@@ -1,0 +1,6 @@
+%div(data-role="page")
+  %div(data-role="content")
+    %ul(data-role="listview")
+      - @batiments.each do |batiment|
+        %li
+          %a{href: campus_batiment_path(@campus, batiment)}= batiment.nom

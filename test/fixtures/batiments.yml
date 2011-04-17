@@ -1,0 +1,42 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ensps:
+  campus: illkirch
+  nom: ENSPS
+  url_photo: MyString
+  acces_wifi: false
+  adresse: MyString
+  code_postal: MyString
+  ville: MyString
+  longitude: 1.5
+  latitude: 1.5
+  horaires: MyText
+  info: MyText
+
+isu:
+  campus: illkirch
+  url_photo: MyString
+  acces_wifi: false
+  nom: ISU
+  adresse: MyString
+  code_postal: MyString
+  ville: MyString
+  longitude: 1.5
+  latitude: 1.5
+  horaires: MyText
+  info: MyText
+
+ru_illkirch:
+  campus: illkirch
+  categorie: ru
+  url_photo: MyString
+  acces_wifi: false
+  nom: Réstaurant universitaire Illkirch
+  adresse: MyString
+  code_postal: MyString
+  ville: MyString
+  longitude: 1.5
+  latitude: 1.5
+  horaires: MyText
+  info: MyText
+  

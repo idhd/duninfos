@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+illkirch:
+  nom: illkirch
+  longitude: 7.737063
+  latitude: 48.522719
+
+esplanade:
+  nom: esplanade
+  longitude: 7.766690
+  latitude: 48.579021

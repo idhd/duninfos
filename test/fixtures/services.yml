@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+info:
+  batiment: isu
+  nom: informatique
+  tel: MyString
+  email: MyString
+  url_site_web: MyString
+
+two:
+  nom: MyString
+  tel: MyString
+  email: MyString
+  url_site_web: MyString

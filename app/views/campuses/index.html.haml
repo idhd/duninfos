@@ -1,0 +1,6 @@
+%div(data-role="page")
+  %div(data-role="content")
+    %ul(data-role="listview")
+      - @campuses.each do |campus|
+        %li
+          %a{href: campus_path(campus)}= campus.nom.capitalize

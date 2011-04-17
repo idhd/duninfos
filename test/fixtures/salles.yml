@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nb_place: 1
+  num_etage: 1
+  info_suplementaire: MyString
+  nom: MyString
+  imprimante: MyString
+  acces_libre: false
+  info: MyText
+
+two:
+  nb_place: 1
+  num_etage: 1
+  info_suplementaire: MyString
+  nom: MyString
+  imprimante: MyString
+  acces_libre: false
+  info: MyText

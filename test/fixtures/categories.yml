@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ru:
+  nom: Réstaurant Universitaire
+  url: 
+
+two:
+  nom: MyString
+  url: MyString
