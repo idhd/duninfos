@@ -20,14 +20,7 @@ class CampusesController < ApplicationController
   end
   
   def create
-    @campus = Campus.new(params[:campus])
-    if @campus.save
-      redirect_to campuses_path
-      respond_with @campus, :status => :created, :location => @campus
-    else
-      render "campuses#edit"
-      respond_with @post.errors, :status => :unprocessable_entity
-    end
+    respond_with(@campus = Campus.create(params[:campus]))
   end
   
   def update
