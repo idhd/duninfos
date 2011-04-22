@@ -1,0 +1,20 @@
+# Duninfos
+
+L’application que nous vous proposons est une application de géolocalisation avec mise à disposition d’informations pratiques.
+
+## Description de l’application
+L’application s’ouvre sur un menu qui liste les différents campus de l’UdS avec la possibilité, en cliquant sur le nom, d’afficher soit en vue aérienne soit en mode plan (en fonction du paramétrage de l’utilisateur) ou, en cliquant sur un lien à droite du nom, d’afficher la liste des différents bâtiments du campus sélectionné. Dans le mode plan/vue aérienne, l’utilisateur peut cliquer, se déplacer et zoomer (avant et arrière) en utilisant les dispositifs tactiles du smartphone, ainsi que de choisir les repères qu’il souhaite visualiser sur la carte. Lorsque l’utilisateur clique sur un repère, une fenêtre contextuelle s’affiche indiquant les informations liées au repère. Dans le cas d’un bâtiment, sont affichés son nom et ses heures d’ouverture, ainsi que deux liens : l’un vers une photo du bâtiment avec son entrée principale et l’autre vers une liste de catégories de salles et de services : salle de cours, amphi, scolarité, accueil, salle informatique, imprimantes, etc.
+
+De plus, depuis le menu principal, l’utilisateur peut accéder à un mode de recherche afin de trouver le lieu ou le service qu’il souhaite. Il est aussi possible à partir du mode plan/vue aérienne de revenir directement au menu et inversement.
+
+## Contenu de l’application :
+L’application contient tout d’abord les emplacements et horaires d’ouverture des bâtiments, des bibliothèques et des services administratifs (pour les étudiants) de l’UdS. De plus, elle permet, à l’aide de plans par étage simplifiés, à l’utilisateur de vérifier la position dans le bâtiment de la salle qu’il recherche. En outre, une fois la salle trouvée, elle permet à celui-ci de vérifier, via le planning de la salle, qu’il s’agit bien de la salle recherchée. L’application contient la position des restaurants universitaires, des cités universitaires, des bornes de rechargement pass campus, des imprimantes en libre service, etc. Depuis le menu principal, l’utilisateur peut suivre les news concernant la carte pass campus. De plus, afin de faciliter l’accès à l’Université pour les personnes à mobilité réduite, les entrées accessibles pour ceux- ci sont représentées par un pictogramme sur la carte, avec la possibilité d’en voir la photo en cliquant dessus, par simple réglage des paramètres. Si l’entrée principale ne leur est pas accessible, cela sera indiqué par le même pictogramme, mais barré, et d’un clic, l’utilisateur pourra visualiser la photo de l’entrée accessible.
+
+## Objectifs de l’application
+Le premier objectif de l’application est de permettre aux utilisateurs de
+localiser les bâtiments, les salles de cours et les différents services disponibles comme les bibliothèques, les imprimantes en libre service, les points de rechargement pass campus, les services de l’agora, etc. Dans chaque cas, des informations pratiques seront fournies comme la position, les horaires d’ouverture, l’emploi du temps dans le cas d’une salle... Le second objectif de l’application est de faire découvrir aux utilisateurs les campus de l’UdS, de familiariser les nouveaux étudiants aux bâtiments et aux campus afin qu’ils se les approprient.
+
+## Contexte d’usage et publics de l’application
+Les différents contextes d’usage de l’application sont liés à ses objectifs. L’application est susceptible d’être utilisée pour trouver un bâtiment ou une salle précise afin de s’y rendre, ainsi que les horaires d’ouverture et la localisation de différents services. Elle sera particulièrement utile pour les étudiants et les professeurs qui ont cours dans une salle en dehors de leur UFR habituelle ou qui sont à la recherche d’un service spécifique sur le campus.
+
+Les publics auxquels s’adresse l’application sont tout d’abord les étudiants et les professeurs, mais aussi tout le personnel de l’UdS, les chercheurs et les intervenants extérieurs.
