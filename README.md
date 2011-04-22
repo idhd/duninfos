@@ -7,7 +7,7 @@ L’application s’ouvre sur un menu qui liste les différents campus de l’Ud
 
 De plus, depuis le menu principal, l’utilisateur peut accéder à un mode de recherche afin de trouver le lieu ou le service qu’il souhaite. Il est aussi possible à partir du mode plan/vue aérienne de revenir directement au menu et inversement.
 
-## Contenu de l’application :
+## Contenu de l’application
 L’application contient tout d’abord les emplacements et horaires d’ouverture des bâtiments, des bibliothèques et des services administratifs (pour les étudiants) de l’UdS. De plus, elle permet, à l’aide de plans par étage simplifiés, à l’utilisateur de vérifier la position dans le bâtiment de la salle qu’il recherche. En outre, une fois la salle trouvée, elle permet à celui-ci de vérifier, via le planning de la salle, qu’il s’agit bien de la salle recherchée. L’application contient la position des restaurants universitaires, des cités universitaires, des bornes de rechargement pass campus, des imprimantes en libre service, etc. Depuis le menu principal, l’utilisateur peut suivre les news concernant la carte pass campus. De plus, afin de faciliter l’accès à l’Université pour les personnes à mobilité réduite, les entrées accessibles pour ceux- ci sont représentées par un pictogramme sur la carte, avec la possibilité d’en voir la photo en cliquant dessus, par simple réglage des paramètres. Si l’entrée principale ne leur est pas accessible, cela sera indiqué par le même pictogramme, mais barré, et d’un clic, l’utilisateur pourra visualiser la photo de l’entrée accessible.
 
 ## Objectifs de l’application
