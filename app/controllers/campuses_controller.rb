@@ -25,16 +25,12 @@ class CampusesController < ApplicationController
   
   def update
     @campus = Campus.find(params[:id])
-    if @campus.update_attributes(params[:campus])
-      redirect_to @campus
-    else
-      render "campuses#edit"
-    end
+    @campus.update_attributes(params[:campus])
+    respond_with @campus
   end
   
   def destroy
     @campus = Campus.find(params[:id])
-    @campus.destroy
-    redirect_to campuses_url
+    respond_with @campus.destroy
   end
 end
