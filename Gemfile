@@ -9,6 +9,12 @@ gem 'sqlite3'
 gem 'haml'
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
