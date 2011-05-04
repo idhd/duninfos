@@ -9,7 +9,7 @@ class BatimentsController < ApplicationController
         @batiments = @campus.batiments
       end
     end
-    respond_with @batiment
+    respond_with @batiments
   end
   
   def show
