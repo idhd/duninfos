@@ -23,13 +23,13 @@ class BornesController < ApplicationController
   def update
     @borne = Borne.find(params[:id])
     @borne.update_attributes(params[:borne])
-    respond_with [@borne.batiment.campus, @borne.batiment, @borne]
+    respond_with(@borne.batiment.campus, @borne.batiment, @borne)
   end
   
   def destroy
     @borne = Borne.find(params[:id])
     @batiment = @borne.batiment
     @campus = @batiment.campus
-    respond_with [@campus, @batiment, @borne.destroy]
+    respond_with(@campus, @batiment, @borne.destroy)
   end
 end

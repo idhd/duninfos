@@ -23,13 +23,13 @@ class ServicesController < ApplicationController
   def update
     @service = Service.find(params[:id])
     @service.update_attributes(params[:service])
-    respond_with [@service.batiment.campus, @service.batiment, @service]
+    respond_with(@service.batiment.campus, @service.batiment, @service)
   end
 
   def destroy
     @service = Service.find(params[:id])
     @batiment = @service.batiment
     @campus = @batiment.campus
-    respond_with [@campus, @batiment, @service.destroy]
+    respond_with(@campus, @batiment, @service.destroy)
   end
 end
