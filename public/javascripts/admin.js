@@ -54,11 +54,12 @@ $(document).ready(function(){
       $("."+choix).each(function() {
         $(this).attr('name',choix+'['+$(this).attr('name')+']');
       });
-      
+      $("#select-campus").attr('disabled', 'disabled');
       var batiment_id = $("#select-batiment").attr('value');
       var campus_id =  $("#select-campus").attr('value');
       
       if(choix == "batiment") {
+        $("#select-campus").attr('disabled', '');
         $("form").attr('action','campuses/'+campus_id+'/batiments');
         }
       else if(choix == "campus") {
