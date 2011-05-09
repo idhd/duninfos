@@ -6,7 +6,7 @@
     %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
   / /header
   %div{"data-role" => "content"}
-    %form{:action => "campuses/193666451/batiments.json", :method => "post"}
+    %form#admin_form{:action => "campuses/193666451/batiments.json", :method => "post"}
       %h2 Interface Administrateur
       %div{"data-role" => "fieldcontain"}
         %fieldset{"data-role" => "controlgroup"}
@@ -34,51 +34,51 @@
       %div.ui-grid-a.campus.batiment.entree.all{"data-role" => "fieldcontain"}
         %div.ui-block-a.campus.batiment.entree.all{"data-role" => "fieldcontain"}
           %label{:for => "longitude"} Longitude
-          %input.campus.batiment.entree.all#longitude{:name => "batiment[longitude]", :type => "text", :value => ""}/
+          %input.campus.batiment.entree.all#longitude{:name => "longitude", :type => "text", :value => ""}/
         %div.ui-block-b.campus.batiment.entree.all{"data-role" => "fieldcontain"}
           %label{:for => "latitude"} Latitude
-          %input.campus.batiment.entree.all#latitude{:name => "batiment[latitude]", :type => "text", :value => ""}/
+          %input.campus.batiment.entree.all#latitude{:name => "latitude", :type => "text", :value => ""}/
       /catégorie
       %div.batiment.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-categorie"} Catégorie
-        %select.batiment.service.all#select-categorie{:name => "batiment[categorie_id]"}
+        %select.batiment.service.all#select-categorie{:name => "categorie_id"}
           - @categories.each do |categorie|
             %option= categorie.id
       /campus
-      %div.salle.entree.service.all{"data-role" => "fieldcontain"}
+      %div.batiment.salle.entree.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-campus"} Campus
-        %select.batiment.salle.entree.service.all#select-campus{:name => "select-campus", :onChange => "updatecities(this.selectedIndex)"}
+        %select.batiment.salle.entree.service.all#select-campus{:name => "campus_id", :onChange => "updatecities(this.selectedIndex)"}
           - @campuses.each do |campus|
-            %option= campus.nom.capitalize
+            %option= campus.id
       /batiment
       %div.salle.entree.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-batiment"} Batiment
-        %select.salle.entree.service.all#select-batiment{:name => "select-batiment"}
+        %select.salle.entree.service.all#select-batiment{:name => "batiment_id"}
           - @batiments.each do |batiment|
-            %option= batiment.nom.capitalize
+            %option= batiment.id
             batiment.campus
       /nom
       %div.campus.salle.categorie.batiment.service.all{"data-role" => "fieldcontain"}
         %label{:for => "nom"} Nom
-        %input.campus.salle.batiment.categorie.service.all#nom{:name => "batiment[nom]", :type => "text", :value => ""}/
+        %input.campus.salle.batiment.categorie.service.all#nom{:name => "nom", :type => "text", :value => ""}/
       /nombre de places
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "nbplace"} Nombre de places
-        %input.salle.all#nbplace{:name => "nbplace", :type => "text", :value => ""}/
+        %input.salle.all#nbplace{:name => "nb_place", :type => "text", :value => ""}/
       /numero etage
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "numetage"} Numéro étage
-        %input.salle.all#numetage{:name => "numetage", :type => "text", :value => ""}/
+        %input.salle.all#numetage{:name => "num_etage", :type => "text", :value => ""}/
       /acces libre
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_acces_libre"} Accès libre?
-        %select.salle.all#slider_acces_libre{"data-role" => "slider", :name => "slider_acces_libre"}
+        %select.salle.all#slider_acces_libre{"data-role" => "slider", :name => "acces_libre"}
           %option{:value => "off"} Non
           %option{:value => "on"} Oui
       /imprimante
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_imprimante"} Imprimante?
-        %select.salle.all#slider_imprimante{"data-role" => "slider", :name => "slider_imprimante"}
+        %select.salle.all#slider_imprimante{"data-role" => "slider", :name => "imprimante"}
           %option{:value => "off"} Non
           %option{:value => "on"} Oui
       /url_icone
@@ -100,43 +100,43 @@
       /url_photo
       %div.batiment.entree.borne.all{"data-role" => "fieldcontain"}
         %label{:for => "url_photo"} URL photo
-        %input.batiment.entree.borne.all#url_photo{:name => "batiment[url_photo]", :type => "text", :value => ""}/
+        %input.batiment.entree.borne.all#url_photo{:name => "url_photo", :type => "text", :value => ""}/
       /horaires
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "horaire"} Horaires
-        %input.batiment.all#horaire{:name => "batiment[horaires]", :type => "text", :value => ""}/
+        %input.batiment.all#horaire{:name => "horaires", :type => "text", :value => ""}/
       /adresse
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "adresse"} Adresse
-        %textarea.batiment.all#adresse{:cols => "40", :name => "batiment[adresse]", :rows => "8"}
+        %textarea.batiment.all#adresse{:cols => "40", :name => "adresse", :rows => "8"}
       /code postal
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "cp"} Code postal
-        %input.batiment.all#cp{:name => "batiment[code_postal]", :type => "text", :value => ""}/
+        %input.batiment.all#cp{:name => "code_postal", :type => "text", :value => ""}/
       /ville
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "ville"} Ville
-        %input.batiment.all#ville{:name => "batiment[ville]", :type => "text", :value => ""}/
+        %input.batiment.all#ville{:name => "ville", :type => "text", :value => ""}/
       /acces handicape
       %div.entree.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_handicap"} Accès handicapé?
-        %select.entree.all#slider_handicap{"data-role" => "slider", :name => "slider_handicap"}
+        %select.entree.all#slider_handicap{"data-role" => "slider", :name => "acces_handicape"}
           %option{:value => "off"} Non
           %option{:value => "on"} Oui
       /acces_wifi
-      %div.all{"data-role" => "fieldcontain"}
+      %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_wifi"} Accès wifi?
-        %select.batiment.all#slider_wifi{"data-role" => "slider", :name => "slider_wifi"}
+        %select.batiment.all#slider_wifi{"data-role" => "slider", :name => "acces_wifi"}
           %option{:value => "off"} Non
           %option{:value => "on"} Oui
       /info
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "infos"} Infos
-        %textarea.batiment.all#infos{:cols => "40", :name => "batiment[info]", :rows => "8"}
+        %textarea.batiment.all#infos{:cols => "40", :name => "info", :rows => "8"}
       /infos_supp
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "info_sup"} Infos supplémentaires
-        %textarea.salle.all#info_sup{:cols => "40", :name => "info_sup", :rows => "8"}
+        %textarea.salle.all#info_sup{:cols => "40", :name => "info_suplementaire", :rows => "8"}
           
       .ui-body.ui-body-b
         %fieldset.ui-grid-a
