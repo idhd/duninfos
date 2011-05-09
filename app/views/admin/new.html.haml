@@ -5,8 +5,9 @@
     %h1 Projet DUN
     %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
   / /header
+  
   %div{"data-role" => "content"}
-    %form#admin_form{:action => "campuses/193666451/batiments.json", :method => "post"}
+    %form#admin_form{:action => "campuses/193666451/batiments.json", :method => "post", :name => "admin_form"}
       %h2 Interface Administrateur
       %div{"data-role" => "fieldcontain"}
         %fieldset{"data-role" => "controlgroup"}
@@ -43,20 +44,19 @@
         %label.select{:for => "select-categorie"} Catégorie
         %select.batiment.service.all#select-categorie{:name => "categorie_id"}
           - @categories.each do |categorie|
-            %option= categorie.id
+            %option{:value => categorie.id}= categorie.nom.capitalize
       /campus
       %div.batiment.salle.entree.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-campus"} Campus
         %select.batiment.salle.entree.service.all#select-campus{:name => "campus_id", :onChange => "updatecities(this.selectedIndex)"}
           - @campuses.each do |campus|
-            %option= campus.id
+            %option{:value => campus.id}= campus.nom.capitalize
       /batiment
       %div.salle.entree.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-batiment"} Batiment
         %select.salle.entree.service.all#select-batiment{:name => "batiment_id"}
           - @batiments.each do |batiment|
-            %option= batiment.id
-            batiment.campus
+            %option{:value => batiment.id}= batiment.nom.capitalize
       /nom
       %div.campus.salle.categorie.batiment.service.all{"data-role" => "fieldcontain"}
         %label{:for => "nom"} Nom

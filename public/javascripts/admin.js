@@ -50,6 +50,7 @@ $(document).ready(function(){
       $(".categorie").attr('disabled', '');
       choix = "categorie";
     });
+    
     $("form").submit(function() {
       $("."+choix).each(function() {
         $(this).attr('name',choix+'['+$(this).attr('name')+']');
@@ -81,7 +82,21 @@ $(document).ready(function(){
       }                                   
     });
     
-
+    //function updatecities(selectedcitygroup){
+    
+    $("#select-campus").change(function() {
+        var campuseslist=document.admin_form.campus_id;
+        var campus_id =  $("#select-campus").attr('value');
+        var batimentslist=document.admin_form.batiment_id;
+        
+        $.get("/campuses/"+campus_id+"/batiments.json", function(data) {
+        batiments=eval(data);
+        console.log(batiments);
+        batimentslist.options.length=0;
+        for (i=0; i<batiments.length; i++)
+            batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);         
+        });
+    });   
 });
 /* 
 disabled
