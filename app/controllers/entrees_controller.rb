@@ -23,13 +23,13 @@ class EntreesController < ApplicationController
   def update
     @entree = Entree.find(params[:id])
     @entree.update_attributes(params[:entree])
-    respond_with [@entree.batiment.campus, @entree.batiment, @entree]
+    respond_with(@entree.batiment.campus, @entree.batiment, @entree)
   end
 
   def destroy
     @entree = Entree.find(params[:id])
     @batiment = @entree.batiment
     @campus = @batiment.campus
-    respond_with [@campus, @batiment, @entree.destroy]
+    respond_with(@campus, @batiment, @entree.destroy)
   end
 end

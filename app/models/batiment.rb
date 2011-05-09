@@ -8,7 +8,7 @@ class Batiment < ActiveRecord::Base
   validates :nom,           :presence => true, :uniqueness => true
   validates :url_photo,     :presence => true
   validates :adresse,       :presence => true
-  validates :code_postale,  :presence => true
+  validates :code_postal,  :presence => true
   validates :ville,         :presence => true
   validates :longitude,     :presence => true
   validates :latitude,      :presence => true

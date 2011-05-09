@@ -9,7 +9,7 @@ class BatimentsController < ApplicationController
         @batiments = @campus.batiments
       end
     end
-    respond_with @batiment
+    respond_with @batiments
   end
   
   def show
@@ -21,18 +21,18 @@ class BatimentsController < ApplicationController
   
   def create
     @campus = Campus.find(params[:campus_id])
-    respond_with [@campus, @batiment = @campus.batiments.create(params[:batiment])]
+    respond_with(@campus, @batiment = @campus.batiments.create(params[:batiment]))
   end
   
   def update
     @batiment = Batiment.find(params[:id])
     @batiment.update_attributes(params[:batiment])
-    respond_with [@batiment.campus, @batiment]
+    respond_with(@batiment.campus, @batiment)
   end
   
   def destroy
     @batiment = Batiment.find(params[:id])
     @campus = @batiment.campus
-    respond_with [@campus, @batiment.destroy]
+    respond_with(@campus, @batiment.destroy)
   end
 end
