@@ -10,7 +10,8 @@ Duninfos::Application.routes.draw do
     end
   end
   
-  match '/admin/' => "admin#new"
+  match '/admin/' => "admin#accueil"
+  match '/admin/new/' => "admin#new"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

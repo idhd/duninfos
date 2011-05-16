@@ -5,14 +5,16 @@ $(document).ready(function(){
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".campus").show(); 
-      $(".campus").attr('disabled', '');     
+      $(".campus").attr('disabled', '');
+      $(".campus-form").attr('disabled', '');     
       choix = "campus";
     });      
     $("label[for='choix-batiment']").click(function(){
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".batiment").show(); 
-      $(".batiment").attr('disabled', '');     
+      $(".batiment").attr('disabled', ''); 
+      $(".batiment-form").attr('disabled', '');     
       choix = "batiment";
     });
     $("label[for='choix-salle']").click(function(){
@@ -20,6 +22,7 @@ $(document).ready(function(){
       $(".all").attr('disabled', 'disabled');
       $(".salle").show();   
       $(".salle").attr('disabled', '');
+      $(".salle-form").attr('disabled', '');
       choix = "salle";
     });
     $("label[for='choix-entree']").click(function(){
@@ -27,6 +30,7 @@ $(document).ready(function(){
       $(".all").attr('disabled', 'disabled');
       $(".entree").show();      
       $(".entree").attr('disabled', '');
+      $(".entree-form").attr('disabled', '');
       choix = "entree";
     });  
     $("label[for='choix-borne']").click(function(){
@@ -34,13 +38,15 @@ $(document).ready(function(){
       $(".all").attr('disabled', 'disabled');
       $(".borne").show();      
       $(".borne").attr('disabled', '');
+      $(".borne-form").attr('disabled', '');
       choix = "borne";
     });
     $("label[for='choix-service']").click(function(){
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
-      $(".service").show();      
-      $(".service").attr('disabled', '');
+      $(".service").show();  
+      $(".service").attr('disabled', '');    
+      $(".service-form").attr('disabled', '');
       choix = "service";
     });
     $("label[for='choix-categorie']").click(function(){
@@ -48,6 +54,7 @@ $(document).ready(function(){
       $(".all").attr('disabled', 'disabled');
       $(".categorie").show();
       $(".categorie").attr('disabled', '');
+      $(".categorie-form").attr('disabled', '');
       choix = "categorie";
     });
     

@@ -26,17 +26,18 @@
           %label{:for => "choix-service"} Service
           %input#choix-categorie{:name => "radio-choice", :type => "radio", :value => "choice-categorie"}/
           %label{:for => "choix-categorie"} Catégorie
+      /Geolocalisation
       %div{"data-role" => "fieldcontain"}
-        %label{:for => "slider2"} Géolocalisation?
+        %label.ui-slider{:for => "slider2"} Géolocalisation?
         %select.all#slider_geloc{"data-role" => "slider", :name => "slider_geoloc"}
           %option{:value => "off"} Off
           %option{:value => "on"} On
       /coordonnées
-      %div.ui-grid-a.campus.batiment.entree.all{"data-role" => "fieldcontain"}
-        %div.ui-block-a.campus.batiment.entree.all{"data-role" => "fieldcontain"}
+      %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
+        %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
           %label{:for => "longitude"} Longitude
           %input.campus.batiment.entree.all#longitude{:name => "longitude", :type => "text", :value => ""}/
-        %div.ui-block-b.campus.batiment.entree.all{"data-role" => "fieldcontain"}
+        %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
           %label{:for => "latitude"} Latitude
           %input.campus.batiment.entree.all#latitude{:name => "latitude", :type => "text", :value => ""}/
       /catégorie
@@ -72,13 +73,13 @@
       /acces libre
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_acces_libre"} Accès libre?
-        %select.salle.all#slider_acces_libre{"data-role" => "slider", :name => "acces_libre"}
+        %select.salle-form.all#slider_acces_libre{"data-role" => "slider", :name => "acces_libre"}
           %option{:value => "off"} Non
           %option{:value => "on"} Oui
       /imprimante
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_imprimante"} Imprimante?
-        %select.salle.all#slider_imprimante{"data-role" => "slider", :name => "imprimante"}
+        %select.salle-form.all#slider_imprimante{"data-role" => "slider", :name => "imprimante"}
           %option{:value => "off"} Non
           %option{:value => "on"} Oui
       /url_icone
@@ -120,15 +121,15 @@
       /acces handicape
       %div.entree.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_handicap"} Accès handicapé?
-        %select.entree.all#slider_handicap{"data-role" => "slider", :name => "acces_handicape"}
+        %select.entree-form.all#slider_handicap{"data-role" => "slider", :name => "acces_handicape"}
           %option{:value => "off"} Non
           %option{:value => "on"} Oui
       /acces_wifi
       %div.batiment.all{"data-role" => "fieldcontain"}
-        %label{:for => "slider_wifi"} Accès wifi?
-        %select.batiment.all#slider_wifi{"data-role" => "slider", :name => "acces_wifi"}
+        %label.ui-slider{:for => "slider_wifi"} Accès wifi?
+        %select#slider_wifi.batiment-form.all{"data-role" => "slider", :name => "slider_wifi", :style => "display: none"}
           %option{:value => "off"} Non
-          %option{:value => "on"} Oui
+          %option{:value => "on"} Oui         
       /info
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "infos"} Infos
