@@ -1,0 +1,15 @@
+#pilule {
+position:fixed;
+margin-bottom: 0;
+bottom:0px;
+width: 100%;
+text-align: center;
+}
+
+#pilule button {
+width: 100px;
+}
+
+#accordion {
+margin: 0 5px 0 5px;
+}
