@@ -1,4 +1,5 @@
 int main
 {
-    return 0;
+printf("hello\n");    
+return 0;
 }
