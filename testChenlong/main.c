@@ -1,5 +1,5 @@
 int main
 {
-printf("hello\n");    
-return 0;
+    printf("toto\n");
+    return 0;
 }
