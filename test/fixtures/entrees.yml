@@ -1,13 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  url_photo: MyString
-  acces_handicape: false
+entree_ISU:
+  batiment: isu
+  url_photo: entreeIsu1.png
+  acces_handicape: true
   longitude: 1.5
   latitude: 1.5
+  position: 0
 
-two:
-  url_photo: MyString
-  acces_handicape: false
+entree2_ISU:
+  batiment: isu
+  url_photo: entreeIsu2.png
+  acces_handicape: true
   longitude: 1.5
   latitude: 1.5
+  position: 1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110411202318) do
+ActiveRecord::Schema.define(:version => 20110516125132) do
 
   create_table "batiments", :force => true do |t|
     t.integer  "campus_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20110411202318) do
     t.float    "latitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "salles", :force => true do |t|

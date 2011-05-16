@@ -2,7 +2,7 @@ class Batiment < ActiveRecord::Base
   belongs_to :campus
   belongs_to :categorie
   has_many :bornes
-  has_many :entrees
+  has_many :entrees, :order => "position"
   has_many :services
   
   validates :nom,           :presence => true, :uniqueness => true
