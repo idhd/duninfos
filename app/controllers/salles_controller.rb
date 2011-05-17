@@ -1,35 +1,36 @@
+
 class SallesController < ApplicationController
   respond_to :html, :json, :xml
 
   def index
     if params[:batiment_id] && @batiment = Batiment.find(params[:batiment_id])
-      @entrees = @batiment.entrees
+      @salles = @batiment.salles
     else
-      @entrees = Entree.all
+      @salles = Salle.all
     end
-    respond_with @entrees
+    respond_with @salles
   end
 
   def show
-    @entree = Entree.find(params[:id])
-    respond_with @entree
+    @salle = Salle.find(params[:id])
+    respond_with @salle
   end
 
   def create
     @batiment = Batiment.find(params[:batiment_id])
-    respond_with(@entree = @batiment.entrees.create(params[:entree]))
+    respond_with(@batiment.campus, @batiment, @salle = @batiment.salle.create(params[:salle]))
   end
 
   def update
-    @entree = Entree.find(params[:id])
-    @entree.update_attributes(params[:entree])
-    respond_with(@entree.batiment.campus, @entree.batiment, @entree)
+    @salle = Salle.find(params[:id])
+    @salle.update_attributes(params[:salle])
+    respond_with(@salle.batiment.campus, @salle.batiment, @salle)
   end
 
   def destroy
-    @entree = Entree.find(params[:id])
-    @batiment = @entree.batiment
+    @salle = Salle.find(params[:id])
+    @batiment = @salle.batiment
     @campus = @batiment.campus
-    respond_with(@campus, @batiment, @entree.destroy)
+    respond_with(@campus, @batiment, @salle.destroy)
   end
 end

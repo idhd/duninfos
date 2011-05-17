@@ -17,7 +17,7 @@ class EntreesController < ApplicationController
 
   def create
     @batiment = Batiment.find(params[:batiment_id])
-    respond_with(@entree = @batiment.entrees.create(params[:entree]))
+    respond_with(@batiment.campus, @batiment, @entree = @batiment.entrees.create(params[:entree]))
   end
 
   def update
