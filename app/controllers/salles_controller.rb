@@ -1,4 +1,3 @@
-
 class SallesController < ApplicationController
   respond_to :html, :json, :xml
 
