@@ -2,16 +2,28 @@ Duninfos::Application.routes.draw do
   root :to => "campuses#index" 
   
   resources :campuses do
+    collection do
+      get 'carte' => "carte#index"
+    end
     resources :batiments do
+      collection do
+        get 'carte' => "carte#index"
+      end
+      member do
+        get 'carte' => "carte#index"
+      end
       resources :bornes
       resources :services
       resources :entrees
       resources :salles
+      
     end
   end
   
   match '/admin/' => "admin#accueil"
   match '/admin/new/' => "admin#new"
+  
+  #match "/campuses(/:campus_id(/batiments(/:batiment_id)))/carte" => "carte#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

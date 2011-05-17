@@ -15,6 +15,8 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+gem 'acts_as_list'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

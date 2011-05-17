@@ -1,0 +1,51 @@
+#cadreCarte
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;   
+    width: 100%;
+    height: 30%;
+}
+
+#cadrePhoto
+{
+    top: 30%;
+    left: 0%;
+    width: 100%;
+    height: 70%;
+}
+
+#imgEntree
+{
+    position: absolute;
+    top: 30%;
+    left: 0%;
+    height: 70%;
+    width: 100%;
+}
+
+#imgHandy
+{
+    position: absolute;
+    top: 30%;
+    right: 0%;
+    width: 6%
+}
+
+#imgPrevious
+{
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    width: 10%;
+}
+
+#imgNext
+{
+    position: absolute;
+    top: 45%;
+    right: 0%;
+    width: 10%;
+}
+
+
