@@ -68,22 +68,22 @@ $(document).ready(function(){
       
       if(choix == "batiment") {
         $("#select-campus").attr('disabled', '');
-        $("form").attr('action','campuses/'+campus_id+'/batiments');
+        $("form").attr('action','/campuses/'+campus_id+'/batiments');
         }
       else if(choix == "campus") {
-        $("form").attr('action','campuses/');
+        $("form").attr('action','/campuses/');
         }
       else if(choix == "salle") {
-        $("form").attr('action','campuses/'+campus_id+'/batiments/'+batiment_id+'/salles');
+        $("form").attr('action','/campuses/'+campus_id+'/batiments/'+batiment_id+'/salles');
         }
       else if(choix == "entree") {
-        $("form").attr('action','campuses/'+campus_id+'/batiments/'+batiment_id+'/entrees');
+        $("form").attr('action','/campuses/'+campus_id+'/batiments/'+batiment_id+'/entrees');
         }
       else if(choix == "borne") {
-        $("form").attr('action','campuses/'+campus_id+'/batiments/'+batiment_id+'/bornes');
+        $("form").attr('action','/campuses/'+campus_id+'/batiments/'+batiment_id+'/bornes');
         }
       else if(choix == "service") {
-        $("form").attr('action','campuses/'+campus_id+'/batiments/'+batiment_id+'/services');
+        $("form").attr('action','/campuses/'+campus_id+'/batiments/'+batiment_id+'/services');
         }
       else if(choix == "categorie") {
       }                                   
