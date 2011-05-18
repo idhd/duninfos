@@ -7,7 +7,7 @@
   / /header
   
   %div{"data-role" => "content"}
-    %form#admin_form{:action => "campuses/193666451/batiments.json", :method => "post", :name => "admin_form"}
+    %form#admin_form{:action => "", :method => "post", :name => "admin_form"}
       %h2 Interface Administrateur
       %div{"data-role" => "fieldcontain"}
         %fieldset{"data-role" => "controlgroup"}
@@ -49,7 +49,7 @@
       /campus
       %div.batiment.salle.entree.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-campus"} Campus
-        %select.batiment.salle.entree.service.all#select-campus{:name => "campus_id", :onChange => "updatecities(this.selectedIndex)"}
+        %select.batiment.salle.entree.service.all#select-campus{:name => "campus_id"}
           - @campuses.each do |campus|
             %option{:value => campus.id}= campus.nom.capitalize
       /batiment
