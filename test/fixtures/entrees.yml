@@ -2,16 +2,25 @@
 
 entree_ISU:
   batiment: isu
-  url_photo: entreeIsu1.png
+  url_photo: ent_isu.jpg
   acces_handicape: true
-  longitude: 1.5
-  latitude: 1.5
+  longitude: 7.737107
+  latitude: 48.522794
   position: 0
 
-entree2_ISU:
+entree_ISU2:
   batiment: isu
-  url_photo: entreeIsu2.png
+  url_photo: ent_isu2.jpg
   acces_handicape: true
-  longitude: 1.5
-  latitude: 1.5
+  longitude: 7.736751
+  latitude: 48.522953
   position: 1
+
+entree_ENSPS:
+  batiment: ensps
+  url_photo: ent_ensps.jpg
+  acces_handicape: true
+  longitude: 7.737666
+  latitude: 48.525507
+  position: 0
+

@@ -1,9 +1,15 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 ru:
-  nom: Réstaurant Universitaire
-  url: 
+  nom: Restaurant Universitaire
+  url: cat_ru.png
 
-two:
-  nom: MyString
-  url: MyString
+ecole:
+  nom: Ecole
+  url: cat_ecole.png
+
+logement:
+  nom: Logement
+  url: cat_logement.png
+
+cmp_sport:
+  nom: complexe sportif
+  url: cat_cmp_sport.png
