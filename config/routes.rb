@@ -20,7 +20,8 @@ Duninfos::Application.routes.draw do
     end
   end
   
-  match '/admin/' => "admin#new"
+  match '/admin/' => "admin#accueil"
+  match '/admin/new/' => "admin#new"
   
   #match "/campuses(/:campus_id(/batiments(/:batiment_id)))/carte" => "carte#index"
   

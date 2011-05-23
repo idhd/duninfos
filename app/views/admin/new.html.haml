@@ -1,338 +1,150 @@
+=javascript_include_tag "admin"
+
 %div{"data-role" => "page"}
   %div{"data-role" => "header", "data-theme" => "b"}
     %h1 Projet DUN
     %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
   / /header
+  
   %div{"data-role" => "content"}
-    %form{:action => "#", :method => "get"}
+    %form#admin_form{:action => "campuses/193666451/batiments.json", :method => "post", :name => "admin_form"}
       %h2 Interface Administrateur
       %div{"data-role" => "fieldcontain"}
         %fieldset{"data-role" => "controlgroup"}
           %legend Que voulez-vous ajouter?
-          / <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-          %input#radio-choice-1{:name => "radio-choice", :type => "radio", :value => "choice-1"}/
-          %label{:for => "radio-choice-1"} Campus
-          %input#radio-choice-2{:name => "radio-choice", :type => "radio", :value => "choice-2"}/
-          %label{:for => "radio-choice-2"} Batiment
-          %input#radio-choice-3{:name => "radio-choice", :type => "radio", :value => "choice-3"}/
-          %label{:for => "radio-choice-3"} Salle
-          %input#radio-choice-4{:name => "radio-choice", :type => "radio", :value => "choice-4"}/
-          %label{:for => "radio-choice-4"} Entrée
-          %input#radio-choice-5{:name => "radio-choice", :type => "radio", :value => "choice-5"}/
-          %label{:for => "radio-choice-5"} Borne
-          %input#radio-choice-6{:name => "radio-choice", :type => "radio", :value => "choice-6"}/
-          %label{:for => "radio-choice-6"} Service
-          %input#radio-choice-7{:name => "radio-choice", :type => "radio", :value => "choice-7"}/
-          %label{:for => "radio-choice-7"} Catégorie
+          %input#choix-campus{:name => "radio-choice", :type => "radio", :value => "choice-campus"}/
+          %label{:for => "choix-campus"} Campus
+          %input#choix-batiment{:name => "radio-choice", :type => "radio", :value => "choice-batiment"}/
+          %label{:for => "choix-batiment"} Batiment
+          %input#choix-salle{:name => "radio-choice", :type => "radio", :value => "choice-salle"}/
+          %label{:for => "choix-salle"} Salle
+          %input#choix-entree{:name => "radio-choice", :type => "radio", :value => "choice-entree"}/
+          %label{:for => "choix-entree"} Entrée
+          %input#choix-borne{:name => "radio-choice", :type => "radio", :value => "choice-borne"}/
+          %label{:for => "choix-borne"} Borne
+          %input#choix-service{:name => "radio-choice", :type => "radio", :value => "choice-service"}/
+          %label{:for => "choix-service"} Service
+          %input#choix-categorie{:name => "radio-choice", :type => "radio", :value => "choice-categorie"}/
+          %label{:for => "choix-categorie"} Catégorie
+      /Geolocalisation
       %div{"data-role" => "fieldcontain"}
-        %label{:for => "slider2"} Géolocalitsation?
-        %select#slider2{"data-role" => "slider", :name => "slider2"}
+        %label.ui-slider{:for => "slider2"} Géolocalisation?
+        %select.all#slider_geloc{"data-role" => "slider", :name => "slider_geoloc"}
           %option{:value => "off"} Off
           %option{:value => "on"} On
-      #formulaire
-        / formulaire
-        #campus
-          / ajout campus
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Nom
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Longitude
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Latitude
-            %input#name{:name => "name", :type => "text", :value => ""}/
-        / /ajout campus
-        #entree
-          / ajout entrée
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Url photo
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "slider2"} Accès handicapé?
-            %select#slider2{"data-role" => "slider", :name => "slider2"}
-              %option{:value => "off"} Non
-              %option{:value => "on"} Oui
-          %div{"data-role" => "fieldcontain"}
-            %label.select{:for => "select-choice-3"} Batiment
-            %select#select-choice-3{:name => "select-choice-3"}
-              %option{:value => "AL"} Alabama
-              %option{:value => "AK"} Alaska
-              %option{:value => "AZ"} Arizona
-              %option{:value => "AR"} Arkansas
-              %option{:value => "SD"} South Dakota
-              %option{:value => "TN"} Tennessee
-              %option{:value => "TX"} Texas
-              %option{:value => "UT"} Utah
-              %option{:value => "VT"} Vermont
-              %option{:value => "VA"} Virginia
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Longitude
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Latitude
-            %input#name{:name => "name", :type => "text", :value => ""}/
-        / /ajout entrée
-        #salle
-          / ajout salle
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Nom
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Nombre de places
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Numéro étage
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "slider2"} Accès libre?
-            %select#slider2{"data-role" => "slider", :name => "slider2"}
-              %option{:value => "off"} Non
-              %option{:value => "on"} Oui
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Imprimante
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label.select{:for => "select-choice-3"} Batiment
-            %select#select-choice-3{:name => "select-choice-3"}
-              %option{:value => "AL"} Alabama
-              %option{:value => "AK"} Alaska
-              %option{:value => "AZ"} Arizona
-              %option{:value => "AR"} Arkansas
-              %option{:value => "SD"} South Dakota
-              %option{:value => "TN"} Tennessee
-              %option{:value => "TX"} Texas
-              %option{:value => "UT"} Utah
-              %option{:value => "VT"} Vermont
-              %option{:value => "VA"} Virginia
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "textarea"} Infos supplémentaires
-            %textarea#textarea{:cols => "40", :name => "textarea", :rows => "8"}
-        / /ajout salle
-        #borne
-          / ajout borne
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} URL photo
-            %input#name{:name => "name", :type => "text", :value => ""}/
-        / /ajout borne
-        #categorie
-          / ajout catégorie
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} URL
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Nom
-            %input#name{:name => "name", :type => "text", :value => ""}/
-        / /ajout catégorie
-        #service
-          / ajout service
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Nom
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Tel
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Email
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} URL site web
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label.select{:for => "select-choice-3"} Batiment
-            %select#select-choice-3{:name => "select-choice-3"}
-              %option{:value => "AL"} Alabama
-              %option{:value => "AK"} Alaska
-              %option{:value => "AZ"} Arizona
-              %option{:value => "AR"} Arkansas
-              %option{:value => "SD"} South Dakota
-              %option{:value => "TN"} Tennessee
-              %option{:value => "TX"} Texas
-              %option{:value => "UT"} Utah
-              %option{:value => "VT"} Vermont
-              %option{:value => "VA"} Virginia
-          %div{"data-role" => "fieldcontain"}
-            %label.select{:for => "select-choice-3"} Catégorie
-            %select#select-choice-3{:name => "select-choice-3"}
-              %option{:value => "AL"} Alabama
-              %option{:value => "AK"} Alaska
-              %option{:value => "AZ"} Arizona
-              %option{:value => "AR"} Arkansas
-              %option{:value => "SD"} South Dakota
-              %option{:value => "TN"} Tennessee
-              %option{:value => "TX"} Texas
-              %option{:value => "UT"} Utah
-              %option{:value => "VT"} Vermont
-              %option{:value => "VA"} Virginia
-        / /ajout service
-        #batiment
-          / ajout batiment
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Url photo
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "slider2"} Accès wifi?
-            %select#slider2{"data-role" => "slider", :name => "slider2"}
-              %option{:value => "off"} Non
-              %option{:value => "on"} Oui
-          %div{"data-role" => "fieldcontain"}
-            %label.select{:for => "select-choice-3"} Catégorie
-            %select#select-choice-3{:name => "select-choice-3"}
-              %option{:value => "AL"} Alabama
-              %option{:value => "AK"} Alaska
-              %option{:value => "AZ"} Arizona
-              %option{:value => "AR"} Arkansas
-              %option{:value => "SD"} South Dakota
-              %option{:value => "TN"} Tennessee
-              %option{:value => "TX"} Texas
-              %option{:value => "UT"} Utah
-              %option{:value => "VT"} Vermont
-              %option{:value => "VA"} Virginia
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Nom du batiment
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "textarea"} Adresse
-            %textarea#textarea{:cols => "40", :name => "textarea", :rows => "8"}
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Code postal
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Ville
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Longitude
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Latitude
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "name"} Horaires
-            %input#name{:name => "name", :type => "text", :value => ""}/
-          %div{"data-role" => "fieldcontain"}
-            %label{:for => "textarea"} Infos
-            %textarea#textarea{:cols => "40", :name => "textarea", :rows => "8"}
-          %div{"data-role" => "fieldcontain"}
-            %fieldset{"data-role" => "controlgroup"}
-              %legend Choose as many snacks as you'd like:
-              %input#checkbox-1a.custom{:name => "checkbox-1a", :type => "checkbox"}/
-              %label{:for => "checkbox-1a"} Cheetos
-              %input#checkbox-2a.custom{:name => "checkbox-2a", :type => "checkbox"}/
-              %label{:for => "checkbox-2a"} Doritos
-              %input#checkbox-3a.custom{:name => "checkbox-3a", :type => "checkbox"}/
-              %label{:for => "checkbox-3a"} Fritos
-              %input#checkbox-4a.custom{:name => "checkbox-4a", :type => "checkbox"}/
-              %label{:for => "checkbox-4a"} Sun Chips
-          %div{"data-role" => "fieldcontain"}
-            %label.select{:for => "select-choice-1"} Choose shipping method:
-            %select#select-choice-1{:name => "select-choice-1"}
-              %option{:value => "standard"} Standard: 7 day
-              %option{:value => "rush"} Rush: 3 days
-              %option{:value => "express"} Express: next day
-              %option{:value => "overnight"} Overnight
-          %div{"data-role" => "fieldcontain"}
-            %label.select{:for => "select-choice-3"} Your state:
-            %select#select-choice-3{:name => "select-choice-3"}
-              %option{:value => "AL"} Alabama
-              %option{:value => "AK"} Alaska
-              %option{:value => "AZ"} Arizona
-              %option{:value => "AR"} Arkansas
-              %option{:value => "SD"} South Dakota
-              %option{:value => "TN"} Tennessee
-              %option{:value => "TX"} Texas
-              %option{:value => "UT"} Utah
-              %option{:value => "VT"} Vermont
-              %option{:value => "VA"} Virginia
-        / /ajout batiment
-      / /ajout formulaire
+      /coordonnées
+      %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
+        %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
+          %label{:for => "longitude"} Longitude
+          %input.campus.batiment.entree.all#longitude{:name => "longitude", :type => "text", :value => ""}/
+        %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
+          %label{:for => "latitude"} Latitude
+          %input.campus.batiment.entree.all#latitude{:name => "latitude", :type => "text", :value => ""}/
+      /catégorie
+      %div.batiment.service.all{"data-role" => "fieldcontain"}
+        %label.select{:for => "select-categorie"} Catégorie
+        %select.batiment.service.all#select-categorie{:name => "categorie_id"}
+          - @categories.each do |categorie|
+            %option{:value => categorie.id}= categorie.nom.capitalize
+      /campus
+      %div.batiment.salle.entree.service.all{"data-role" => "fieldcontain"}
+        %label.select{:for => "select-campus"} Campus
+        %select.batiment.salle.entree.service.all#select-campus{:name => "campus_id", :onChange => "updatecities(this.selectedIndex)"}
+          - @campuses.each do |campus|
+            %option{:value => campus.id}= campus.nom.capitalize
+      /batiment
+      %div.salle.entree.service.all{"data-role" => "fieldcontain"}
+        %label.select{:for => "select-batiment"} Batiment
+        %select.salle.entree.service.all#select-batiment{:name => "batiment_id"}
+          - @batiments.each do |batiment|
+            %option{:value => batiment.id}= batiment.nom.capitalize
+      /nom
+      %div.campus.salle.categorie.batiment.service.all{"data-role" => "fieldcontain"}
+        %label{:for => "nom"} Nom
+        %input.campus.salle.batiment.categorie.service.all#nom{:name => "nom", :type => "text", :value => ""}/
+      /nombre de places
+      %div.salle.all{"data-role" => "fieldcontain"}
+        %label{:for => "nbplace"} Nombre de places
+        %input.salle.all#nbplace{:name => "nb_place", :type => "text", :value => ""}/
+      /numero etage
+      %div.salle.all{"data-role" => "fieldcontain"}
+        %label{:for => "numetage"} Numéro étage
+        %input.salle.all#numetage{:name => "num_etage", :type => "text", :value => ""}/
+      /acces libre
+      %div.salle.all{"data-role" => "fieldcontain"}
+        %label{:for => "slider_acces_libre"} Accès libre?
+        %select.salle-form.all#slider_acces_libre{"data-role" => "slider", :name => "acces_libre"}
+          %option{:value => "off"} Non
+          %option{:value => "on"} Oui
+      /imprimante
+      %div.salle.all{"data-role" => "fieldcontain"}
+        %label{:for => "slider_imprimante"} Imprimante?
+        %select.salle-form.all#slider_imprimante{"data-role" => "slider", :name => "imprimante"}
+          %option{:value => "off"} Non
+          %option{:value => "on"} Oui
+      /url_icone
+      %div.categorie.all{"data-role" => "fieldcontain"}
+        %label{:for => "url_icone"} URL icône
+        %input.categorie.all#url_icone{:name => "url_icone", :type => "text", :value => ""}/
+      /tel
+      %div.categorie.all{"data-role" => "fieldcontain"}
+        %label{:for => "tel"} Tel
+        %input.categorie.all#tel{:name => "tel", :type => "text", :value => ""}/
+      /email
+      %div.categorie.all{"data-role" => "fieldcontain"}
+        %label{:for => "email"} Email
+        %input.categorie.all#email{:name => "email", :type => "text", :value => ""}/
+      /url_web
+      %div.categorie.all{"data-role" => "fieldcontain"}
+        %label{:for => "url_web"} URL site web
+        %input.categorie.all#url_web{:name => "url_web", :type => "text", :value => ""}/
+      /url_photo
+      %div.batiment.entree.borne.all{"data-role" => "fieldcontain"}
+        %label{:for => "url_photo"} URL photo
+        %input.batiment.entree.borne.all#url_photo{:name => "url_photo", :type => "text", :value => ""}/
+      /horaires
+      %div.batiment.all{"data-role" => "fieldcontain"}
+        %label{:for => "horaire"} Horaires
+        %input.batiment.all#horaire{:name => "horaires", :type => "text", :value => ""}/
+      /adresse
+      %div.batiment.all{"data-role" => "fieldcontain"}
+        %label{:for => "adresse"} Adresse
+        %textarea.batiment.all#adresse{:cols => "40", :name => "adresse", :rows => "8"}
+      /code postal
+      %div.batiment.all{"data-role" => "fieldcontain"}
+        %label{:for => "cp"} Code postal
+        %input.batiment.all#cp{:name => "code_postal", :type => "text", :value => ""}/
+      /ville
+      %div.batiment.all{"data-role" => "fieldcontain"}
+        %label{:for => "ville"} Ville
+        %input.batiment.all#ville{:name => "ville", :type => "text", :value => ""}/
+      /acces handicape
+      %div.entree.all{"data-role" => "fieldcontain"}
+        %label{:for => "slider_handicap"} Accès handicapé?
+        %select.entree-form.all#slider_handicap{"data-role" => "slider", :name => "acces_handicape"}
+          %option{:value => "off"} Non
+          %option{:value => "on"} Oui
+      /acces_wifi
+      %div.batiment.all{"data-role" => "fieldcontain"}
+        %label.ui-slider{:for => "slider_wifi"} Accès wifi?
+        %select#slider_wifi.batiment-form.all{"data-role" => "slider", :name => "slider_wifi", :style => "display: none"}
+          %option{:value => "off"} Non
+          %option{:value => "on"} Oui         
+      /info
+      %div.batiment.all{"data-role" => "fieldcontain"}
+        %label{:for => "infos"} Infos
+        %textarea.batiment.all#infos{:cols => "40", :name => "info", :rows => "8"}
+      /infos_supp
+      %div.salle.all{"data-role" => "fieldcontain"}
+        %label{:for => "info_sup"} Infos supplémentaires
+        %textarea.salle.all#info_sup{:cols => "40", :name => "info_suplementaire", :rows => "8"}
+          
       .ui-body.ui-body-b
         %fieldset.ui-grid-a
           .ui-block-a
             %button{"data-theme" => "d", :type => "submit"} Cancel
           .ui-block-b
             %button{"data-theme" => "a", :type => "submit"} Submit
-  / /content
+  / /content"window.location.replace('feedback.htm');" 
 / /page
-:javascript
-  $(document).ready(function(){
-    $("#campus").hide();
-    $("#batiment").hide();
-    $("#salle").hide();
-    $("#entree").hide();
-    $("#borne").hide();
-    $("#categorie").hide();
-    $("#service").hide();
-    
-    $("label[for='radio-choice-1']").click(function(){
-  //    if ($("label[for='radio-choice-1']").hasClass("ui-btn-active")) {
-        $("#batiment").hide();
-        $("#salle").hide();
-        $("#entree").hide();
-        $("#borne").hide();
-        $("#categorie").hide();
-        $("#service").hide();
-        $("#campus").show();      
-    });
-    $("label[for='radio-choice-2']").click(function(){
-  //    if ($("label[for='radio-choice-1']").hasClass("ui-btn-active")) {
-        $("#salle").hide();
-        $("#entree").hide();
-        $("#borne").hide();
-        $("#campus").hide();
-        $("#categorie").hide();
-        $("#service").hide();
-        $("#batiment").show();      
-    });
-    $("label[for='radio-choice-3']").click(function(){
-  //    if ($("label[for='radio-choice-1']").hasClass("ui-btn-active")) {
-        $("#campus").hide();
-        $("#batiment").hide();
-        $("#entree").hide();
-        $("#borne").hide();
-        $("#categorie").hide();
-        $("#service").hide();   
-        $("#salle").show();   
-    });
-    $("label[for='radio-choice-4']").click(function(){
-  //    if ($("label[for='radio-choice-1']").hasClass("ui-btn-active")) {
-        $("#campus").hide();
-        $("#batiment").hide();
-        $("#salle").hide();
-        $("#borne").hide();
-        $("#categorie").hide();
-        $("#service").hide(); 
-        $("#entree").show();      
-    });
-    $("label[for='radio-choice-5']").click(function(){
-  //    if ($("label[for='radio-choice-1']").hasClass("ui-btn-active")) {
-        $("#campus").hide();
-        $("#batiment").hide();
-        $("#salle").hide();
-        $("#entree").hide();
-        $("#categorie").hide();
-        $("#service").hide();  
-        $("#borne").show();      
-    });
-    $("label[for='radio-choice-6']").click(function(){
-  //    if ($("label[for='radio-choice-1']").hasClass("ui-btn-active")) {
-        $("#campus").hide();
-        $("#batiment").hide();
-        $("#salle").hide();
-        $("#entree").hide();
-        $("#categorie").hide();  
-        $("#borne").hide();
-        $("#service").show();      
-    });
-    $("label[for='radio-choice-7']").click(function(){
-  //    if ($("label[for='radio-choice-1']").hasClass("ui-btn-active")) {
-        $("#campus").hide();
-        $("#batiment").hide();
-        $("#salle").hide();
-        $("#entree").hide();
-        $("#service").hide();  
-        $("#borne").hide();    
-        $("#categorie").show();  
-    });
-  });
-
 

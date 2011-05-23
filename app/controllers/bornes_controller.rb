@@ -17,7 +17,7 @@ class BornesController < ApplicationController
   
   def create
     @batiment = Batiment.find(params[:batiment_id])
-    respond_with(@borne = @batiment.bornes.create(params[:borne]))
+    respond_with(@batiment.campus, @batiment, @borne = @batiment.bornes.create(params[:borne]))
   end
   
   def update
