@@ -5,14 +5,16 @@ ensps:
   nom: ENSPS
   url_photo: bat_ensps.jpg
   acces_wifi: true
-  adresse: Pôle API - Parc d'Innovation
-           Bd Sébastien Brant
-           BP 10413
+  adresse: |
+            Pôle API - Parc d'Innovation
+            Bd Sébastien Brant
+            BP 10413
   code_postal: 67412
   ville: Illkirch Graffenstaden
   longitude: 7.737741
   latitude: 48.525745
-  horaires: Lundi-Mercredi : 8h-12h | 14h-18h
+  horaires: |
+            Lundi-Mercredi : 8h-12h | 14h-18h
             Jeudi-Vendredi : 8h30-12h | 13h30-17h30
   info: Bâtiment de l'ENSPS
 
@@ -21,13 +23,15 @@ isu:
   nom: ISU
   url_photo: MyString
   acces_wifi: false
-  adresse: Pôle API - Parc d'Innovation
-           1 rue Jean-Dominique Cassini
+  adresse: |
+            Pôle API - Parc d'Innovation
+            1 rue Jean-Dominique Cassini
   code_postal: 67412
   ville: Illkirch Graffenstaden
   longitude: 7.73692
   latitude: 48.523139
-  horaires: Lundi-Mercredi : 8h-12h | 14h-20h
+  horaires: |
+            Lundi-Mercredi : 8h-12h | 14h-20h
             Jeudi-Vendredi : 8h30-12h | 13h30-19h30
   info: Bâtiment de l'International Space University
 
@@ -41,7 +45,7 @@ ru_illkirch:
   ville: Illkirch Graffenstaden
   longitude: 7.737685
   latitude: 48.528695
-  horaires: Lundi-Vendredi : 11h-15h
+  horaires: 'Lundi-Vendredi : 11h-15h'
   info: Bâtiment du Restaurant Universitaire d'Illkirch
   
 
