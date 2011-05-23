@@ -13,7 +13,7 @@
       %p="lower #{@entree.lower_item}"
 
       - if (@entree.first?)
-        %p="first"        
+        %p="first!"        
         %a{:href => campus_batiment_entree_path(@entree.batiment.campus, @entree.batiment, @entree.batiment.entrees.last)} 
           %img{:id => "imgPrevious", :src => "/images/previousEntree.png"}        
       - else
