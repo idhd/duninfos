@@ -1,4 +1,5 @@
 Duninfos::Application.routes.draw do
+
   root :to => "campuses#index" 
   
   resources :campuses do
@@ -11,6 +12,7 @@ Duninfos::Application.routes.draw do
   end
   
   match '/admin/' => "admin#new"
+  match '/search/' => "search#search"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
