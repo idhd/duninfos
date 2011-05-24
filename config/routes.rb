@@ -13,7 +13,9 @@ Duninfos::Application.routes.draw do
         get 'carte' => "carte#index"
       end
       resources :bornes
-      resources :services
+      resources :services do
+        resources :categorie
+      end
       resources :entrees
       resources :salles
       
