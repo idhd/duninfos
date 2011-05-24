@@ -6,7 +6,7 @@ entree_ISU:
   acces_handicape: true
   longitude: 7.737107
   latitude: 48.522794
-  position: 0
+  position: 1
 
 entree_ISU2:
   batiment: isu
@@ -14,7 +14,7 @@ entree_ISU2:
   acces_handicape: true
   longitude: 7.736751
   latitude: 48.522953
-  position: 1
+  position: 2
 
 entree_PoleApi:
   batiment: poleApi
@@ -22,7 +22,7 @@ entree_PoleApi:
   acces_handicape: true
   longitude: 7.737666
   latitude: 48.525507
-  position: 0
+  position: 1
 
 entree_PoleApi2:
   batiment: poleApi
@@ -30,5 +30,5 @@ entree_PoleApi2:
   acces_handicape: true
   longitude: 7.738549
   latitude: 48.525691
-  position: 1
+  position: 2
 
