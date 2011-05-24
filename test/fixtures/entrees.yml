@@ -6,7 +6,7 @@ entree_ISU:
   acces_handicape: true
   longitude: 1.5
   latitude: 1.5
-  position: 0
+  position: 1
 
 entree2_ISU:
   batiment: isu
@@ -14,4 +14,4 @@ entree2_ISU:
   acces_handicape: true
   longitude: 1.5
   latitude: 1.5
-  position: 1
+  position: 2

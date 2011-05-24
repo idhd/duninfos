@@ -18,16 +18,16 @@
 #imgEntree
 {
     position: absolute;
-    top: 30%;
+    top: 0%;
     left: 0%;
-    height: 70%;
+    height: 100%;
     width: 100%;
 }
 
 #imgHandy
 {
     position: absolute;
-    top: 30%;
+    top: 0%;
     right: 0%;
     width: 6%
 }
