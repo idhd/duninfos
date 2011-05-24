@@ -3,24 +3,24 @@
     %div{:id => "cadreCarte"}
       
     %div{:id => "cadrePhoto"}
-      %img{:id => "imgEntree", :src => "/images/" + @entree.url_photo}
+      %img{:id => "imgEntree", :src => "/images/entrees/" + @entree.batiment.nom + "/" + @entree.url_photo}
       - if (@entree.acces_handicape)
-        %img{:id => "imgHandy", :src => "/images/acces_handy_true.png"}
+        %img{:id => "imgHandy", :src => "/images/entrees/acces_handy_true.png"}
       - else
-        %img{:id => "imgHandy", :src => "/images/acces_handy_false.png"}      
+        %img{:id => "imgHandy", :src => "/images/entrees/acces_handy_false.png"}      
 
       - if (@entree.batiment.entrees.size > 1) 
         - if (@entree.first?)
           %a{:href => campus_batiment_entree_path(@entree.batiment.campus, @entree.batiment, @entree.batiment.entrees.last)} 
-            %img{:id => "imgPrevious", :src => "/images/previousEntree.png"}        
+            %img{:id => "imgPrevious", :src => "/images/entrees/previousEntree.png"}        
         - else
           %a{:href => campus_batiment_entree_path(@entree.batiment.campus, @entree.batiment, @entree.higher_item)} 
-            %img{:id => "imgPrevious", :src => "/images/previousEntree.png"}
+            %img{:id => "imgPrevious", :src => "/images/entrees/previousEntree.png"}
             
         
         - if (@entree.last?)
           %a{:href => campus_batiment_entree_path(@entree.batiment.campus, @entree.batiment, @entree.batiment.entrees.first)} 
-            %img{:id => "imgNext", :src => "/images/nextEntree.png"}
+            %img{:id => "imgNext", :src => "/images/entrees/nextEntree.png"}
         - else
           %a{:href => campus_batiment_entree_path(@entree.batiment.campus, @entree.batiment, @entree.lower_item)}
-            %img{:id => "imgNext", :src => "/images/nextEntree.png"}
+            %img{:id => "imgNext", :src => "/images/entrees/nextEntree.png"}
