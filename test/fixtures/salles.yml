@@ -1,19 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nb_place: 1
+1601:
+  batiment: isu
+  nb_place: 40
   num_etage: 1
-  info_suplementaire: MyString
-  nom: MyString
-  imprimante: MyString
+  info: Wifi Vidéoprojecteur
+  nom: Salle 1601
+  imprimante: false
   acces_libre: false
-  info: MyText
 
-two:
-  nb_place: 1
+1401:
+  batiment: isu
+  nb_place: 50
   num_etage: 1
-  info_suplementaire: MyString
-  nom: MyString
-  imprimante: MyString
+  info: Wifi Vidéoprojecteur
+  nom: Salle 1401
+  imprimante: true
   acces_libre: false
-  info: MyText
