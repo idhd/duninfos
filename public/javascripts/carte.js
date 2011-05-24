@@ -16,11 +16,46 @@ $(document).ready(function () {
       $('#map').gmap3({
         action: 'addMarker',
         latLng: [val.batiment.latitude, val.batiment.longitude],
+        events: 
+        {         
+        	click: 	function(marker, event) 
+        			{
+        				console.log(marker)
+          				var map = $(this).gmap3('get');
+              			var infowindow = $(this).gmap3({action:'get', name:'infowindow'});
+          				if (infowindow) 
+          				{
+            				infowindow.open(map, marker);
+            				//infowindow.setContent(val);
+          				} 
+          				else 
+          				{
+            				$(this).gmap3({action:'addinfowindow', anchor:marker, options:{content: data}});
+          				}
+        			},
+			closeclick: function()
+        				{
+          					var infowindow = $(this).gmap3({action:'get', name:'infowindow'});
+          					if (infowindow)
+          					{
+            						infowindow.close();
+          					}
+          				}
+        },
         infowindow:
         {
           options:
           {
-            content: val.batiment.nom
+			content:'<div class="infoWindow"><h4>'+val.batiment.nom+'</h4></div>'+
+                  	'<div id="infoBatiment">'+
+                  	'<p>'+val.batiment.adresse+'</p>'+
+                  	'<p>'+val.batiment.code_postal+' '+val.batiment.ville+'</p>'+
+                  	'<p>Horaires d\'ouvertures: '+val.batiment.horaires+'<p>'+
+                  	'</div>'+
+                  	'<div id="imgBatiment">'+
+                  	'<a href=""><img alt="liste des entrées" src="'+val.batiment.url_photo+'"></a>'+
+                  	'</div>'+
+                  	'<div id="infoSalles"><a href="">Liste des salles</a></div>',
           }
         }
       });
