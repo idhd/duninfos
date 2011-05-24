@@ -3,15 +3,15 @@
 ensiie:
   categorie: ecole
   batiment: isu
-  nom: École Nationale Supérieure d’Informatique pour l’Industrie et l’Entreprise
+  nom: ENSIIE
   tel: 0369200230
   email: christiane.muller@ensiie.fr
   url_site_web: www.ensiie.fr
 
 ensps:
   categorie: ecole
-  batiment: ensps
-  nom: École Nationale Supérieure de Physique de Strasbourg
+  batiment: poleApi
+  nom: ENSPS
   tel: 0368854510
   email: contact@ensps.fr
   url_site_web: www.ensps.fr

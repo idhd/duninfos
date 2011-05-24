@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-ensps:
+poleApi:
   campus: illkirch
-  nom: ENSPS
-  url_photo: bat_ensps.jpg
+  nom: Pôle Api
+  url_photo: bat_poleApi.jpg
   acces_wifi: true
   adresse: |
             Pôle API - Parc d'Innovation
@@ -16,12 +16,12 @@ ensps:
   horaires: |
             Lundi-Mercredi : 8h-12h | 14h-18h
             Jeudi-Vendredi : 8h30-12h | 13h30-17h30
-  info: Bâtiment de l'ENSPS
+  info: Le Pôle API
 
 isu:
   campus: illkirch
   nom: ISU
-  url_photo: MyString
+  url_photo: bat_isu.jpg
   acces_wifi: false
   adresse: |
             Pôle API - Parc d'Innovation
@@ -37,7 +37,7 @@ isu:
 
 ru_illkirch:
   campus: illkirch
-  url_photo: MyString
+  url_photo: bat_ru.jpg
   acces_wifi: true
   nom: Restaurant Universitaire d'Illkirch
   adresse: 76 route du Rhin

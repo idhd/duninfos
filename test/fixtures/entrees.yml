@@ -16,11 +16,19 @@ entree_ISU2:
   latitude: 48.522953
   position: 1
 
-entree_ENSPS:
-  batiment: ensps
-  url_photo: ent_ensps.jpg
+entree_PoleApi:
+  batiment: poleApi
+  url_photo: ent_poleApi.jpg
   acces_handicape: true
   longitude: 7.737666
   latitude: 48.525507
   position: 0
+
+entree_PoleApi2:
+  batiment: poleApi
+  url_photo: ent_poleApi2.jpg
+  acces_handicape: true
+  longitude: 7.738549
+  latitude: 48.525691
+  position: 1
 
