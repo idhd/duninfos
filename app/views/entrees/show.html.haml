@@ -7,9 +7,7 @@
       - if (@entree.acces_handicape)
         %img{:id => "imgHandy", :src => "/images/acces_handy_true.png"}
       - else
-        %img{:id => "imgHandy", :src => "/images/acces_handy_false.png"}
-           
-      
+        %img{:id => "imgHandy", :src => "/images/acces_handy_false.png"}      
 
       - if (@entree.batiment.entrees.size > 1) 
         - if (@entree.first?)
