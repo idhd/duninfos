@@ -1,7 +1,7 @@
 $(document).ready(function(){
-document.admin_form.batiment_id.options.length=0;
-var myselect = $("select#select-batiment");
-myselect.selectmenu("refresh");
+    document.admin_form.batiment_id.options.length=0;
+    var myselect = $("select#select-batiment");
+    myselect.selectmenu("refresh");
 
 
   $(".all").hide();
@@ -110,5 +110,6 @@ myselect.selectmenu("refresh");
         myselect.selectmenu("refresh");
         });
     });   
+    
 });
 

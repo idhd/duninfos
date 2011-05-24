@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20110516125132) do
     t.integer  "num_etage"
     t.string   "info_suplementaire"
     t.string   "nom"
-    t.string   "imprimante"
+    t.boolean  "imprimante"
     t.boolean  "acces_libre"
     t.text     "info"
     t.datetime "created_at"

@@ -80,7 +80,7 @@
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_imprimante"} Imprimante?
         %select.salle-form.all#slider_imprimante{"data-role" => "slider", :name => "imprimante"}
-          %option{:value => "off"} Non
+          %option{:value => "false"} Non
           %option{:value => "on"} Oui
       /url_icone
       %div.categorie.all{"data-role" => "fieldcontain"}
@@ -122,14 +122,14 @@
       %div.entree.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_handicap"} Accès handicapé?
         %select.entree-form.all#slider_handicap{"data-role" => "slider", :name => "acces_handicape"}
-          %option{:value => "off"} Non
-          %option{:value => "on"} Oui
+          %option{:value => "false"} Non
+          %option{:value => "true"} Oui
       /acces_wifi
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label.ui-slider{:for => "slider_wifi"} Accès wifi?
-        %select#slider_wifi.batiment-form.all{"data-role" => "slider", :name => "slider_wifi", :style => "display: none"}
-          %option{:value => "off"} Non
-          %option{:value => "on"} Oui         
+        %select#slider_wifi.batiment-form.all{"data-role" => "slider", :name => "acces_wifi", :style => "display: none"}
+          %option{:value => "false"} Non
+          %option{:value => "true"} Oui         
       /info
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "infos"} Infos

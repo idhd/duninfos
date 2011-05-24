@@ -22,6 +22,13 @@ Duninfos::Application.routes.draw do
   
   match '/admin/' => "admin#accueil"
   match '/admin/new/' => "admin#new"
+  match '/admin/edit/' => "admin#accueil_edit"
+  match '/admin/campus/edit' => "admin#edit_campuses"
+  match '/admin/batiment/edit' => "admin#edit_batiments"
+  match '/admin/salle/edit' => "admin#edit_salles"
+  match '/admin/entree/edit' => "admin#edit_entrees"
+  match '/admin/borne/edit' => "admin#edit_bornes"
+  match '/admin/service/edit' => "admin#edit_services"
   
   #match "/campuses(/:campus_id(/batiments(/:batiment_id)))/carte" => "carte#index"
   
