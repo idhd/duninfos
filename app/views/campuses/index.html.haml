@@ -1,17 +1,12 @@
-%div{"data-role" => "page"}
-  %div{"data-role" => "header", "data-theme" => "c"}
+%div(data-role="page")
+  %div(data-role="header" data-theme="c")
     %h2 Duninfos
-    %a.ui-btn-right{"data-icon" => "home", "data-iconpos" => "notext", "data-role" => "button", :href => "Home.html"}
-  %div{"data-role" => "content"}
+    %a(data-role="button"){href: "http://www.unistra.fr/"}
+      Unistra
+    %a.ui-btn-right(data-role="button"){href: "http://www.passcampus-alsace.fr/"}
+      Pass Campus
+  %div(data-role="content" data-theme="g")
     %ul(data-role="listview")
       - @campuses.each do |campus|
         %li
-          %a{href: campus_path(campus)}= campus.nom.capitalize      
-    %div{"data-role" => "content", "data-theme" => "c"}
-      .ui-grid-b
-        .ui-block-a
-          %a{"data-role" => "button", :href => "Search.html"} Recherche
-        .ui-block-b
-          %a{"data-role" => "button", :href => "index.html"} Carte
-        .ui-block-c
-          %a{"data-role" => "button", :href => "index.html"} Parametres
+          %a{href: campus_path(campus)}= campus.nom.capitalize
