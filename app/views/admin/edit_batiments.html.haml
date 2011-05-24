@@ -1,0 +1,27 @@
+=javascript_include_tag "edit"
+
+%div(data-role="page" )
+  %h1 Modification de batiments
+  %form#form{:action => "", :method => "post", :name => "form"}
+
+    %div{"data-role" => "fieldcontain"}
+      %label.select{:for => "select-campus"} Campus
+      %select#select-campus{:name => "campus_id"}
+        - @campuses.each do |campus|
+          %option{:value => campus.id}= campus.nom.capitalize
+
+    %h2 Quel batiment voulez-vous modifier?
+    
+    /batiment
+    %div{"data-role" => "fieldcontain"}
+      %label.select{:for => "select-batiment"} Batiment
+      %select#select-batiment{:name => "batiment_id"}
+        - @batiments.each do |batiment|
+          %option{:value => batiment.id}= batiment.nom.capitalize
+
+    %ul#test(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
+      %li
+        %a.lol{:href => "http://google.fr"} Editer
+      %li
+        %a.kikoo{:href => "http://google.fr", :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Supprimer
+
