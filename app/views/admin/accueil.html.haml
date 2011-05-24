@@ -1,0 +1,11 @@
+
+%div{"data-role" => "page"}
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+
+  %div{"data-role" => "content"}
+    %a{:href => "/admin/new/", "data-role" => "button", "data-icon" => "plus"} Ajouter du contenu
+    %a{:href => "/admin/edit/", "data-role" => "button", "data-icon" => "refresh"} Modifier du contenu
+    %a{:href => "/admin/delete/", "data-role" => "button", "data-icon" => "delete"} Supprimer du contenu

@@ -4,20 +4,21 @@ class EntreesController < ApplicationController
   def index
     if params[:batiment_id] && @batiment = Batiment.find(params[:batiment_id])
       @entrees = @batiment.entrees
+      respond_with @entrees, :location => campus_batiment_url(@batiment.campus, @batiment)
     else
       @entrees = Entree.all
+      respond_with @entrees, :location => :root
     end
-    respond_with @entrees
   end
 
   def show
     @entree = Entree.find(params[:id])
-    respond_with @entree
+    respond_with @entree, :location => campus_batiment_url(@entree.batiment.campus, @entree.batiment)
   end
 
   def create
     @batiment = Batiment.find(params[:batiment_id])
-    respond_with(@entree = @batiment.entrees.create(params[:entree]))
+    respond_with(@batiment.campus, @batiment, @entree = @batiment.entrees.create(params[:entree]))
   end
 
   def update
