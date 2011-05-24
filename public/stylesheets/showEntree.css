@@ -31,4 +31,12 @@
     width: 10%;
 }
 
+#linkLstSalle
+{
+    position: absolute;
+    left: 0%;    
+    top: 83%;    
+    width: 100%;
+}
+
 
