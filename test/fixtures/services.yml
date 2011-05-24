@@ -1,14 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-info:
+ensiie:
+  categorie: ecole
   batiment: isu
-  nom: informatique
-  tel: MyString
-  email: MyString
-  url_site_web: MyString
+  nom: ENSIIE
+  tel: 0369200230
+  email: christiane.muller@ensiie.fr
+  url_site_web: www.ensiie.fr
 
-two:
-  nom: MyString
-  tel: MyString
-  email: MyString
-  url_site_web: MyString
+ensps:
+  categorie: ecole
+  batiment: poleApi
+  nom: ENSPS
+  tel: 0368854510
+  email: contact@ensps.fr
+  url_site_web: www.ensps.fr

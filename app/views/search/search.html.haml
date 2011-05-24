@@ -1,0 +1,15 @@
+%div(data-role="page")
+  %div(data-role="header" data-theme="c")
+    %h2 Duninfos
+    %a.ui-btn-right(data-icon="home" data-iconpos="notext" data-role="button" href="index.html")
+  %div(data-role="content" data-theme="g")
+    %ul(data-role="listview" data-filter="true")
+      - @campuses.each do |campus|
+        %li
+          %a{href: campus_path(campus)}= campus.nom.capitalize
+      - @batiments.each do |batiment|
+        %li
+          %a{href: campus_path(batiment)}= batiment.nom.capitalize
+      - @services.each do |service|
+        %li
+          Service ici.

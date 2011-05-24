@@ -1,4 +1,5 @@
 Duninfos::Application.routes.draw do
+
   root :to => "campuses#index" 
   
   resources :campuses do
@@ -13,13 +14,17 @@ Duninfos::Application.routes.draw do
         get 'carte' => "carte#index"
       end
       resources :bornes
-      resources :services
+      resources :services do
+        resources :categorie
+      end
       resources :entrees
       resources :salles
       
     end
   end
   
+  match '/search/' => "search#search"
+
   match '/admin/' => "admin#accueil"
   match '/admin/new/' => "admin#new"
   

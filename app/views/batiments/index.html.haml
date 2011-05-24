@@ -1,6 +1,17 @@
-%div(data-role="page")
-  %div(data-role="content")
+%div{"data-role" => "page"}
+  %div{"data-role" => "header", "data-theme" => "c"}
+    %h2 Duninfos
+    %a.ui-btn-right{"data-icon" => "home", "data-iconpos" => "notext", "data-role" => "button", :href => "index.html"}
+  %div{"data-role" => "content"}
     %ul(data-role="listview")
       - @batiments.each do |batiment|
         %li
           %a{href: campus_batiment_path(@campus, batiment)}= batiment.nom
+    %div{"data-role" => "content", "data-theme" => "c"}
+      .ui-grid-b
+        .ui-block-a
+          %a{"data-role" => "button", :href => "Search.html"} Recherche
+        .ui-block-b
+          %a{"data-role" => "button", :href => "index.html"} Carte
+        .ui-block-c
+          %a{"data-role" => "button", :href => "index.html"} Parametres

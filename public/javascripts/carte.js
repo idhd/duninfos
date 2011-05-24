@@ -1,41 +1,29 @@
 $(document).ready(function () {
 
-  var window_url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
-  var window_url_split = window_url.split('/');
+  // On récupère l'adresse de la page (auquel on enlève le '/carte' de la fin)
+  var url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
   
-	$.getJSON( window_url,
-	  function(data) {
-	    if (window_url_split.length == 4)
-	      
-	      $.each(data, function(key, val) {
-          // Positionne un marqueur
-          $('#map').gmap3(
-            { action: 'addMarker',
-              latLng: [val.batiment.latitude, val.batiment.longitude],
-              infowindow:
-              {
-                options:{
-                  content: 'Hello World !' + val.batiment.nom
-                }
-              }
-            }
-          );
-	        //alert("Tous les batiments: " + val.batiment.nom + " (" + val.batiment.longitude + ", " + val.batiment.latitude + ")" );
-        });
-      else
-      {
-        $('#map').gmap3(
-            { action: 'addMarker',
-              latLng: [data.batiment.latitude, data.batiment.longitude],
-              infowindow:
-              {
-                options:{
-                  content: 'Hello World !' +  data.batiment.nom
-                }
-              }
-            });
-       //alert("Un batiment: " + data.batiment.nom + " (" + data.batiment.longitude + ", " + data.batiment.latitude + ")" );
-      }
-    });
-    
+  // On récupère l'objet JSON correspondant à l'adresse précédente
+	$.getJSON( url, function(data) {
+	  
+    // Si l'objet JSON récupéré n'est pas un tableau de batiments, on le transforme en tableau
+    if (!$.isArray(data)) data = new Array(data);
+      
+    // Pour chaque batiment du tableau
+    $.each(data, function(key, val) {
+
+      // On positionne un marqueur pour ce batiment
+      $('#map').gmap3({
+        action: 'addMarker',
+        latLng: [val.batiment.latitude, val.batiment.longitude],
+        infowindow:
+        {
+          options:
+          {
+            content: val.batiment.nom
+          }
+        }
+      });
+    });   
+  });
 });

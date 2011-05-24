@@ -46,9 +46,9 @@ $(document).ready(function () {
   });
 
   $('#accordion').hide();
-  $('#settings_button').click(function() {
-      
-      $('#accordion').toggle();
+  
+  $('#bouton-parametres').click(function() {
+    $('#accordion').toggle();
   });
 
 	$('#accordion list-divider').click(function() {
