@@ -16,14 +16,34 @@ $(document).ready(function () {
       $('#map').gmap3({
         action: 'addMarker',
         latLng: [val.batiment.latitude, val.batiment.longitude],
-        infowindow:
-        {
-          options:
-          {
-            content: val.batiment.nom
-          }
+        map:{
+          center: true,
+        },
+        marker: {
+          data:'<div class="infoWindow"><h4>'+val.batiment.nom+'</h4></div>'+
+               '<div id="infoBatiment">'+
+               '<p>'+val.batiment.adresse+'</p>'+
+               '<p>'+val.batiment.code_postal+' '+val.batiment.ville+'</p>'+
+               '<p>Horaires d\'ouvertures: '+val.batiment.horaires+'<p>'+
+               '</div>'+
+               '<div id="imgBatiment">'+
+               '<a href=""><img alt="liste des entrées" src="'+val.batiment.url_photo+'"></a>'+
+               '</div>'+
+               '<div id="infoSalles"><a href="">Liste des salles</a></div>',
+          events: {
+            click: function(marker, event, data) {
+              var infowindow = $(this).gmap3({action:'get', name:'infowindow'})
+              if(infowindow) {
+                infowindow.setContent(data);
+                infowindow.open(marker.map, marker);
+              } else {
+                $(this).gmap3({action:'addinfowindow', anchor:marker, options:{content: data}});
+              }
+            }
         }
-      });
-    });   
+        
+        }
+      });   
+    });
   });
 });
