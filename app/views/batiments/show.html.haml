@@ -10,3 +10,5 @@
       %li(data-role="list-devider") Entrees
       - @entrees.each do |entree|
         %li= entree.url_photo
+        
+  = render :partial => "shared/navigation", :locals => { :complet => true }

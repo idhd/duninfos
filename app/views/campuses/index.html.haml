@@ -10,3 +10,5 @@
       - @campuses.each do |campus|
         %li
           %a{href: campus_path(campus)}= campus.nom.capitalize
+
+  = render :partial => "shared/navigation", :locals => { :complet => false }

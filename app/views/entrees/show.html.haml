@@ -29,8 +29,4 @@
         %ul(data-role="listview")
           %li{:id => "linkLstSalle"}
             %a{:href => campus_batiment_path(@entree.batiment.campus, @entree.batiment) + "/salles"}= "Liste des salles"
-      
-
-
-
-      
+  = render :partial => "shared/navigation", :locals => { :complet => false }  
