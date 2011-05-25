@@ -19,6 +19,11 @@ class BatimentsController < ApplicationController
     respond_with @batiment
   end
   
+  def edit
+    @batiment = Batiment.find(params[:id])
+    @campuses = Campus.all
+  end
+  
   def create
     @campus = Campus.find(params[:campus_id])
     respond_with(@campus, @batiment = @campus.batiments.create(params[:batiment]))

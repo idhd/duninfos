@@ -1,0 +1,31 @@
+%h1 Editing post
+
+/liste des campus
+%div.batiment.salle.entree.service.all{"data-role" => "fieldcontain"}
+  %label.select{:for => "select-campus"} Campus
+  %select.batiment.salle.entree.service.all#select-campus{:name => "campus_id"}
+    - @campuses.each do |campus|
+      %option{:value => campus.id}= campus.nom.capitalize
+            
+
+- form_for(@post) do |f|
+
+  %div {:class="field"}
+    = f.label :name
+    = f.text_field :name
+  %div {:class="field"}
+    = f.label :title 
+    = f.text_field :title
+  %div {:class="field"}
+    = f.label :content 
+    = f.text_area :content
+  %div {:class="actions"}
+    = f.submit
+
+= link_to 'Show', @post |
+= link_to 'Back', posts_path
+
+
+%div.batiment.all{"data-role" => "fieldcontain"}
+        %label{:for => "ville"} Ville
+        %input.batiment.all#ville{:name => "ville", :type => "text", :value => ""}/

@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    document.admin_form.batiment_id.options.length=0;
+    var myselect = $("select#select-batiment");
+    myselect.selectmenu("refresh");
+
+
   $(".all").hide();
   var choix = "";
     $("label[for='choix-campus']").click(function(){
@@ -89,36 +94,22 @@ $(document).ready(function(){
       }                                   
     });
     
-    //function updatecities(selectedcitygroup){
-    
     $("#select-campus").change(function() {
         var campuseslist=document.admin_form.campus_id;
         var campus_id =  $("#select-campus").attr('value');
         var batimentslist=document.admin_form.batiment_id;
+        var myselect = $("select#select-batiment");
         
         $.get("/campuses/"+campus_id+"/batiments.json", function(data) {
         batiments=eval(data);
-        console.log(batiments);
+        //console.log(batiments);
         batimentslist.options.length=0;
+         
         for (i=0; i<batiments.length; i++)
             batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);         
+        myselect.selectmenu("refresh");
         });
     });   
+    
 });
-/* 
-disabled
 
- $("#select-campus").change(function() {
-$.get("/campus/"+campus.id+"/batiments.json", function(data) {
-  batiments=eval(data);
-  
-});
-});
- javascripts/dynamic_states.js.erb
-function updatecities(selectedcitygroup){
-citieslist.options.length=0
-if (selectedcitygroup>0){
-  for (i=0; i<cities[selectedcitygroup].length; i++)
-    citieslist.options[citieslist.options.length]=new Option(cities[selectedcitygroup][i].split("|")[0], cities[selectedcitygroup][i].split("|")[1])
-  }
-}*/
