@@ -5,4 +5,7 @@ class CarteController < ApplicationController
     render 'shared/carte'
   end
   
+  def parametres
+    render 'shared/parametres'
+  end  
 end

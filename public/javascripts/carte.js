@@ -4,7 +4,7 @@ $(document).ready(function () {
   var url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
   
   // On récupère l'objet JSON correspondant à l'adresse précédente
-	$.getJSON( url, function(data) {
+	$.getJSON( url + ".json", function(data) {
 	  
     // Si l'objet JSON récupéré n'est pas un tableau de batiments, on le transforme en tableau
     if (!$.isArray(data)) data = new Array(data);

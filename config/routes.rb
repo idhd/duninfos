@@ -5,13 +5,16 @@ Duninfos::Application.routes.draw do
   resources :campuses do
     collection do
       get 'carte' => "carte#index"
+      get 'carte/parametres' => "carte#parametres"
     end
     resources :batiments do
       collection do
         get 'carte' => "carte#index"
+        get 'carte/parametres' => "carte#parametres"
       end
       member do
         get 'carte' => "carte#index"
+        get 'carte/parametres' => "carte#parametres"
       end
       resources :bornes
       resources :services do
