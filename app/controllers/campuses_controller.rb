@@ -20,7 +20,7 @@ class CampusesController < ApplicationController
   end
   
   def create
-    respond_with(@campus = Campus.create(params[:campus]))
+    respond_with(@campus = Campus.create(params[:campus]), :location => campuses_path)
   end
   
   def update
