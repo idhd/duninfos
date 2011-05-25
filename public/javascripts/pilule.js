@@ -4,17 +4,17 @@ $(document).ready(function() {
   //$('#accordion').hide();
   
   // On affiche la liste des paramètres lorsqu'on clique sur le bouton adéquat
-  /*$('#bouton-parametres').click(function() {
+  /*$('#bouton-parametres').bind('tap', function() {
     $('#accordion').toggle();
   });
 
-	$('#accordion list-divider').click(function() {
+	$('#accordion list-divider').bind('tap', function() {
 		$(this).next().toggle();
 		return false;
 	}).next().hide();*/
   
   // On affiche la carte lorsqu'on clique sur le bouton adéquat
-  $("#bouton-carte").click(function() {
+  $("#bouton-carte").bind('tap', function() {
   
     // On vérifie que l'url est au bon format
     if (window.location.pathname.match("^/campuses/[0-9]+/batiments(/[0-9]+)?$") != null)
@@ -29,7 +29,7 @@ $(document).ready(function() {
     }
   });
   
-  $("#bouton-parametres").click(function() {
+  $("#bouton-parametres").bind('tap', function() {
   
     // On vérifie qu'on est sur la carte
     if (window.location.pathname.match("^/campuses/[0-9]+/batiments(/[0-9]+)?/carte$") != null)
@@ -47,7 +47,7 @@ $(document).ready(function() {
     }
   });
   
-  $("#bouton-rechercher").click(function() {
+  $("#bouton-rechercher").bind('tap', function() {
       window.location = '/search';
   });
 });

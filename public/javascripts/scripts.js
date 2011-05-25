@@ -39,7 +39,7 @@ $(document).ready(function () {
   );*/
   
   // Supprimer les marqueurs
-  $('#map_remove').click(function(){
+  $('#map_remove').bind('tap', function() {
       $('#map').gmap3({
           action: 'clear'
       });
@@ -47,11 +47,11 @@ $(document).ready(function () {
 
   $('#accordion').hide();
   
-  $('#bouton-parametres').click(function() {
+  $('#bouton-parametres').bind('tap', function() {
     $('#accordion').toggle();
   });
 
-	$('#accordion list-divider').click(function() {
+	$('#accordion list-divider').bind('tap', function() {
 		$(this).next().toggle();
 		return false;
 	}).next().hide();

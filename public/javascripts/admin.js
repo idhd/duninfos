@@ -6,7 +6,7 @@ $(document).ready(function(){
 
   $(".all").hide();
   var choix = "";
-    $("label[for='choix-campus']").click(function(){
+    $("label[for='choix-campus']").bind('tap', function() {
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".campus").show(); 
@@ -14,7 +14,7 @@ $(document).ready(function(){
       $(".campus-form").attr('disabled', '');     
       choix = "campus";
     });      
-    $("label[for='choix-batiment']").click(function(){
+    $("label[for='choix-batiment']").bind('tap', function(){
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".batiment").show(); 
@@ -22,15 +22,15 @@ $(document).ready(function(){
       $(".batiment-form").attr('disabled', '');     
       choix = "batiment";
     });
-    $("label[for='choix-salle']").click(function(){
+    $("label[for='choix-salle']").bind('tap', function() {
       $(".all").hide();   
-      $(".all").attr('disabled', 'disabled');
+      $(".all").attr('disabled', 'disabled' );
       $(".salle").show();   
       $(".salle").attr('disabled', '');
       $(".salle-form").attr('disabled', '');
       choix = "salle";
     });
-    $("label[for='choix-entree']").click(function(){
+    $("label[for='choix-entree']").bind('tap', function() {
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".entree").show();      
@@ -38,7 +38,7 @@ $(document).ready(function(){
       $(".entree-form").attr('disabled', '');
       choix = "entree";
     });  
-    $("label[for='choix-borne']").click(function(){
+    $("label[for='choix-borne']").bind('tap', function() {
       $(".all").hide();  
       $(".all").attr('disabled', 'disabled');
       $(".borne").show();      
@@ -46,7 +46,7 @@ $(document).ready(function(){
       $(".borne-form").attr('disabled', '');
       choix = "borne";
     });
-    $("label[for='choix-service']").click(function(){
+    $("label[for='choix-service']").bind('tap', function() {
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".service").show();  
@@ -54,7 +54,7 @@ $(document).ready(function(){
       $(".service-form").attr('disabled', '');
       choix = "service";
     });
-    $("label[for='choix-categorie']").click(function(){
+    $("label[for='choix-categorie']").bind('tap', function() {
       $(".all").hide();   
       $(".all").attr('disabled', 'disabled');
       $(".categorie").show();
