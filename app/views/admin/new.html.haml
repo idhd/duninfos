@@ -27,9 +27,9 @@
           %input#choix-categorie{:name => "radio-choice", :type => "radio", :value => "choice-categorie"}/
           %label{:for => "choix-categorie"} Catégorie
       /Geolocalisation
-      %div{"data-role" => "fieldcontain"}
+      %div#slider_geloc{"data-role" => "fieldcontain"}
         %label.ui-slider{:for => "slider2"} Géolocalisation?
-        %select.all#slider_geloc{"data-role" => "slider", :name => "slider_geoloc"}
+        %select.all{"data-role" => "slider", :name => "slider_geoloc"}
           %option{:value => "off"} Off
           %option{:value => "on"} On
       /coordonnées

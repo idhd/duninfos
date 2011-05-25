@@ -109,7 +109,26 @@ $(document).ready(function(){
             batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);         
         myselect.selectmenu("refresh");
         });
-    });   
-    
+    });
+
+    if(navigator.geolocation)
+    {
+	navigator.geolocation.getCurrentPosition(function(position)
+	{
+	        latitude = position.coords.latitude;
+	        longitude = position.coords.longitude;
+	});
+
+    	$("#slider_geloc").click(function()
+	{
+		la = document.getElementById('latitude').value;
+		if(la == "") { document.getElementById('latitude').value = latitude; }
+		else { document.getElementById('latitude').value = ""; }
+
+		la = document.getElementById('longitude').value;
+		if(la == "") { document.getElementById('longitude').value = longitude; }
+		else { document.getElementById('longitude').value = ""; }
+	});
+    }
 });
 
