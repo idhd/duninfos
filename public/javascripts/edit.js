@@ -15,9 +15,9 @@ $(document).ready(function(){
         batimentslist.options.length=0;
          
         for (i=0; i<batiments.length; i++)
-                batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);
+            batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id, true);
 
-        myselect.selectmenu("refresh");
+            myselect.selectmenu("refresh");
         });
         var campus_id = $("#select-campus option:selected").val();
         var batiment_id = $("#select-batiment option:selected").val();
@@ -26,14 +26,17 @@ $(document).ready(function(){
         $(".kikoo").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id);
     });   
     
-
-    $("#select-batiment").change(function() {
+    $("#test").click(function(e) {
+        e.preventDefault;
         var campus_id = $("#select-campus option:selected").val();
         var batiment_id = $("#select-batiment option:selected").val();
 //        alert($("#select-batiment option:selected").val());
         $(".lol").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id+'/edit');
         $(".kikoo").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id);
-    });    
+        e.default;
+    });
+    
+    
 
 });
 

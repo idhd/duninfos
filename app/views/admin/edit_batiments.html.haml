@@ -7,6 +7,7 @@
     %div{"data-role" => "fieldcontain"}
       %label.select{:for => "select-campus"} Campus
       %select#select-campus{:name => "campus_id"}
+        %option{:disabled => "disabled", :selected => "selected"} Choisissez le campus
         - @campuses.each do |campus|
           %option{:value => campus.id}= campus.nom.capitalize
 
@@ -16,6 +17,7 @@
     %div{"data-role" => "fieldcontain"}
       %label.select{:for => "select-batiment"} Batiment
       %select#select-batiment{:name => "batiment_id"}
+        %option{:disabled => "disabled", :selected => "selected"} Choisissez le batiment
         - @batiments.each do |batiment|
           %option{:value => batiment.id}= batiment.nom.capitalize
 
