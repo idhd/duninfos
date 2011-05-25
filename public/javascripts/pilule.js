@@ -1,23 +1,23 @@
 $(document).ready(function() {
 
   // On cache la liste des paramètres au départ
-  $('#accordion').hide();
+  //$('#accordion').hide();
   
   // On affiche la liste des paramètres lorsqu'on clique sur le bouton adéquat
-  $('#bouton-parametres').click(function() {
+  /*$('#bouton-parametres').click(function() {
     $('#accordion').toggle();
   });
 
 	$('#accordion list-divider').click(function() {
 		$(this).next().toggle();
 		return false;
-	}).next().hide();
+	}).next().hide();*/
   
   // On affiche la carte lorsqu'on clique sur le bouton adéquat
   $("#bouton-carte").click(function() {
   
     // On vérifie que l'url est au bon format
-    if (window.location.pathname.match("^/campuses(/[0-9]+/batiments(/[0-9]+)?)?$") != null)
+    if (window.location.pathname.match("^/campuses/[0-9]+/batiments(/[0-9]+)?$") != null)
     {
       // Si oui, on ajoute '/carte' à la fin de l'url
       window.location = window.location.pathname + '/carte';
@@ -25,6 +25,24 @@ $(document).ready(function() {
     else
     {
       // Sinon on désactive le bouton Carte
+      $(this).attr("disabled", "disabled");
+    }
+  });
+  
+  $("#bouton-parametres").click(function() {
+  
+    // On vérifie qu'on est sur la carte
+    if (window.location.pathname.match("^/campuses/[0-9]+/batiments(/[0-9]+)?/carte$") != null)
+    {
+      // Si oui, on ajoute '/parametres' à la fin de l'url
+      window.location = window.location.pathname + '/parametres';
+    }
+    else if (window.location.pathname.match("^/campuses/[0-9]+/batiments(/[0-9]+)?/carte/parametres$") != null) {
+      window.location = window.location.pathname.substr( 0, window.location.pathname.length-11 );
+    }
+    else
+    {
+      // Sinon on désactive le bouton Paramètres
       $(this).attr("disabled", "disabled");
     }
   });
