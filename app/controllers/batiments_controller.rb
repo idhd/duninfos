@@ -26,7 +26,7 @@ class BatimentsController < ApplicationController
   
   def create
     @campus = Campus.find(params[:campus_id])
-    respond_with(@campus, @batiment = @campus.batiments.create(params[:batiment]))
+    respond_with(@campus, @batiment = @campus.batiments.create(params[:batiment]), :location => campus_path(@campus))
   end
   
   def update
