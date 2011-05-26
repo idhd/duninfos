@@ -1,4 +1,5 @@
-=javascript_include_tag "admin"
+= javascript_include_tag "admin"
+= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=false', 'gmap3-min'
 
 %div{"data-role" => "page"}
   %div{"data-role" => "header", "data-theme" => "b"}
@@ -27,11 +28,7 @@
           %input#choix-categorie{:name => "radio-choice", :type => "radio", :value => "choice-categorie"}/
           %label{:for => "choix-categorie"} Catégorie
       /Geolocalisation
-      %div#slider_geloc{"data-role" => "fieldcontain"}
-        %label.ui-slider{:for => "slider2"} Géolocalisation?
-        %select.all{"data-role" => "slider", :name => "slider_geoloc"}
-          %option{:value => "off"} Off
-          %option{:value => "on"} On
+      %div#btn_geloc{"data-role" => "button"} Obtenir ma position GPS
       /coordonnées
       %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
         %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
@@ -40,6 +37,7 @@
         %div.campus.batiment.entree.all{"data-role" => "fieldcontain"}
           %label{:for => "latitude"} Latitude
           %input.campus.batiment.entree.all#latitude{:name => "latitude", :type => "text", :value => ""}/
+        %p#adresse{:style => "text-align: center;"}
       /catégorie
       %div.batiment.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-categorie"} Catégorie

@@ -3,7 +3,6 @@ $(document).ready(function(){
     var myselect = $("select#select-batiment");
     myselect.selectmenu("refresh");
 
-
   $(".all").hide();
   var choix = "";
     $("label[for='choix-campus']").bind('tap', function() {
@@ -119,16 +118,28 @@ $(document).ready(function(){
 	        latitude = position.coords.latitude;
 	        longitude = position.coords.longitude;
 	});
+	
 
-    	$("#slider_geloc").click(function()
+    	$("#btn_geloc").click(function()
 	{
-		la = document.getElementById('latitude').value;
-		if(la == "") { document.getElementById('latitude').value = latitude; }
-		else { document.getElementById('latitude').value = ""; }
+		la = $('#latitude').val();
+		if(la == "") { $('#latitude').val(latitude); }
+		else { $('#latitude').val(""); }
 
-		la = document.getElementById('longitude').value;
-		if(la == "") { document.getElementById('longitude').value = longitude; }
-		else { document.getElementById('longitude').value = ""; }
+		la = $('#longitude').val();
+		if(la == "") { $('#longitude').val(longitude); }
+		else { $('#longitude').val(""); }
+		
+		ad = $('#adresse').text();
+		if(ad == "")
+		{
+			$('#adresse').gmap3({
+          		action:'getAddress',
+          		latLng:[48.5238929, 7.737783],
+          		callback:function(results){ $('#adresse').text("Vous vous situez aux alentours de : "+results[0].formatted_address) }});
+		}
+		else { $('#adresse').text(""); }
+
 	});
     }
 });
