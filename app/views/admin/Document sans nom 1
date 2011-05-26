@@ -1,0 +1,29 @@
+	// la fonction de traitement de réponse
+	function call_back(response)
+	{
+		// on parse la réponse en cherchant le code de retour
+		if (response.Status.code != 200)
+		{
+			// code != 200, pas de réponse obtenue
+			alert("#failed : " + response.Status.code);
+		}
+		else
+		{
+			// le système peut renvoyer plusieurs adresse, on chope uniquement la première
+			item = response.Placemark[0];
+	 
+			// on peut récupérer les cordonnées demandées
+			ask_point = item.name;
+
+			document.getElementById('adresse').value = ask_point;
+	 
+			// on peut récupérer le point réel de l'adresse (peut être différent que la position envoyée)
+			//real_point = new GLatLng(item.Point.coordinates[1], item.Point.coordinates[0]);
+	 
+			// l'adresse complète de notre point, sous la forme [n°] [rue],[code postal] [ville], [pays]
+			//real_adresse = item.address;
+		}
+	}
+
+	//mon_point = new GLatLng(latitude,longitude);
+	//geocodeur.getLocations(mon_point, call_back);
