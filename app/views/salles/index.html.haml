@@ -1,7 +1,7 @@
 %div{"data-role" => "page"}
   %div{"data-role" => "header", "data-theme" => "c"}
     %h2 Duninfos
-    %a.ui-btn-right{"data-icon" => "home", "data-iconpos" => "notext", "data-role" => "button", :href => "index.html"}
+    %a.ui-btn-right(data-icon="home" data-iconpos="notext" data-role="button"){href: root_url}
   %div{"data-role" => "content"}
     %ul(data-role="listview")
       - @salles.each do |salle|

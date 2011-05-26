@@ -1,0 +1,34 @@
+#infoWindowHeader 
+{
+	text-align: center;
+}
+
+#infoWindowContent
+{
+	clear:both;
+}
+
+#infoBatiment
+{
+	float: left;
+	font-size: small;
+	width: 50%;
+}
+
+#imgBatiment
+{
+	float:right;
+	width: 50%;
+}
+
+#infoSalles
+{
+	text-align:center;
+	clear: both;
+}
+
+#infoSalles a, #infoSalles a:visited
+{
+	color: white;
+	text-decoration: none;
+}
