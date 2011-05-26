@@ -17,8 +17,10 @@ class CarteController < ApplicationController
     else
       @campus = Campus.find(params[:campus_id])
     end
+
+    @categories = Categorie.all
     
-    if params[:bibliotheques]
+    if params[:submit_params]
       session[:parametres] = {
         'batimentsUds' => params[:batimentsUds]
         
