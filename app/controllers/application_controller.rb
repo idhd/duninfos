@@ -4,17 +4,13 @@ class ApplicationController < ActionController::Base
   before_filter :get_current_user
   
   def auth
-    unless @current_user
+    unless @_current_user
       redirect_to login_path
     end
   end
   
   private
   def get_current_user
-    if session[:current_user_id]
-      @current_user = User.find(session[:current_user_id])
-    else
-      @current_user = nil
-    end
+    @_current_user ||= session[:current_user_id] && User.find(session[:current_user_id])
   end
 end
