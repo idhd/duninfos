@@ -1,33 +1,54 @@
-= javascript_include_tag 'pilule'
+/= javascript_include_tag 'pilule'
 
 %div(data-role="footer" data-position="fixed" class="ui-bar-a ui-footer ui-footer-fixed fade ui-fixed-overlay" role="contentinfo")
   %div(data-role="navbar" class="ui-navbar ui-navbar-noicons" role="navigation")
     - if (complet)
-      %ul.ui-grid-b
-        %li.ui-block-a
-          %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(href="/search" data-theme="a") Rechercher
-          / %div(data-theme="c" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-c" aria-disabled="false")
-          /  %span(class="ui-btn-inner ui-btn-corner-all")
-          /    %span(class="ui-btn-text") Rechercher
-          /    %span(class="ui-icon ui-icon-search ui-icon-shadow")
-          /  %input(type="button" id="bouton-rechercher" value="Rechercher" data-icon="search" class="ui-btn-hidden" aria-disabled="false")
+    
+      - if controller.controller_name == 'carte'
+        %ul.ui-grid-b
+          %li.ui-block-a
+            %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => search_path} Rechercher
+            
+          %li.ui-block-b
+            - if @batiment
+              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiment_path(@batiment.campus, @batiment)} Détails
+            - elsif @campus
+              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiments_path(@campus)} Détails
+            - elsif controller.action_name == 'parametres'
+              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
           
-        %li.ui-block-b
-          %a#bouton-carte.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(href="" data-theme="a") Carte
-          / %div(data-theme="c" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-c" aria-disabled="false")
-          /  %span(class="ui-btn-inner ui-btn-corner-all")
-          /    %span(class="ui-btn-text") Carte
-          /    %span(class="ui-icon ui-icon-star ui-icon-shadow")
-          /  %input(type="button" value="Carte" data-icon="star" class="ui-btn-hidden" aria-disabled="false" id="bouton-carte")
-
-        %li.ui-block-c
-          %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(href="" data-theme="a") Paramètres
-          / %div(data-theme="c" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-c" aria-disabled="false")
-          /  %span(class="ui-btn-inner ui-btn-corner-all")
-          /    %span(class="ui-btn-text") Parametres
-          /    %span(class="ui-icon ui-icon-gear ui-icon-shadow")
-          /  %input(type="button" id="bouton-parametres" value="Paramètres" data-icon="gear" class="ui-btn-hidden" aria-disabled="false")
+          %li.ui-block-c
+            - if controller.action_name == 'parametres'
+              %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(onClick="document.parametres_form.submit();" data-theme="a") Valider
+            - else
+              - if @batiment
+                %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => parametres_campus_batiment_path(@batiment.campus, @batiment)} Paramètres
+              - elsif @campus
+                %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => parametres_campus_batiments_path(@campus)} Paramètres
+      
+      - elsif controller.controller_name == 'entrees'
+        %ul.ui-grid-b
+          %li.ui-block-a
+            %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => search_path} Rechercher
+            
+          %li.ui-block-b
+            %a#bouton-carte.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@entree.batiment.campus, @entree.batiment)} Carte
+            
+          %li.ui-block-c
+            %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiment_salles_path(@entree.batiment.campus, @entree.batiment)} Salles
+            
+      - else
+        %ul.ui-grid-a
+          %li.ui-block-a
+            %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => search_path} Rechercher
+            
+          %li.ui-block-b
+            - if @batiment
+              %a#bouton-carte.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
+            - elsif @campus
+              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiments_path(@campus)} Détails
+                
     - else
       %ul.ui-grid
         %li.ui-block-a
-          %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(href="/search" data-theme="a") Rechercher
+          %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => search_path} Rechercher

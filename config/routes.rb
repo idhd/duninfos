@@ -4,17 +4,17 @@ Duninfos::Application.routes.draw do
   
   resources :campuses do
     collection do
-      get 'carte' => "carte#index"
-      get 'carte/parametres' => "carte#parametres"
+      get 'carte' => "carte#index", :as => :carte
+      match 'carte/parametres' => "carte#parametres", :via => [:get, :post], :as => :parametres
     end
     resources :batiments do
       collection do
-        get 'carte' => "carte#index"
-        get 'carte/parametres' => "carte#parametres"
+        get 'carte' => "carte#index", :as => :carte
+        match 'carte/parametres' => "carte#parametres", :via => [:get, :post], :as => :parametres
       end
       member do
-        get 'carte' => "carte#index"
-        get 'carte/parametres' => "carte#parametres"
+        get 'carte' => "carte#index", :as => :carte
+        match 'carte/parametres' => "carte#parametres", :via => [:get, :post], :as => :parametres
       end
       resources :bornes
       resources :services

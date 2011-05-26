@@ -24,9 +24,5 @@
         - else
           %a{:href => campus_batiment_entree_path(@entree.batiment.campus, @entree.batiment, @entree.lower_item)}
             %img{:id => "imgNext", :src => "/images/entrees/nextEntree.png"}
-
-      %div(data-role="content" data-theme="g")
-        %ul(data-role="listview")
-          %li{:id => "linkLstSalle"}
-            %a{:href => campus_batiment_path(@entree.batiment.campus, @entree.batiment) + "/salles"}= "Liste des salles"
-  = render :partial => "shared/navigation", :locals => { :complet => false }  
+  
+  = render :partial => "shared/navigation", :locals => { :complet => true }
