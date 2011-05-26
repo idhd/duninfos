@@ -1,0 +1,21 @@
+%div(data-role="page")
+  %div(data-role="header")
+    %h1= @salle.nom
+  %div(data-role="content")
+    %ul(data-role="listview" data-inset="true")
+      - if @salle.acces_libre?
+        %li  Cette salle est en libre accès
+      - else
+        %li Cette salle n'est pas en libre accès
+      %li
+        Nombre de places :
+        = @salle.nb_place
+      %li
+        Etage :
+        = @salle.num_etage
+      - if @salle.imprimante?
+        %li Imprimante en libre service
+      %li
+        Autres informations :
+        = @salle.info
+  = render :partial => "shared/navigation", :locals => { :complet => false }

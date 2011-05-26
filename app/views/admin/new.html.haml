@@ -7,7 +7,7 @@
   / /header
   
   %div{"data-role" => "content"}
-    %form#admin_form{:action => "campuses/193666451/batiments.json", :method => "post", :name => "admin_form"}
+    %form#admin_form{:action => "", :method => "post", :name => "admin_form"}
       %h2 Interface Administrateur
       %div{"data-role" => "fieldcontain"}
         %fieldset{"data-role" => "controlgroup"}
@@ -27,9 +27,9 @@
           %input#choix-categorie{:name => "radio-choice", :type => "radio", :value => "choice-categorie"}/
           %label{:for => "choix-categorie"} Catégorie
       /Geolocalisation
-      %div{"data-role" => "fieldcontain"}
+      %div#slider_geloc{"data-role" => "fieldcontain"}
         %label.ui-slider{:for => "slider2"} Géolocalisation?
-        %select.all#slider_geloc{"data-role" => "slider", :name => "slider_geoloc"}
+        %select.all{"data-role" => "slider", :name => "slider_geoloc"}
           %option{:value => "off"} Off
           %option{:value => "on"} On
       /coordonnées
@@ -47,15 +47,15 @@
           - @categories.each do |categorie|
             %option{:value => categorie.id}= categorie.nom.capitalize
       /campus
-      %div.batiment.salle.entree.service.all{"data-role" => "fieldcontain"}
+      %div.batiment.borne.salle.entree.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-campus"} Campus
-        %select.batiment.salle.entree.service.all#select-campus{:name => "campus_id", :onChange => "updatecities(this.selectedIndex)"}
+        %select.batiment.borne.salle.entree.service.all#select-campus{:name => "campus_id"}
           - @campuses.each do |campus|
             %option{:value => campus.id}= campus.nom.capitalize
       /batiment
-      %div.salle.entree.service.all{"data-role" => "fieldcontain"}
+      %div.salle.borne.entree.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-batiment"} Batiment
-        %select.salle.entree.service.all#select-batiment{:name => "batiment_id"}
+        %select.salle.borne.entree.service.all#select-batiment{:name => "batiment_id"}
           - @batiments.each do |batiment|
             %option{:value => batiment.id}= batiment.nom.capitalize
       /nom
@@ -74,30 +74,30 @@
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_acces_libre"} Accès libre?
         %select.salle-form.all#slider_acces_libre{"data-role" => "slider", :name => "acces_libre"}
-          %option{:value => "off"} Non
-          %option{:value => "on"} Oui
+          %option{:value => "false"} Non
+          %option{:value => "true"} Oui
       /imprimante
       %div.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_imprimante"} Imprimante?
         %select.salle-form.all#slider_imprimante{"data-role" => "slider", :name => "imprimante"}
-          %option{:value => "off"} Non
-          %option{:value => "on"} Oui
+          %option{:value => "false"} Non
+          %option{:value => "true"} Oui
       /url_icone
       %div.categorie.all{"data-role" => "fieldcontain"}
-        %label{:for => "url_icone"} URL icône
-        %input.categorie.all#url_icone{:name => "url_icone", :type => "text", :value => ""}/
+        %label{:for => "url"} URL
+        %input.categorie.all#url{:name => "url", :type => "text", :value => ""}/
       /tel
-      %div.categorie.all{"data-role" => "fieldcontain"}
+      %div.service.all{"data-role" => "fieldcontain"}
         %label{:for => "tel"} Tel
-        %input.categorie.all#tel{:name => "tel", :type => "text", :value => ""}/
+        %input.service.all#tel{:name => "tel", :type => "text", :value => ""}/
       /email
-      %div.categorie.all{"data-role" => "fieldcontain"}
+      %div.service.all{"data-role" => "fieldcontain"}
         %label{:for => "email"} Email
-        %input.categorie.all#email{:name => "email", :type => "text", :value => ""}/
+        %input.service.all#email{:name => "email", :type => "text", :value => ""}/
       /url_web
-      %div.categorie.all{"data-role" => "fieldcontain"}
-        %label{:for => "url_web"} URL site web
-        %input.categorie.all#url_web{:name => "url_web", :type => "text", :value => ""}/
+      %div.service.all{"data-role" => "fieldcontain"}
+        %label{:for => "url_site_web"} URL site web
+        %input.service.all#url_site_web{:name => "url_site_web", :type => "text", :value => ""}/
       /url_photo
       %div.batiment.entree.borne.all{"data-role" => "fieldcontain"}
         %label{:for => "url_photo"} URL photo
@@ -122,14 +122,14 @@
       %div.entree.all{"data-role" => "fieldcontain"}
         %label{:for => "slider_handicap"} Accès handicapé?
         %select.entree-form.all#slider_handicap{"data-role" => "slider", :name => "acces_handicape"}
-          %option{:value => "off"} Non
-          %option{:value => "on"} Oui
+          %option{:value => "false"} Non
+          %option{:value => "true"} Oui
       /acces_wifi
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label.ui-slider{:for => "slider_wifi"} Accès wifi?
-        %select#slider_wifi.batiment-form.all{"data-role" => "slider", :name => "slider_wifi", :style => "display: none"}
-          %option{:value => "off"} Non
-          %option{:value => "on"} Oui         
+        %select#slider_wifi.batiment-form.all{"data-role" => "slider", :name => "acces_wifi", :style => "display: none"}
+          %option{:value => "false"} Non
+          %option{:value => "true"} Oui         
       /info
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "infos"} Infos

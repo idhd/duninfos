@@ -7,3 +7,5 @@
       - @batiments.each do |batiment|
         %li
           %a{href: campus_batiment_path(@campus, batiment)}= batiment.nom
+
+  = render :partial => "shared/navigation", :locals => { :complet => true }

@@ -5,28 +5,36 @@ Duninfos::Application.routes.draw do
   resources :campuses do
     collection do
       get 'carte' => "carte#index"
+      get 'carte/parametres' => "carte#parametres"
     end
     resources :batiments do
       collection do
         get 'carte' => "carte#index"
+        get 'carte/parametres' => "carte#parametres"
       end
       member do
         get 'carte' => "carte#index"
+        get 'carte/parametres' => "carte#parametres"
       end
       resources :bornes
-      resources :services do
-        resources :categorie
-      end
+      resources :services
       resources :entrees
       resources :salles
-      
     end
   end
+  resources :categories
   
   match '/search/' => "search#search"
 
   match '/admin/' => "admin#accueil"
   match '/admin/new/' => "admin#new"
+  match '/admin/edit/' => "admin#accueil_edit"
+  match '/admin/campus/edit' => "admin#edit_campuses"
+  match '/admin/batiment/edit' => "admin#edit_batiments"
+  match '/admin/salle/edit' => "admin#edit_salles"
+  match '/admin/entree/edit' => "admin#edit_entrees"
+  match '/admin/borne/edit' => "admin#edit_bornes"
+  match '/admin/service/edit' => "admin#edit_services"
   
   #match "/campuses(/:campus_id(/batiments(/:batiment_id)))/carte" => "carte#index"
   

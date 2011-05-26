@@ -1,0 +1,17 @@
+      
+%div(data-role="page" )
+  %h1 Modification de campus
+
+  %div{"data-role" => "content"}
+    %h2 Quel campus voulez-vous modifier?
+
+    %div(data-role="collapsible-set")
+      - @campuses.each do |campus|
+        %div(data-role="collapsible")
+          %h3=campus.nom.capitalize
+          %ul(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
+            %li
+              %a{:href => edit_campus_path(campus)} Edit
+            %li
+              %a{:href => campus_path(campus), :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Destroy
+

@@ -1,7 +1,12 @@
 $(document).ready(function(){
+    document.admin_form.batiment_id.options.length=0;
+    var myselect = $("select#select-batiment");
+    myselect.selectmenu("refresh");
+
+
   $(".all").hide();
   var choix = "";
-    $("label[for='choix-campus']").click(function(){
+    $("label[for='choix-campus']").bind('tap', function() {
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".campus").show(); 
@@ -9,7 +14,7 @@ $(document).ready(function(){
       $(".campus-form").attr('disabled', '');     
       choix = "campus";
     });      
-    $("label[for='choix-batiment']").click(function(){
+    $("label[for='choix-batiment']").bind('tap', function(){
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".batiment").show(); 
@@ -17,15 +22,15 @@ $(document).ready(function(){
       $(".batiment-form").attr('disabled', '');     
       choix = "batiment";
     });
-    $("label[for='choix-salle']").click(function(){
+    $("label[for='choix-salle']").bind('tap', function() {
       $(".all").hide();   
-      $(".all").attr('disabled', 'disabled');
+      $(".all").attr('disabled', 'disabled' );
       $(".salle").show();   
       $(".salle").attr('disabled', '');
       $(".salle-form").attr('disabled', '');
       choix = "salle";
     });
-    $("label[for='choix-entree']").click(function(){
+    $("label[for='choix-entree']").bind('tap', function() {
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".entree").show();      
@@ -33,7 +38,7 @@ $(document).ready(function(){
       $(".entree-form").attr('disabled', '');
       choix = "entree";
     });  
-    $("label[for='choix-borne']").click(function(){
+    $("label[for='choix-borne']").bind('tap', function() {
       $(".all").hide();  
       $(".all").attr('disabled', 'disabled');
       $(".borne").show();      
@@ -41,7 +46,7 @@ $(document).ready(function(){
       $(".borne-form").attr('disabled', '');
       choix = "borne";
     });
-    $("label[for='choix-service']").click(function(){
+    $("label[for='choix-service']").bind('tap', function() {
       $(".all").hide();
       $(".all").attr('disabled', 'disabled');
       $(".service").show();  
@@ -49,7 +54,7 @@ $(document).ready(function(){
       $(".service-form").attr('disabled', '');
       choix = "service";
     });
-    $("label[for='choix-categorie']").click(function(){
+    $("label[for='choix-categorie']").bind('tap', function() {
       $(".all").hide();   
       $(".all").attr('disabled', 'disabled');
       $(".categorie").show();
@@ -86,39 +91,45 @@ $(document).ready(function(){
         $("form").attr('action','/campuses/'+campus_id+'/batiments/'+batiment_id+'/services');
         }
       else if(choix == "categorie") {
+        $("form").attr('action','/categories/');
       }                                   
     });
-    
-    //function updatecities(selectedcitygroup){
     
     $("#select-campus").change(function() {
         var campuseslist=document.admin_form.campus_id;
         var campus_id =  $("#select-campus").attr('value');
         var batimentslist=document.admin_form.batiment_id;
+        var myselect = $("select#select-batiment");
         
         $.get("/campuses/"+campus_id+"/batiments.json", function(data) {
         batiments=eval(data);
-        console.log(batiments);
+        //console.log(batiments);
         batimentslist.options.length=0;
+         
         for (i=0; i<batiments.length; i++)
             batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);         
+        myselect.selectmenu("refresh");
         });
-    });   
-});
-/* 
-disabled
+    });
 
- $("#select-campus").change(function() {
-$.get("/campus/"+campus.id+"/batiments.json", function(data) {
-  batiments=eval(data);
-  
+    if(navigator.geolocation)
+    {
+	navigator.geolocation.getCurrentPosition(function(position)
+	{
+	        latitude = position.coords.latitude;
+	        longitude = position.coords.longitude;
+	});
+
+    	$("#slider_geloc").click(function()
+	{
+		la = document.getElementById('latitude').value;
+		if(la == "") { document.getElementById('latitude').value = latitude; }
+		else { document.getElementById('latitude').value = ""; }
+
+		la = document.getElementById('longitude').value;
+		if(la == "") { document.getElementById('longitude').value = longitude; }
+		else { document.getElementById('longitude').value = ""; }
+	});
+    }
 });
-});
- javascripts/dynamic_states.js.erb
-function updatecities(selectedcitygroup){
-citieslist.options.length=0
-if (selectedcitygroup>0){
-  for (i=0; i<cities[selectedcitygroup].length; i++)
-    citieslist.options[citieslist.options.length]=new Option(cities[selectedcitygroup][i].split("|")[0], cities[selectedcitygroup][i].split("|")[1])
-  }
-}*/
+
