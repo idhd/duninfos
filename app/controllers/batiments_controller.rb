@@ -1,5 +1,7 @@
 class BatimentsController < ApplicationController
   respond_to :html, :json, :xml
+
+  before_filter :auth, :only => [:create, :update, :destroy]
   
   def index
     if params[:campus_id] && @campus = Campus.find(params[:campus_id])

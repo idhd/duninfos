@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523154305) do
+ActiveRecord::Schema.define(:version => 20110526095901) do
 
   create_table "batiments", :force => true do |t|
     t.integer  "campus_id"
@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(:version => 20110523154305) do
     t.string   "tel"
     t.string   "email"
     t.string   "url_site_web"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,6 +1,8 @@
 class CampusesController < ApplicationController
   respond_to :html, :json, :xml
   
+  before_filter :auth, :only => [:create, :update, :destroy]
+  
   def index
     @campuses = Campus.all
     respond_with @campuses
