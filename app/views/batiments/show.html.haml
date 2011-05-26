@@ -11,6 +11,6 @@
       %div(class="ui-block-a")
         %a(data-theme="c" data-role="button"){href: campus_batiment_entree_path(@batiment.campus, @batiment, @batiment.entrees.first)} Entrées
       %div(class="ui-block-b")
-        %button(data-theme="c") Salles
+        %a(data-theme="c" data-role="button"){href: campus_batiment_path(@batiment.campus, @batiment) + "/salles"} Salles
 
 = render :partial => "shared/navigation", :locals => { :complet => true }
