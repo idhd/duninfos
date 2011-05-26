@@ -1,4 +1,7 @@
 class AdminController < ApplicationController
+  
+  before_filter :auth
+  
   def new
     if params[:campus_id] && @campus = Campus.find(params[:campus_id])
       if params[:categorie_id] && @categorie = Categorie.find(params[:categorie_id])

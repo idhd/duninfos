@@ -26,7 +26,10 @@ Duninfos::Application.routes.draw do
   
   match '/search/' => "search#search"
 
-  match '/admin/' => "admin#accueil"
+  match '/login' => 'login#login', :as => :login
+  match '/logout' => 'login#logout', :as => :logout
+
+  match '/admin/' => "admin#accueil", :as => :admin_root
   match '/admin/new/' => "admin#new"
   match '/admin/edit/' => "admin#accueil_edit"
   match '/admin/campus/edit' => "admin#edit_campuses"
