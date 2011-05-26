@@ -67,6 +67,10 @@ $(document).ready(function(){
       $("."+choix).each(function() {
         $(this).attr('name',choix+'['+$(this).attr('name')+']');
       });
+      $("."+choix+'-form').each(function() {
+        $(this).attr('name',choix+'['+$(this).attr('name')+']');
+      });
+      
       $("#select-campus").attr('disabled', 'disabled');
       var batiment_id = $("#select-batiment").attr('value');
       var campus_id =  $("#select-campus").attr('value');
@@ -120,7 +124,7 @@ $(document).ready(function(){
 	        longitude = position.coords.longitude;
 	});
 
-    	$("#slider_geloc").click(function()
+    $("#slider_geloc").click(function()
 	{
 		la = document.getElementById('latitude').value;
 		if(la == "") { document.getElementById('latitude').value = latitude; }

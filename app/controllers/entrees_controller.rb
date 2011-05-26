@@ -18,6 +18,11 @@ class EntreesController < ApplicationController
 
   def create
     @batiment = Batiment.find(params[:batiment_id])
+#    uploaded_io = params[:entree][:url_photo]
+#    File.open(Rails.root.join('public', 'images', 'entrees', @batiment.nom, uploaded_io.original_filename), 'w') do |file|
+#      file.write(uploaded_io.read.force_encoding('utf-8'))
+#    end
+#    params[:entree][:url_photo] = uploaded_io.original_filename
     respond_with(@batiment.campus, @batiment, @entree = @batiment.entrees.create(params[:entree]))
   end
 
@@ -25,6 +30,10 @@ class EntreesController < ApplicationController
     @entree = Entree.find(params[:id])
     @entree.update_attributes(params[:entree])
     respond_with(@entree.batiment.campus, @entree.batiment, @entree)
+  end
+  
+  def upload
+
   end
 
   def destroy

@@ -17,7 +17,7 @@ class ServicesController < ApplicationController
 
   def create
     @batiment = Batiment.find(params[:batiment_id])
-    respond_with(@batiment.campus, @batiment, @service = @batiment.services.create(params[:service]))
+    respond_with(@batiment.campus, @batiment, @service = @batiment.services.create(params[:service]), :location => campus_batiment_path(@batiment.campus, @batiment))
   end
 
   def update

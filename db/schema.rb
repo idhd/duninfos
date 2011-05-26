@@ -10,11 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523154305) do
+ActiveRecord::Schema.define(:version => 20110526112054) do
 
   create_table "batiments", :force => true do |t|
     t.integer  "campus_id"
-    t.integer  "categorie_id"
     t.string   "url_photo"
     t.boolean  "acces_wifi"
     t.string   "nom"
@@ -66,7 +65,6 @@ ActiveRecord::Schema.define(:version => 20110523154305) do
     t.integer  "batiment_id"
     t.integer  "nb_place"
     t.integer  "num_etage"
-    t.string   "info_suplementaire"
     t.string   "nom"
     t.boolean  "imprimante"
     t.boolean  "acces_libre"
