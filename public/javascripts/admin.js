@@ -91,6 +91,7 @@ $(document).ready(function(){
         $("form").attr('action','/campuses/'+campus_id+'/batiments/'+batiment_id+'/services');
         }
       else if(choix == "categorie") {
+        $("form").attr('action','/categories/');
       }                                   
     });
     

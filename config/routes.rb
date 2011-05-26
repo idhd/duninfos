@@ -17,14 +17,12 @@ Duninfos::Application.routes.draw do
         get 'carte/parametres' => "carte#parametres"
       end
       resources :bornes
-      resources :services do
-        resources :categorie
-      end
+      resources :services
       resources :entrees
       resources :salles
-      
     end
   end
+  resources :categories
   
   match '/search/' => "search#search"
 
