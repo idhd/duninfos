@@ -1,12 +1,14 @@
 %div(data-role="page")
-  %div(data-role="header")
-    %h1= @batiment.nom
-  %div(data-role="content")
+  %div(data-role="header" data-theme="c")
+    %h2= @batiment.nom
+    %a.ui-btn-right(data-icon="home" data-iconpos="notext" data-role="button"){href: root_url}
+  %div(data-role="content" data-theme="g")
     %ul(data-role="listview" data-inset="true")
       %li(data-role="list-devider") Services
       - @services.each do |service|
         %li= service.nom
-    %ul(data-role="listview" data-inset="true" data-dividertheme="b" data-theme="c")
-      %li(data-role="list-devider") Entrees
-      - @entrees.each do |entree|
-        %li= entree.url_photo
+    %fieldset(class="ui-grid-a")
+      %div(class="ui-block-a")
+        %a(data-theme="c" data-role="button"){href: campus_batiment_entree_path(@batiment.campus, @batiment, @batiment.entrees.first)} Entrées
+      %div(class="ui-block-b")
+        %button(data-theme="c") Salles
