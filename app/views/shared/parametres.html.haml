@@ -2,51 +2,52 @@
   %div{"data-position" => "fixed", "data-role" => "header"}
     %h1 Choix des repères
   %div{"data-role" => "content"}
-    %ul{"data-role" => "listview", "data-theme" => "c", "data-type" => "horizontal"}
-      %li
-        %img{:height => "80px", :src => "http://t1.gstatic.com/images?q=tbn:ANd9GcSl81MTPRTFfabA5fQRqwPp6_bEr8Cg1S-k91hG7NqgI42zuXUSJw", :width => "80px"}/
-        %input#checkbox-1{"data-theme" => "c", :name => "checkbox-1", :type => "checkbox"}/
-        %label{:for => "checkbox-1"}
-          %font{:size => "3"} Batiments de l'UdS
-      %li
-        %img{:src => "http://t2.gstatic.com/images?q=tbn:ANd9GcSYTzWg9PCHzJaRK2u5Lo1erZLF3dy6EDbbph3k0nJ_qwsN1fka", :width => '80px', :height => '80px'}
-        %input#checkbox-2{"data-theme" => "c", :name => "checkbox-2", :type => "checkbox"}/
-        %label{:for => "checkbox-2"}
-          %font{:size => "3"} Bibliotheques
-      %li
-        %img{:height => "80px", :src => "http://t3.gstatic.com/images?q=tbn:ANd9GcTsamfG_ZKtjO7DBZdRqVuqevhFEY6l9QcRCjmuPeBg8vBxveIWgA", :width => "80px"}/
-        %input#checkbox-3{"data-theme" => "c", :name => "checkbox-3", :type => "checkbox"}/
-        %label{:for => "checkbox-3"}
-          %font{:size => "3"} Bornes de recharge Pass Campus
-      %li
-        %img{:height => "80px", :src => "http://t0.gstatic.com/images?q=tbn:ANd9GcTThRhC7LSvkTFCSFBkm-bO_s78HkqZmC-mLnCkn0VUm5uq0xkJrmol1kYkbA", :width => "80px"}/
-        %input#checkbox-4{"data-theme" => "c", :name => "checkbox-4", :type => "checkbox"}/
-        %label{:for => "checkbox-4"}
-          %font{:size => "3"} Cites Universitaires
-      %li
-        %img{:height => "80px", :src => "http://t1.gstatic.com/images?q=tbn:ANd9GcS9m65Y1a4m306pnE_lD20kBWl8o6CfziQkZveBKZDJu1BanuLW", :width => "80px"}/
-        %input#checkbox-5{"data-theme" => "c", :name => "checkbox-5", :type => "checkbox"}/
-        %label{:for => "checkbox-5"}
-          %font{:size => "3"} Complexes Sportifs
-      %li
-        %img{:height => "80px", :src => "http://t2.gstatic.com/images?q=tbn:ANd9GcRBXZq3QlwctbI8R9HL-9C36ePsjDtMunNjL91hqeQYiuV6eTGD", :width => "80px"}/
-        %input#checkbox-6{"data-theme" => "c", :name => "checkbox-6", :type => "checkbox"}/
-        %label{:for => "checkbox-6"}
-          %font{:size => "3"} Imprimentes en libre service
-      %li
-        %img{:height => "80px", :src => "http://t3.gstatic.com/images?q=tbn:ANd9GcRoNAxGgSKPhON7ZdwviVRBj480LKAhWMokNHfzvm4l4CUwCypw", :width => "80px"}/
-        %input#checkbox-7{"data-theme" => "c", :name => "checkbox-7", :type => "checkbox"}/
-        %label{:for => "checkbox-7"}
-          %font{:size => "3"} Restaurants Universitaires
-      %li
-        %img{:height => "80px", :src => "http://t3.gstatic.com/images?q=tbn:ANd9GcS9NShTbsNimMtUya5z9JMcXgajiFSfjzN62t5ccJLUMRqiZ7YUCw", :width => "80px"}/
-        %input#checkbox-8{"data-theme" => "c", :name => "checkbox-8", :type => "checkbox"}/
-        %label{:for => "checkbox-8"}
-          %font{:size => "3"} Salles Informatiques
-      %li
-        %img{:height => "80px", :src => "http://t2.gstatic.com/images?q=tbn:ANd9GcTNtpvlrdBN70zIH__lDqYSrVGDOulAPGHsb60vQoUkXQ5mGh7y7g", :width => "80px"}/
-        %input#checkbox-9{"data-theme" => "c", :name => "checkbox-9", :type => "checkbox"}/
-        %label{:for => "checkbox-9"}
-          %font{:size => "3"} Services de l'UdS
+    %form#parametres_form{:action => "", :method => "post", :name => "parametres_form"}
+      %ul{"data-role" => "listview", "data-theme" => "c", "data-type" => "horizontal"}
+        %li
+          %img{:height => "80px", :src => "http://t1.gstatic.com/images?q=tbn:ANd9GcSl81MTPRTFfabA5fQRqwPp6_bEr8Cg1S-k91hG7NqgI42zuXUSJw", :width => "80px"}/
+          %input{id='batimentsUds' "data-theme" => "c", :name => "batimentsUds", :type => "checkbox"}/
+          %label{:for => "batimentsUds"}
+            %font{:size => "3"} Batiments de l'UdS
+        %li
+          %img{:src => "http://t2.gstatic.com/images?q=tbn:ANd9GcSYTzWg9PCHzJaRK2u5Lo1erZLF3dy6EDbbph3k0nJ_qwsN1fka", :width => '80px', :height => '80px'}
+          %input#bibliotheques{"data-theme" => "c", :name => "bibliotheques", :type => "checkbox"}/
+          %label{:for => "bibliotheques"}
+            %font{:size => "3"} Bibliotheques
+        %li
+          %img{:height => "80px", :src => "http://t3.gstatic.com/images?q=tbn:ANd9GcTsamfG_ZKtjO7DBZdRqVuqevhFEY6l9QcRCjmuPeBg8vBxveIWgA", :width => "80px"}/
+          %input#bornes{"data-theme" => "c", :name => "bornes", :type => "checkbox"}/
+          %label{:for => "bornes"}
+            %font{:size => "3"} Bornes de recharge Pass Campus
+        %li
+          %img{:height => "80px", :src => "http://t0.gstatic.com/images?q=tbn:ANd9GcTThRhC7LSvkTFCSFBkm-bO_s78HkqZmC-mLnCkn0VUm5uq0xkJrmol1kYkbA", :width => "80px"}/
+          %input#citesU{"data-theme" => "c", :name => "citesU", :type => "checkbox"}/
+          %label{:for => "citesU"}
+            %font{:size => "3"} Cites Universitaires
+        %li
+          %img{:height => "80px", :src => "http://t1.gstatic.com/images?q=tbn:ANd9GcS9m65Y1a4m306pnE_lD20kBWl8o6CfziQkZveBKZDJu1BanuLW", :width => "80px"}/
+          %input#complexesSportifs{"data-theme" => "c", :name => "complexesSportifs", :type => "checkbox"}/
+          %label{:for => "complexesSportifs"}
+            %font{:size => "3"} Complexes Sportifs
+        %li
+          %img{:height => "80px", :src => "http://t2.gstatic.com/images?q=tbn:ANd9GcRBXZq3QlwctbI8R9HL-9C36ePsjDtMunNjL91hqeQYiuV6eTGD", :width => "80px"}/
+          %input#imprimantesLibres{"data-theme" => "c", :name => "imprimantesLibres", :type => "checkbox"}/
+          %label{:for => "imprimantesLibres"}
+            %font{:size => "3"} Imprimantes en libre service
+        %li
+          %img{:height => "80px", :src => "http://t3.gstatic.com/images?q=tbn:ANd9GcRoNAxGgSKPhON7ZdwviVRBj480LKAhWMokNHfzvm4l4CUwCypw", :width => "80px"}/
+          %input#restosU{"data-theme" => "c", :name => "restosU", :type => "checkbox"}/
+          %label{:for => "restosU"}
+            %font{:size => "3"} Restaurants Universitaires
+        %li
+          %img{:height => "80px", :src => "http://t3.gstatic.com/images?q=tbn:ANd9GcS9NShTbsNimMtUya5z9JMcXgajiFSfjzN62t5ccJLUMRqiZ7YUCw", :width => "80px"}/
+          %input#sallesInfo{"data-theme" => "c", :name => "sallesInfo", :type => "checkbox"}/
+          %label{:for => "sallesInfo"}
+            %font{:size => "3"} Salles Informatiques
+        %li
+          %img{:height => "80px", :src => "http://t2.gstatic.com/images?q=tbn:ANd9GcTNtpvlrdBN70zIH__lDqYSrVGDOulAPGHsb60vQoUkXQ5mGh7y7g", :width => "80px"}/
+          %input#servicesUds{"data-theme" => "c", :name => "servicesUds", :type => "checkbox"}/
+          %label{:for => "servicesUds"}
+            %font{:size => "3"} Services de l'UdS
           
   = render :partial => "shared/navigation", :locals => { :complet => true }
