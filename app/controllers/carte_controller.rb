@@ -19,19 +19,17 @@ class CarteController < ApplicationController
     end
 
     @categories = Categorie.all
-    
+   
     if params[:submit_params]
-      session[:parametres] = {
-        'batimentsUds' => params[:batimentsUds]
-        
-      }
       
+      session[:parametres] = params
+            
       if params[:campus_id] && params[:batiment_id] && params[:id]
         redirect_to campus_batiment_entrees_carte_path(params[:id])
       elsif params[:campus_id] && params[:id]
         redirect_to carte_campus_batiment_path(params[:campus_id], params[:id])
       else
-        redirect_to campus_batiments_carte_path(params[:id])
+        redirect_to carte_campus_batiments_path(params[:id])
       end
     else
     

@@ -7,10 +7,16 @@
       %li(data-role="list-devider") Services
       - @services.each do |service|
         %li= service.nom
-    %fieldset(class="ui-grid-a")
-      %div(class="ui-block-a")
-        %a(data-theme="c" data-role="button"){href: campus_batiment_entree_path(@batiment.campus, @batiment, @batiment.entrees.first)} Entrées
-      %div(class="ui-block-b")
-        %a(data-theme="c" data-role="button"){href: campus_batiment_path(@batiment.campus, @batiment) + "/salles"} Salles
+        
+    - if @entrees != []
+      %fieldset(class="ui-grid-a")
+        %div(class="ui-block-a")
+          %a(data-theme="c" data-role="button"){href: campus_batiment_entree_path(@batiment.campus, @batiment, @entrees.first)} Entrées
+        %div(class="ui-block-b")
+          %a(data-theme="c" data-role="button"){href: campus_batiment_salles_path(@batiment.campus, @batiment)} Salles
+    - else
+      %fieldset(class="ui-grid")
+        %div(class="ui-block")
+          %a(data-theme="c" data-role="button"){href: campus_batiment_salles_path(@batiment.campus, @batiment)} Salles
 
   = render :partial => "shared/navigation", :locals => { :complet => true }
