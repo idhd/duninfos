@@ -134,7 +134,8 @@
       %div.batiment.salle.all{"data-role" => "fieldcontain"}
         %label{:for => "info"} Infos
         %textarea.batiment.salle.all#info{:cols => "40", :name => "info", :rows => "8"}
-      
+      /Token
+      %input{:name=> "authenticity_token", :value=> form_authenticity_token , :type =>"hidden"}
       .ui-body.ui-body-b
         %fieldset.ui-grid-a
           .ui-block-a

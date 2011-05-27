@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20110526112054) do
     t.integer  "nb_place"
     t.integer  "num_etage"
     t.string   "nom"
-    t.string   "imprimante"
+    t.boolean  "imprimante"
     t.boolean  "acces_libre"
     t.text     "info"
     t.datetime "created_at"
@@ -80,6 +80,13 @@ ActiveRecord::Schema.define(:version => 20110526112054) do
     t.string   "tel"
     t.string   "email"
     t.string   "url_site_web"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

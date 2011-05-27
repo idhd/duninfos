@@ -1,6 +1,8 @@
 class EntreesController < ApplicationController
   respond_to :html, :json, :xml
 
+  before_filter :auth, :only => [:create, :update, :destroy]
+
   def index
     if params[:batiment_id] && @batiment = Batiment.find(params[:batiment_id])
       @entrees = @batiment.entrees
