@@ -76,7 +76,7 @@ $(document).ready(function(){
       
       if(choix == "batiment") {
         $("#select-campus").attr('disabled', '');
-        $("form").attr('action','/campuses/'+campus_id+'/batiments');
+        $("form").attr('action','/campuses/'+campus_id+'/batiments/');
         }
       else if(choix == "campus") {
         $("form").attr('action','/campuses/');
@@ -105,13 +105,18 @@ $(document).ready(function(){
         var myselect = $("select#select-batiment");
         
         $.get("/campuses/"+campus_id+"/batiments.json", function(data) {
-        batiments=eval(data);
-        //console.log(batiments);
-        batimentslist.options.length=0;
-         
-        for (i=0; i<batiments.length; i++)
-            batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);         
-        myselect.selectmenu("refresh");
+            batiments=eval(data);
+            //console.log(batiments);
+            batimentslist.options.length=0;
+            if (batiments.length != 0) {
+                for (i=0; i<batiments.length; i++)
+                    batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);         
+            }
+            else
+            {
+                batimentslist.options[0]=new Option("Pas de batiments dans ce campus");
+            }
+            myselect.selectmenu("refresh");
         });
     });
 

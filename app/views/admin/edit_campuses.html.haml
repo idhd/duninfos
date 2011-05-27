@@ -1,8 +1,11 @@
       
 %div(data-role="page" )
-  %h1 Modification de campus
-
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
   %div{"data-role" => "content"}
+    %h1 Modification de campus
     %h2 Quel campus voulez-vous modifier?
 
     %div(data-role="collapsible-set")
