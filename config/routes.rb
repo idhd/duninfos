@@ -18,7 +18,11 @@ Duninfos::Application.routes.draw do
       end
       resources :bornes
       resources :services
-      resources :entrees
+      resources :entrees do
+        collection do
+          get 'edit' => "entrees#edit_all"
+        end
+      end      
       resources :salles
     end
   end
@@ -28,6 +32,8 @@ Duninfos::Application.routes.draw do
 
   match '/login' => 'login#login', :as => :login
   match '/logout' => 'login#logout', :as => :logout
+  
+  match '/admin/borne/edit' => "admin#edit_bornes"
 
   match '/admin/' => "admin#accueil", :as => :admin_root
   match '/admin/new/' => "admin#new"
@@ -35,6 +41,7 @@ Duninfos::Application.routes.draw do
   match '/admin/campus/edit' => "admin#edit_campuses"
   match '/admin/batiment/edit' => "admin#edit_batiments"
   match '/admin/salle/edit' => "admin#edit_salles"
+  match '/admin/entree/edit_accueil' => "admin#edit_entrees_accueil"
   match '/admin/entree/edit' => "admin#edit_entrees"
   match '/admin/borne/edit' => "admin#edit_bornes"
   match '/admin/service/edit' => "admin#edit_services"

@@ -1,3 +1,4 @@
+
 $(document).ready(function(){    
     document.form.batiment_id.options.length=0;
     var myselect = $("select#select-batiment");
@@ -19,11 +20,11 @@ $(document).ready(function(){
 
             myselect.selectmenu("refresh");
         });
+        
         var campus_id = $("#select-campus option:selected").val();
         var batiment_id = $("#select-batiment option:selected").val();
 
-        $(".lol").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id+'/edit');
-        $(".kikoo").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id);
+        $(".lol").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id+'/entrees/edit');
     });   
     
     $("#test").bind('tap', function(e) {
@@ -31,9 +32,9 @@ $(document).ready(function(){
         var campus_id = $("#select-campus option:selected").val();
         var batiment_id = $("#select-batiment option:selected").val();
 //        alert($("#select-batiment option:selected").val());
-        $(".lol").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id+'/edit');
-        $(".kikoo").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id);
+        $(".lol").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id+'/entrees/edit');
         e.default;
     });
 });
+
 
