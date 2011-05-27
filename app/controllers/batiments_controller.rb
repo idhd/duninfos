@@ -17,7 +17,7 @@ class BatimentsController < ApplicationController
   def show
     @batiment = Batiment.find(params[:id])
     @entrees = @batiment.entrees
-    @services = @batiment.services
+    @salles = @batiment.salles
     respond_with(@batiment,:include => [:entrees, :categories])
   end
   
