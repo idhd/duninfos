@@ -1,5 +1,16 @@
 $(document).ready(function () {
 
+  // Initialise la carte
+  $('#map').gmap3(
+    {action: 'init',
+      options:{
+        center:[48.5820584, 7.7466488],
+        zoom:16,
+        mapTypeId: google.maps.MapTypeId.ROAD
+      }
+    }
+  );
+  
   // On récupère l'adresse de la page (auquel on enlève le '/carte' de la fin)
   var url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
   
@@ -32,6 +43,10 @@ console.log(data);
         
 
         marker: {
+          options: {
+            icon: "http://www.google.fr/help/maps/tour/images/marker_kml.png",
+            position: [1000, 1000]
+          },
           data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
                		'<div id="infoWindowContent">'+
                		
