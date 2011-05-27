@@ -4,11 +4,13 @@
   %div{"data-role" => "content"}
     %form#parametres_form{:action => "", :method => "post", :name => "parametres_form"}
       %ul{"data-role" => "listview", "data-theme" => "c", "data-type" => "horizontal"}
+        - i=0
         - @categories.each do |categorie|
+          - i = i+1
           %li
             %img{:height => "80px", :src => categorie.url, :width => "80px"}
-            %input(data-theme = "c"){:name => categorie.nom.delete(' '), :type => "checkbox"}
-            %label{:for => categorie.nom}
+            %input(data-theme = "c"){:name => categorie.nom.delete(' '), :type => "checkbox", :id => "checkbox-#{i}"}
+            %label{:for => "checkbox-#{i}"}
               %font{:size => "3"}
                 = categorie.nom.capitalize
       %input#submit_params(type='hidden' name='submit_params' value='1')
