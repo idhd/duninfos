@@ -11,7 +11,7 @@ class BatimentsController < ApplicationController
         @batiments = @campus.batiments
       end
     end
-    respond_with(@batiments,:include => :entrees)
+    respond_with(@batiments,:include => [:entrees, :services])
   end
   
   def show
