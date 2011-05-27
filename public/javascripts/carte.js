@@ -32,7 +32,6 @@ console.log(data);
         
 
         marker: {
-          
           data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
                		'<div id="infoWindowContent">'+
                		
