@@ -1,4 +1,4 @@
-=javascript_include_tag "edit_salle"
+=javascript_include_tag "edit_entree"
 
 %div(data-role="page" )
   %div{"data-role" => "header", "data-theme" => "b"}
@@ -6,7 +6,7 @@
     %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
   / /header
   %div{"data-role" => "content"}
-    %h1 Modification de salles
+    %h1 Modification d'entrées'
     %form#form{:action => "", :method => "post", :name => "form"}
 
       %div{"data-role" => "fieldcontain"}
@@ -22,18 +22,8 @@
           - @batiments.each do |batiment|
             %option{:value => batiment.id}= batiment.nom.capitalize
 
-      %h2 Quelle salle voulez-vous modifier?
-
-      %div{"data-role" => "fieldcontain"}
-        %label.select{:for => "select-salle"} Salle?
-        %select#select-salle{:name => "salle_id"}
-          - @salles.each do |salle|
-            %option{:value => salle.id}= salle.nom.capitalize
-      
-      
+            
       %ul#test(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
         %li
-          %a.lol{:href => "http://google.fr"} Editer
-        %li
-          %a.kikoo{:href => "http://google.fr", :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Supprimer
+          %a.lol{:href => "http://google.fr"} Aller à la page d'édition/suppression
 

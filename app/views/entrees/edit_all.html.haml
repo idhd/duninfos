@@ -1,0 +1,18 @@
+
+%div(data-role="page" )
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+  %div{"data-role" => "content"}
+    %h1 Modification/Suppression d'entrées
+    %div{"data-role" => "fieldcontain"}
+      %h2 Quelle entrée voulez-vous modifier?      
+      - @entrees.each do |entree|
+        %img{:id => "imgHandy", :src => "/images/entrees/"+entree.id.to_s+".jpeg"}  
+        %ul#test(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
+          %li
+            %a.lol{:href => edit_campus_batiment_entree_path(entree.batiment.campus, entree.batiment, entree)} Editer
+          %li
+            %a.kikoo{:href => campus_batiment_entree_path(entree.batiment.campus, entree.batiment, entree), :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Supprimer
+

@@ -28,6 +28,15 @@ class EntreesController < ApplicationController
     respond_with(@batiment.campus, @batiment, @entree = @batiment.entrees.create(params[:entree]))
   end
 
+  def edit
+    @entree = Entree.find(params[:id])
+  end
+  
+  def edit_all
+    @batiment = Batiment.find(params[:batiment_id])
+    @entrees = @batiment.entrees
+  end
+
   def update
     @entree = Entree.find(params[:id])
     @entree.update_attributes(params[:entree])

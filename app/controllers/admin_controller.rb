@@ -31,5 +31,14 @@ class AdminController < ApplicationController
     @batiments = Batiment.all
     @salles = Salle.all
   end
+  
+  def edit_entrees_accueil
+    @campuses = Campus.all
+    @batiments = Batiment.all
+  end
+  def edit_entrees_accueil
+    @campuses = Campus.all
+    @batiments = Batiment.all
+  end
 
 end
