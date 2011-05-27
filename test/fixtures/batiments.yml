@@ -21,7 +21,7 @@ poleApi:
 isu:
   campus: illkirch
   nom: ISU
-  url_photo: bat_isu.jpg
+  url_photo: /images/batiments/473597501.jpg
   acces_wifi: false
   adresse: |
             Pôle API - Parc d'Innovation
