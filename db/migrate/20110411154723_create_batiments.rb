@@ -2,7 +2,6 @@ class CreateBatiments < ActiveRecord::Migration
   def self.up
     create_table :batiments do |t|
       t.references :campus
-      t.references :categorie
       t.string :url_photo
       t.boolean :acces_wifi
       t.string :nom

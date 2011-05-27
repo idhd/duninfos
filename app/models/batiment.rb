@@ -6,7 +6,7 @@ class Batiment < ActiveRecord::Base
   has_many :salles
   
   validates :nom,           :presence => true, :uniqueness => true
-  validates :url_photo,     :presence => true
+#  validates :url_photo,     :presence => true
   validates :adresse,       :presence => true
   validates :code_postal,  :presence => true
   validates :ville,         :presence => true

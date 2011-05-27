@@ -3,8 +3,6 @@
 
   <%= form_for([@batiment.campus, @batiment]) do |f| %>
     <div class="field">
-<!--      <% campuses_array = @campuses.map { |campus| [campus.nom.capitalize, campus.id] } %>
-      <%= options_for_select(campuses_array) %>-->
       <%= collection_select(:batiment, :campus_id, @campuses, :id, :nom) %>
     </div>
     <div class="field">

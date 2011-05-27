@@ -8,7 +8,7 @@
   / /header
   
   %div{"data-role" => "content"}
-    %form#admin_form{:action => "", :method => "post", :name => "admin_form"}
+    %form#admin_form{:action => "", :method => "post", :name => "admin_form", :enctype=>'multipart/form-data'}
       %h2 Interface Administrateur
       %div{"data-role" => "fieldcontain"}
         %fieldset{"data-role" => "controlgroup"}
@@ -39,9 +39,10 @@
           %input.campus.batiment.entree.all#latitude{:name => "latitude", :type => "text", :value => ""}/
         %p#adresse{:style => "text-align: center;"}
       /catégorie
-      %div.batiment.service.all{"data-role" => "fieldcontain"}
+      %div.service.all{"data-role" => "fieldcontain"}
         %label.select{:for => "select-categorie"} Catégorie
-        %select.batiment.service.all#select-categorie{:name => "categorie_id"}
+        %select.service.all#select-categorie{:name => "categorie_id"}
+          %option{:disabled => "disabled", :selected => "selected"} Choisissez une catégorie
           - @categories.each do |categorie|
             %option{:value => categorie.id}= categorie.nom.capitalize
       /campus
@@ -99,7 +100,8 @@
       /url_photo
       %div.batiment.entree.borne.all{"data-role" => "fieldcontain"}
         %label{:for => "url_photo"} URL photo
-        %input.batiment.entree.borne.all#url_photo{:name => "url_photo", :type => "text", :value => ""}/
+        /%input.batiment.entree.borne.all#url_photo{:name => "url_photo", :type => "text", :value => ""}/
+        %input.batiment.entree.borne.all#url_photo{:class=>"ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c", :type=>"file", :name=>"url_photo", :"data-ajax"=>"false"}
       /horaires
       %div.batiment.all{"data-role" => "fieldcontain"}
         %label{:for => "horaire"} Horaires
@@ -128,21 +130,19 @@
         %select#slider_wifi.batiment-form.all{"data-role" => "slider", :name => "acces_wifi", :style => "display: none"}
           %option{:value => "false"} Non
           %option{:value => "true"} Oui         
-      /info
-      %div.batiment.all{"data-role" => "fieldcontain"}
-        %label{:for => "infos"} Infos
-        %textarea.batiment.all#infos{:cols => "40", :name => "info", :rows => "8"}
-      /infos_supp
-      %div.salle.all{"data-role" => "fieldcontain"}
-        %label{:for => "info_sup"} Infos supplémentaires
-        %textarea.salle.all#info_sup{:cols => "40", :name => "info_suplementaire", :rows => "8"}
-          
+      /infos
+      %div.batiment.salle.all{"data-role" => "fieldcontain"}
+        %label{:for => "info"} Infos
+        %textarea.batiment.salle.all#info{:cols => "40", :name => "info", :rows => "8"}
+      /Token
+      %input{:name=> "authenticity_token", :value=> form_authenticity_token , :type =>"hidden"}
       .ui-body.ui-body-b
         %fieldset.ui-grid-a
           .ui-block-a
             %button{"data-theme" => "d", :type => "submit"} Cancel
           .ui-block-b
             %button{"data-theme" => "a", :type => "submit"} Submit
+
   / /content"window.location.replace('feedback.htm');" 
 / /page
 
