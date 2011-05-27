@@ -32,9 +32,7 @@ console.log(data);
         
 
         marker: {
-          options: {
-          icon: val.batiment.icon
-          },
+          
           data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
                		'<div id="infoWindowContent">'+
                		
