@@ -1,6 +1,12 @@
 %div{"data-role" => "page"}
   %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface de connexion
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+
+  %div{"data-role" => "content"}
     = form_tag(login_path) do
+      %label{:for => "login"} Identifiant :
       = text_field_tag :login
+      %label{:for => "password"} Mot de passe :
       = text_field_tag :password
-      = submit_tag
+      = submit_tag :Connexion
