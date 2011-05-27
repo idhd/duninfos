@@ -14,7 +14,7 @@
           %a(data-theme="c" data-role="button"){href: campus_batiment_entree_path(@batiment.campus, @batiment, @entrees.first)} Entrées
         %div(class="ui-block-b")
           %a(data-theme="c" data-role="button"){href: campus_batiment_salles_path(@batiment.campus, @batiment)} Salles
-    - else
+    - elsif @salles != []
       %fieldset(class="ui-grid")
         %div(class="ui-block")
           %a(data-theme="c" data-role="button"){href: campus_batiment_salles_path(@batiment.campus, @batiment)} Salles
