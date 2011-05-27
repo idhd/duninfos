@@ -11,14 +11,14 @@ class BatimentsController < ApplicationController
         @batiments = @campus.batiments
       end
     end
-    respond_with(@batiments,:include => :entrees)
+    respond_with(@batiments,:include => [:entrees, :services])
   end
   
   def show
     @batiment = Batiment.find(params[:id])
     @entrees = @batiment.entrees
-    @services = @batiment.services
-    respond_with(@batiment,:include => :entrees)
+    @salles = @batiment.salles
+    respond_with(@batiment,:include => [:entrees, :categories])
   end
   
   def edit

@@ -1,5 +1,16 @@
 $(document).ready(function () {
 
+  // Initialise la carte
+  $('#map').gmap3(
+    {action: 'init',
+      options:{
+        center:[48.5820584, 7.7466488],
+        zoom:16,
+        mapTypeId: google.maps.MapTypeId.ROAD
+      }
+    }
+  );
+  
   // On récupère l'adresse de la page (auquel on enlève le '/carte' de la fin)
   var url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
   
@@ -8,6 +19,8 @@ $(document).ready(function () {
 	  
     // Si l'objet JSON récupéré n'est pas un tableau de batiments, on le transforme en tableau
     if (!$.isArray(data)) data = new Array(data);
+
+console.log(data);
       
     // Pour chaque batiment du tableau
     $.each(data, function(key, val) {
@@ -15,6 +28,10 @@ $(document).ready(function () {
 	// Si il n'y a pas d'entrées on renvoie vers le batiment 
 	if (val.batiment.entrees[0]) premiereEntree = '/entrees/'+val.batiment.entrees[0].id;
 	else premiereEntree = '';
+    
+    if(val.batiment.services.length > 0) {
+        val.batiment.icon = "/images/categories/"+val.batiment.services[0].categorie_id+".png";
+    }
 
       // On positionne un marqueur pour ce batiment
       $('#map').gmap3({
@@ -23,7 +40,13 @@ $(document).ready(function () {
         map:{
           center: true,
         },
+        
+
         marker: {
+          options: {
+            icon: "http://www.google.fr/help/maps/tour/images/marker_kml.png",
+            position: [1000, 1000]
+          },
           data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
                		'<div id="infoWindowContent">'+
                		

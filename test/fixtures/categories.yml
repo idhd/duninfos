@@ -13,3 +13,7 @@ logement:
 cmp_sport:
   nom: complexe sportif
   url: cat_cmp_sport.png
+
+bibliotheque:
+  nom: Bibliothèque
+  url: cat_biblio.png

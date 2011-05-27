@@ -3,6 +3,7 @@ class Batiment < ActiveRecord::Base
   has_many :bornes
   has_many :entrees, :order => "position"
   has_many :services
+  has_many :categories, :through => :services
   has_many :salles
   
   validates :nom,           :presence => true, :uniqueness => true

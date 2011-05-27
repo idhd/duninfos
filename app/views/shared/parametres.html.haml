@@ -8,11 +8,10 @@
         - @categories.each do |categorie|
           - i = i+1
           %li
-            %img{:height => "80px", :src => categorie.url, :width => "80px"}
+            %img{:height => "80px", :src => "/images/categories/" + categorie.url, :width => "80px"}
             %input(data-theme = "c"){:name => categorie.nom.delete(' '), :type => "checkbox", :id => "checkbox-#{i}"}
             %label{:for => "checkbox-#{i}"}
-              %font{:size => "3"}
-                = categorie.nom.capitalize
+              = categorie.nom.capitalize
       %input#submit_params(type='hidden' name='submit_params' value='1')
           
   = render :partial => "shared/navigation", :locals => { :complet => true }
