@@ -3,7 +3,7 @@
     %div{:id => "cadreCarte"}
       
     %div{:id => "cadrePhoto"}
-      %img{:id => "imgEntree", :src => "/images/entrees/" + @entree.batiment.nom + "/" + @entree.url_photo}
+      %img{:id => "imgEntree", :src => @entree.photo.url}
       - if (@entree.acces_handicape)
         %img{:id => "imgHandy", :src => "/images/entrees/acces_handy_true.png"}
       - else
