@@ -10,12 +10,16 @@
             %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => search_path} Rechercher
             
           %li.ui-block-b
-            - if @batiment
+            - if controller.action_name == 'parametres'
+              - if @batiment
+                %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
+              - elsif @campus
+                %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiments_path(@campus)} Carte
+              
+            - elsif @batiment
               %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiment_path(@batiment.campus, @batiment)} Détails
             - elsif @campus
               %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiments_path(@campus)} Détails
-            - elsif controller.action_name == 'parametres'
-              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
           
           %li.ui-block-c
             - if controller.action_name == 'parametres'
