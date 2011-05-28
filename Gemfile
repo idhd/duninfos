@@ -8,6 +8,7 @@ gem 'rails', '3.0.6'
 gem 'sqlite3'
 gem 'haml'
 gem 'jquery-rails'
+gem 'paperclip'
 
 group :development, :test do
   gem 'cucumber-rails'

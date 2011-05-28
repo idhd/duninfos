@@ -76,6 +76,9 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     nokogiri (1.4.4)
+    paperclip (2.3.11)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -121,5 +124,6 @@ DEPENDENCIES
   database_cleaner
   haml
   jquery-rails
+  paperclip
   rails (= 3.0.6)
   sqlite3
