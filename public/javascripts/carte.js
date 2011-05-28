@@ -99,7 +99,15 @@ $(document).ready(function () {
 			{
 			action: 'addMarker',
 			latLng: [val.entree.latitude, val.entree.longitude],
-			map: {center: true}
+			map: {center: true},
+
+            marker: 
+            {
+			  options: 
+              {
+				icon: '/images/entrees/entrance.png'
+			  }
+            }
 			});
 		}
     });
