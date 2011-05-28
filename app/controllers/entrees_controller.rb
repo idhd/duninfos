@@ -30,6 +30,7 @@ class EntreesController < ApplicationController
 
   def edit
     @entree = Entree.find(params[:id])
+    @batiments = Batiment.all
   end
   
   def edit_all
