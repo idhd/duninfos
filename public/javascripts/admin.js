@@ -144,7 +144,7 @@ $(document).ready(function(){
 		{
 			$('#adresse').gmap3({
           		action:'getAddress',
-          		latLng:[48.5238929, 7.737783],
+          		latLng:[latitude, longitude],
           		callback:function(results){ $('#adresse').text("Vous vous situez aux alentours de : "+results[0].formatted_address) }});
 		}
 		else { $('#adresse').text(""); }
