@@ -21,6 +21,7 @@ Duninfos::Application.routes.draw do
       resources :entrees do
         collection do
           get 'edit' => "entrees#edit_all"
+          get 'carte' => "carte#index", :as => :carte
         end
       end      
       resources :salles

@@ -1,13 +1,11 @@
 class Entree < ActiveRecord::Base
   belongs_to :batiment
   acts_as_list :scope => :batiment
-
-def next_entree
-  Entree.where(:position => position + 1).first  
-end
-
-def previous_entree
-  Entree.where(:position => position - 1).first  
-end
-
+  
+  has_attached_file :photo,
+    # :styles => { :small => "150x150>" },
+    :url => "/images/entrees/:id.:extension",
+    :path => ":rails_root/public/images/entrees/:id.:extension"
+  validates_attachment_size :photo, :less_than => 5.megabytes  
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 end
