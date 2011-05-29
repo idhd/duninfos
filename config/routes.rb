@@ -47,7 +47,7 @@ Duninfos::Application.routes.draw do
   match '/admin/entree/edit' => "admin#edit_entrees"
   match '/admin/borne/edit' => "admin#edit_bornes"
   match '/admin/service/edit' => "admin#edit_services"
-  
+  match '/admin/categorie/edit' => "admin#edit_categories"
   #match "/campuses(/:campus_id(/batiments(/:batiment_id)))/carte" => "carte#index"
   
   # The priority is based upon order of creation:

@@ -1,0 +1,20 @@
+      
+%div(data-role="page" )
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+  %div{"data-role" => "content"}
+    %h1 Modification d'une entrée
+    %h2 Quelle entrée voulez-vous modifier?
+
+    %div(data-role="collapsible-set")
+      - @categories.each do |categorie|
+        %div(data-role="collapsible")
+          %h3=categorie.nom.capitalize
+          %ul(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
+            %li
+              %a{:href => edit_categorie_path(categorie)} Edit
+            %li
+              %a{:href => categorie_path(categorie), :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Destroy
+

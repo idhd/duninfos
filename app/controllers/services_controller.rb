@@ -22,6 +22,10 @@ class ServicesController < ApplicationController
     respond_with(@batiment.campus, @batiment, @service = @batiment.services.create(params[:service]), :location => campus_batiment_path(@batiment.campus, @batiment))
   end
 
+  def edit
+    @service = Service.find(params[:id])
+  end
+
   def update
     @service = Service.find(params[:id])
     @service.update_attributes(params[:service])
