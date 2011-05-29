@@ -32,7 +32,7 @@ class CarteController < ApplicationController
         redirect_to carte_campus_batiments_path(params[:id])
       end
     else
-    
+      @parametres = session[:parametres]
       respond_to do |f|
           f.html { render 'shared/parametres' }
           f.json { render :json => session[:parametres] }
