@@ -1,7 +1,7 @@
 <div data-role='page'>
   <h1>Edition d'un batiment</h1>
 
-  <%= form_for([@batiment.campus, @batiment]) do |f| %>
+  <%= form_for([@batiment.campus, @batiment], :html => { :multipart => true }) do |f| %>
     <div class="field">
       <%= collection_select(:batiment, :campus_id, @campuses, :id, :nom) %>
     </div>
@@ -13,7 +13,6 @@
       <%= f.label :latitude %><br />
       <%= f.text_field :latitude %>
     </div>
-
     <div class="field">
       <%= f.label :nom %><br />
       <%= f.text_field :nom %>

@@ -1,7 +1,7 @@
 <div data-role='page'>
   <h1>Edition d'une entrée</h1>
 
-  <%= form_for([@entree.batiment.campus, @entree.batiment, @entree]) do |f| %>
+  <%= form_for([@entree.batiment.campus, @entree.batiment, @entree], :html => { :multipart => true }) do |f| %>
     <div class="field">
       <%= collection_select(:entree, :batiment_id, @batiments, :id, :nom) %>
     </div>
@@ -14,9 +14,9 @@
       <%= f.text_area :latitude %>
     </div>
     <div class="field">
-      <%= f.label :url_photo %><br />
-      <%= f.text_field :url_photo %>
-    </div>    
+      <%= f.label :photo %><br />
+      <%= f.file_field :photo %>
+    </div>
     <div data-role="fieldcontain">
       <label for="slider2">Accès handicapé?</label>
       <%= f.select(:acces_handicape, [['Oui', true], ['Non', false]]) %>
