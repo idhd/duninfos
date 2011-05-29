@@ -12,7 +12,7 @@
             - if @parametres && @parametres.keys.include?(categorie.nom.delete(' '))
               %input(data-theme = "c" checked){:name => "parametres[#{categorie.nom.delete(' ')}]", :type => "checkbox", :id => "checkbox-#{i}"}
             - else
-              %input(data-theme = "c"){:name => categorie.nom.delete(' '), :type => "checkbox", :id => "checkbox-#{i}"}
+              %input(data-theme = "c"){:name => "parametres[#{categorie.nom.delete(' ')}]", :type => "checkbox", :id => "checkbox-#{i}"}
             %label{:for => "checkbox-#{i}"}
               = categorie.nom.capitalize
         %li
