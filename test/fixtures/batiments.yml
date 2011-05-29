@@ -3,7 +3,6 @@
 poleApi:
   campus: illkirch
   nom: Pôle Api
-  url_photo: bat_poleApi.jpg
   acces_wifi: true
   adresse: |
             Pôle API - Parc d'Innovation
@@ -21,7 +20,6 @@ poleApi:
 isu:
   campus: illkirch
   nom: ISU
-  url_photo: /images/batiments/473597501.jpg
   acces_wifi: false
   adresse: |
             Pôle API - Parc d'Innovation
@@ -34,10 +32,10 @@ isu:
             Lundi-Mercredi : 8h-12h | 14h-20h
             Jeudi-Vendredi : 8h30-12h | 13h30-19h30
   info: Bâtiment de l'International Space University
+  photo_file_name: 473597501.jpg
 
 ru_illkirch:
   campus: illkirch
-  url_photo: bat_ru.jpg
   acces_wifi: true
   nom: Restaurant Universitaire d'Illkirch
   adresse: 76 route du Rhin
@@ -47,6 +45,18 @@ ru_illkirch:
   latitude: 48.528695
   horaires: 'Lundi-Vendredi : 11h-15h'
   info: Bâtiment du Restaurant Universitaire d'Illkirch
+
+bat_biblio_pharma:
+  campus: illkirch
+  acces_wifi: true
+  nom: Bibliothèque de la faculté de pharmacie
+  adresse: 76 route du Rhin
+  code_postal: 67400
+  ville: Illkirch Graffenstaden
+  longitude: 7.736388
+  latitude: 48.52951
+  horaires: ''
+  info: ''
   
 
   
