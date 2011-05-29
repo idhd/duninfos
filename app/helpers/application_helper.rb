@@ -2,7 +2,7 @@ module ApplicationHelper
   def form_geolocation_fields(form, adresse = true)
     concat (javascript_include_tag 'geolocation.js')
     content_tag :div, nil, :class => 'geolocation' do
-      concat (raw "<input type='button' value='me localiser' />")
+      concat (raw "<input class='localize_me' type='button' value='me localiser' />")
       concat (content_tag :div, 'data-role' => 'fieldcontain' do
         concat form.label :latitude
         concat form.text_field :latitude, :class => 'latitude'
