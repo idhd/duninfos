@@ -57,9 +57,9 @@ $(document).ready(function () {
 	    // On se charge de marquer les batiments
 	    if(!val.entree)
 	    {
-	    	    
+	    	i = 0;    
 	      $.each(val.batiment.categories, function(k, v) {
-	        if( !categories || ($.inArray(v.nom.replace(' ', ''), categories) != -1)) {
+	        if( $.isEmptyObject(categories) || ($.inArray(v.nom.replace(' ', ''), categories) != -1)) {
 	        
 		        // Si il n'y a pas d'entrées on renvoie vers le batiment 
 		        if (val.batiment.entrees[0]) premiereEntree = '/entrees/'+val.batiment.entrees[0].id;
@@ -68,7 +68,7 @@ $(document).ready(function () {
 		        // On positionne un marqueur pour ce batiment
 		        $('#map').gmap3({
 			        action: 'addMarker',
-			        latLng: [val.batiment.latitude, val.batiment.longitude],
+			        latLng: [val.batiment.latitude + 0.1*i, val.batiment.longitude + 0.1*i],
 			        map:{
 			          center: true,
 			        },
@@ -111,6 +111,7 @@ $(document).ready(function () {
 			        }
 			      });
 		      }
+		      i++;
 		    });
 		  }
 		  else
