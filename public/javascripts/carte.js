@@ -59,7 +59,7 @@ $(document).ready(function () {
 	    {
 	    	    
 	      $.each(val.batiment.categories, function(k, v) {
-	        if( categories || ($.inArray(v.nom.replace(' ', ''), categories) != -1)) {
+	        if( !categories || ($.inArray(v.nom.replace(' ', ''), categories) != -1)) {
 	        
 		        // Si il n'y a pas d'entrées on renvoie vers le batiment 
 		        if (val.batiment.entrees[0]) premiereEntree = '/entrees/'+val.batiment.entrees[0].id;
