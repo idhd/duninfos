@@ -2,7 +2,10 @@ class CarteController < ApplicationController
   respond_to :html
   
   def index
-    if params[:campus_id] && params[:id]
+    if params[:campus_id] && params[:batiment_id]
+      @batiment = Batiment.find(params[:batiment_id])
+      @entrees = @batiment.entrees
+    elsif params[:campus_id] && params[:id]
       @batiment = Batiment.find(params[:id])
     else
       @campus = Campus.find(params[:campus_id])
@@ -12,7 +15,10 @@ class CarteController < ApplicationController
   end
   
   def parametres
-    if params[:campus_id] && params[:id]
+    if params[:campus_id] && params[:batiment_id]
+      @batiment = Batiment.find(params[:batiment_id])
+      @entrees = @batiment.entrees
+    elsif params[:campus_id] && params[:id]
       @batiment = Batiment.find(params[:id])
     else
       @campus = Campus.find(params[:campus_id])
@@ -24,8 +30,8 @@ class CarteController < ApplicationController
       
       session[:parametres] = params
             
-      if params[:campus_id] && params[:batiment_id] && params[:id]
-        redirect_to campus_batiment_entrees_carte_path(params[:id])
+      if params[:campus_id] && params[:batiment_id]
+        redirect_to carte_campus_batiment_entrees_path(params[:batiment_id])
       elsif params[:campus_id] && params[:id]
         redirect_to carte_campus_batiment_path(params[:campus_id], params[:id])
       else

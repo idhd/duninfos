@@ -11,24 +11,28 @@
             
           %li.ui-block-b
             - if controller.action_name == 'parametres'
-              - if @batiment
-                %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
+              - if @entrees
+                %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_entrees_path(@batiment.campus, @batiment)} Carte
+              - elsif @batiment
+                %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
               - elsif @campus
-                %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiments_path(@campus)} Carte
+                %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiments_path(@campus)} Carte
               
             - elsif @batiment
-              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiment_path(@batiment.campus, @batiment)} Détails
+              %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiment_path(@batiment.campus, @batiment)} Détails
             - elsif @campus
-              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiments_path(@campus)} Détails
+              %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiments_path(@campus)} Détails
           
           %li.ui-block-c
             - if controller.action_name == 'parametres'
-              %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(onClick="document.parametres_form.submit();" data-theme="a") Valider
+              %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(onClick="document.parametres_form.submit();" data-theme="a") Valider
             - else
-              - if @batiment
-                %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => parametres_campus_batiment_path(@batiment.campus, @batiment)} Paramètres
+              - if @entrees
+                %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => parametres_campus_batiment_entrees_path(@batiment.campus, @batiment)} Paramètres
+              - elsif @batiment
+                %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => parametres_campus_batiment_path(@batiment.campus, @batiment)} Paramètres
               - elsif @campus
-                %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => parametres_campus_batiments_path(@campus)} Paramètres
+                %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => parametres_campus_batiments_path(@campus)} Paramètres
       
       - elsif controller.controller_name == 'entrees'
         %ul.ui-grid-b
@@ -36,10 +40,10 @@
             %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => search_path} Rechercher
             
           %li.ui-block-b
-            %a#bouton-carte.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_entrees_path(@entree.batiment.campus, @entree.batiment)} Carte
+            %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_entrees_path(@entree.batiment.campus, @entree.batiment)} Carte
             
           %li.ui-block-c
-            %a#bouton-parametres.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiment_salles_path(@entree.batiment.campus, @entree.batiment)} Salles
+            %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => campus_batiment_salles_path(@entree.batiment.campus, @entree.batiment)} Salles
             
       - else
         %ul.ui-grid-a
@@ -48,9 +52,9 @@
             
           %li.ui-block-b
             - if @batiment
-              %a#bouton-carte.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
+              %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiment_path(@batiment.campus, @batiment)} Carte
             - elsif @campus
-              %a#bouton-details.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiments_path(@campus)} Carte
+              %a.ui-btn-active.ui-state-persist.ui-btn.ui-btn-up-a(data-theme="a"){:href => carte_campus_batiments_path(@campus)} Carte
                 
     - else
       %ul.ui-grid
