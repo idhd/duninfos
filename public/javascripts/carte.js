@@ -13,8 +13,7 @@ $(document).ready(function () {
       });
     }
   });
-
-
+  
   // On récupère l'adresse de la page (auquel on enlève le '/carte' de la fin)
   var url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
   
@@ -54,24 +53,25 @@ $(document).ready(function () {
     // Pour chaque batiment du tableau
     $.each(data, function(key, val) 
     {
-      console.log(val.batiment.nom);
+      
 	    // On se charge de marquer les batiments
 	    if(!val.entree)
 	    {
 	    	i = 0;
 	    	
-	    		    	
+	      
 	    	if (!$.isEmptyObject(val.batiment.categories)) {
-	    	
-	      	// On copie les éléments de catégories dans categoriesTemp
-	      	categoriesTemp = categories;
+	    	  
+	      	// On fait une copie INDEPENDANTE categoriesTemp des catégories
+	      	categoriesTemp = categories.slice();
 	      	
 	        $.each(val.batiment.categories, function(k, v) {
-	        
-	          if($.inArray(String(v.id), categoriesTemp) != -1) {
 	          
+	          
+	          if($.inArray(String(v.id), categoriesTemp) != -1) {
+	            
 	            // On enlève la catégorie déjà placée sur la carte du tableau categoriesTemp
-	            categorieId = categoriesTemp.splice($.inArray(String(v.id), categoriesTemp), 1);
+	            categoriesTemp.splice($.inArray(String(v.id), categoriesTemp), 1);
 	          
 		          // Si il n'y a pas d'entrées on renvoie vers le batiment 
 		          if (val.batiment.entrees[0]) premiereEntree = '/entrees/'+val.batiment.entrees[0].id;
