@@ -68,7 +68,7 @@ $(document).ready(function () {
 	        if( $.isEmptyObject(categoriesTemp) || ($.inArray(String(v.id), categoriesTemp) != -1)) {
 	        
 	          // On enlève la catégorie déjà placée sur la carte du tableau categoriesTemp
-	          categoriesTemp.splice($.inArray(String(v.id), categoriesTemp), 1);
+	          categorieId = categoriesTemp.splice($.inArray(String(v.id), categoriesTemp), 1);
 	        
 		        // Si il n'y a pas d'entrées on renvoie vers le batiment 
 		        if (val.batiment.entrees[0]) premiereEntree = '/entrees/'+val.batiment.entrees[0].id;
@@ -85,7 +85,7 @@ $(document).ready(function () {
 
 			        marker: {
 			          options: {
-				          icon: "/images/categories/"+val.batiment.categoriesTemp[0].url
+				          icon: "/images/categories/"+val.batiment.categories[i].url
 			          },
 			          data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
 						        '<div id="infoWindowContent">'+
