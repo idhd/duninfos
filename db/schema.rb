@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110528184340) do
+ActiveRecord::Schema.define(:version => 20110529213232) do
 
   create_table "batiments", :force => true do |t|
     t.integer  "campus_id"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(:version => 20110528184340) do
     t.string   "url_photo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "campuses", :force => true do |t|
@@ -48,9 +54,12 @@ ActiveRecord::Schema.define(:version => 20110528184340) do
 
   create_table "categories", :force => true do |t|
     t.string   "nom"
-    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "entrees", :force => true do |t|
