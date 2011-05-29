@@ -68,7 +68,7 @@ $(document).ready(function () {
 		        // On positionne un marqueur pour ce batiment
 		        $('#map').gmap3({
 			        action: 'addMarker',
-			        latLng: [val.batiment.latitude + 0.1*i, val.batiment.longitude + 0.1*i],
+			        latLng: [val.batiment.latitude + 0.0001*i, val.batiment.longitude + 0.0001*i],
 			        map:{
 			          center: true,
 			        },
