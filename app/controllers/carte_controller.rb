@@ -28,7 +28,7 @@ class CarteController < ApplicationController
    
     if params[:submit_params]
       
-      session[:parametres] = params
+      session[:parametres] = params[:parametres]
             
       if params[:campus_id] && params[:batiment_id]
         redirect_to carte_campus_batiment_entrees_path(params[:batiment_id])
