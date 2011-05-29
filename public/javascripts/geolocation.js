@@ -1,9 +1,9 @@
 $(function () {
-  $("form .geolocation").bind('tap', function() {
+  $(".localize_me").bind('tap', function() {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         $('.latitude').val(position.coords.latitude);
-        $('.longitude').val(position.coords.latitude);
+        $('.longitude').val(position.coords.longitude);
         if($('.adresse')) {
           console.log("adres")
           $('.adresse').gmap3({
