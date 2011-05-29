@@ -11,7 +11,7 @@ class BatimentsController < ApplicationController
         @batiments = @campus.batiments
       end
     end
-    respond_with(@batiments,:include => [:entrees, :categories])
+    respond_with(@batiments,:include => [:entrees, :categories, :bornes])
   end
   
   def show
@@ -19,7 +19,7 @@ class BatimentsController < ApplicationController
     @entrees = @batiment.entrees
     @salles = @batiment.salles
     @services = @batiment.services
-    respond_with(@batiment,:include => [:entrees, :categories])
+    respond_with(@batiment,:include => [:entrees, :categories, :bornes])
   end
   
   def edit
