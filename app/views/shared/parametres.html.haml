@@ -9,7 +9,7 @@
           - i = i+1
           %li
             %img{:height => "80px", :src => "/images/categories/" + categorie.url, :width => "80px"}
-            - if @parametres && @parametres.keys.include?(categorie.id)
+            - if @parametres && @parametres.keys.include?(categorie.id.to_s)
               %input(data-theme = "c" checked){:name => "parametres[#{categorie.id}]", :type => "checkbox", :id => "checkbox-#{i}"}
             - else
               %input(data-theme = "c"){:name => "parametres[#{categorie.id}]", :type => "checkbox", :id => "checkbox-#{i}"}
