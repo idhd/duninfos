@@ -65,7 +65,7 @@ $(document).ready(function () {
 	    	
 	      $.each(val.batiment.categories, function(k, v) {
 	      
-	        if( $.isEmptyObject(categories) || ($.inArray(String(v.id), categoriesTemp) != -1)) {
+	        if( $.isEmptyObject(categoriesTemp) || ($.inArray(String(v.id), categoriesTemp) != -1)) {
 	        
 	          // On enlève la catégorie déjà placée sur la carte du tableau categoriesTemp
 	          categoriesTemp.splice($.inArray(String(v.id), categoriesTemp), 1);
@@ -85,7 +85,7 @@ $(document).ready(function () {
 
 			        marker: {
 			          options: {
-				          icon: "/images/categories/"+val.batiment.categories[0].url
+				          icon: "/images/categories/"+val.batiment.categoriesTemp[0].url
 			          },
 			          data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
 						        '<div id="infoWindowContent">'+
