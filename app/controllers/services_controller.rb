@@ -23,13 +23,16 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    @campuses = Campus.all
+    @batiments = Batiment.all
+    @categories = Categorie.all
     @service = Service.find(params[:id])
   end
 
   def update
     @service = Service.find(params[:id])
     @service.update_attributes(params[:service])
-    respond_with(@service.batiment.campus, @service.batiment, @service)
+    respond_with(@service.batiment.campus, @service.batiment, @service, :location => campus_batiment_path(@service.batiment.campus, @service.batiment))
   end
 
   def destroy

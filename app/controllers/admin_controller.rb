@@ -42,7 +42,9 @@ class AdminController < ApplicationController
   end
   
   def edit_services
-    @categories = Service.all
+    @campuses = Campus.all
+    @batiments = Batiment.all
+    @services = Service.all
   end
 
 end
