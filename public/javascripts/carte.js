@@ -90,13 +90,13 @@ $(document).ready(function () {
 						        '<div id="imgBatiment">'+
 						        '<a href="/campuses/'+val.batiment.campus_id+
 						        '/batiments/'+val.batiment.id+premiereEntree+
-						        '"><img alt="liste des entrées" src="'+val.batiment.url_photo+'"></a>'+
+						        '"><img alt="liste des entrées" src="/images/batiments/'+val.batiment.photo_file_name+'"></a>'+
 						        '</div>'+
 						
 						        '</div>'+
 					        '<div id="infoSalles" class="ui-btn-active ui-state-persist ui-btn ui-btn-up-a">'+
 					        '<a href="/campuses/'+val.batiment.campus_id+
-					        '/batiments/'+val.batiment.id+'/salles"><h4>Liste des entrées</h4></a></div>',
+					        '/batiments/'+val.batiment.id+'/salles"><h4>Liste des salles</h4></a></div>',
 			          events: {
 				          click: function(marker, event, data) {
 				            var infowindow = $(this).gmap3({action:'get', name:'infowindow'})
