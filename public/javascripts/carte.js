@@ -3,6 +3,7 @@ $(document).ready(function () {
   var url_complete = window.location.pathname;
   
   var categories = new Array();
+  var categoriesTemp = new Array();
   
   // On récupère les parametres
   $.getJSON( url_complete + "/parametres.json", function(data) {
@@ -57,9 +58,17 @@ $(document).ready(function () {
 	    // On se charge de marquer les batiments
 	    if(!val.entree)
 	    {
-	    	i = 0;    
+	    	i = 0;
+	    	
+	    	// On copie les éléments de catégories dans categoriesTemp
+	    	categoriesTemp = categories;
+	    	
 	      $.each(val.batiment.categories, function(k, v) {
-	        if( $.isEmptyObject(categories) || ($.inArray(String(v.id), categories) != -1)) {
+	      
+	        if( $.isEmptyObject(categoriesTemp) || ($.inArray(String(v.id), categoriesTemp) != -1)) {
+	        
+	          // On enlève la catégorie déjà placée sur la carte du tableau categoriesTemp
+	          categorieId = categoriesTemp.splice($.inArray(String(v.id), categoriesTemp), 1);
 	        
 		        // Si il n'y a pas d'entrées on renvoie vers le batiment 
 		        if (val.batiment.entrees[0]) premiereEntree = '/entrees/'+val.batiment.entrees[0].id;
@@ -76,7 +85,7 @@ $(document).ready(function () {
 
 			        marker: {
 			          options: {
-				          icon: "/images/categories/"+val.batiment.categories[0].url
+				          icon: "/images/categories/"+val.batiment.categories[i].url
 			          },
 			          data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
 						        '<div id="infoWindowContent">'+
