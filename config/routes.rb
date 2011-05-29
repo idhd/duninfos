@@ -22,6 +22,7 @@ Duninfos::Application.routes.draw do
         collection do
           get 'edit' => "entrees#edit_all"
           get 'carte' => "carte#index", :as => :carte
+          match 'carte/parametres' => "carte#parametres", :via => [:get, :post], :as => :parametres
         end
       end      
       resources :salles

@@ -9,7 +9,10 @@
           - i = i+1
           %li
             %img{:height => "80px", :src => "/images/categories/" + categorie.url, :width => "80px"}
-            %input(data-theme = "c"){:name => categorie.nom.delete(' '), :type => "checkbox", :id => "checkbox-#{i}"}
+            - if @parametres && @parametres.keys.include?(categorie.id.to_s)
+              %input(data-theme = "c" checked){:name => "parametres[#{categorie.id}]", :type => "checkbox", :id => "checkbox-#{i}"}
+            - else
+              %input(data-theme = "c"){:name => "parametres[#{categorie.id}]", :type => "checkbox", :id => "checkbox-#{i}"}
             %label{:for => "checkbox-#{i}"}
               = categorie.nom.capitalize
         %li

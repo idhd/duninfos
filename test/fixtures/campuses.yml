@@ -9,3 +9,35 @@ esplanade:
   nom: esplanade
   longitude: 7.766690
   latitude: 48.579021
+
+medecine:
+  nom: medecine
+  longitude: 7.745876
+  latitude: 48.576167
+
+meinau:
+  nom: meinau
+  longitude: 7.743194
+  latitude: 48.560733
+
+robertsau:
+  nom: robertsau
+  longitude: 7.77545
+  latitude: 48.602013
+
+schiltigheim:
+  nom: schiltigheim
+  longitude: 7.746386
+  latitude: 48.604691
+
+neudorf:
+  nom: neudorf
+  longitude: 7.777435
+  latitude: 48.566597
+
+cronembourg:
+  nom: cronembourg
+  longitude: 7.712166
+  latitude: 48.606419
+
+

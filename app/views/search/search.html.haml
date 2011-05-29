@@ -7,9 +7,6 @@
       - @campuses.each do |campus|
         %li
           %a{href: campus_path(campus)}= campus.nom.capitalize
-      - @batiments.each do |batiment|
-        %li
-          %a{href: campus_batiment_path(batiment.campus, batiment)}= batiment.nom.capitalize
       - @services.each do |service|
         %li
           %a{href: campus_batiment_path(service.batiment.campus, service.batiment)}= service.nom.capitalize

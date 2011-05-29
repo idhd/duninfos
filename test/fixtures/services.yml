@@ -8,6 +8,13 @@ ensiie:
   email: christiane.muller@ensiie.fr
   url_site_web: www.ensiie.fr
 
+isu:
+  categorie: ecole
+  batiment: isu
+  nom: ISU
+  tel: 0388655430
+  url_site_web: www.isunet.edu/
+
 ensps:
   categorie: ecole
   batiment: poleApi
@@ -20,4 +27,9 @@ restoU:
   categorie: ru
   batiment: ru_illkirch
   nom: Restaurant universitaire
+
+biblioPharma:
+  categorie: bibliotheque
+  batiment: bat_biblio_pharma
+  nom: Bibliothèque
 
