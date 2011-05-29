@@ -58,5 +58,16 @@ bat_biblio_pharma:
   horaires: ''
   info: ''
   
+residence_illkirch:
+  campus: illkirch
+  acces_wifi: true
+  nom: Résidence étudiante d'Illkirch
+  adresse: 78 route du Rhin
+  code_postal: 67400
+  ville: Illkirch Graffenstaden
+  longitude: 7.733688
+  latitude: 48.528944
+  horaires: ''
+  info: ''
 
   

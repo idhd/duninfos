@@ -31,5 +31,10 @@ restoU:
 biblioPharma:
   categorie: bibliotheque
   batiment: bat_biblio_pharma
-  nom: Bibliothèque
+  nom: Bibliothèque  de la faculté de pharmacie
+
+heliotrope:
+  categorie: logement
+  batiment: residence_illkirch
+  nom: Les héliotropes
 

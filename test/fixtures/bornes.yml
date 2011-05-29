@@ -1,5 +1,9 @@
-one:
-  url_photo: MyString
+borneIllkirch1:
+  batiment: ru_illkirch
+  latitude: 48.528911
+  longitude: 7.73759
 
-two:
-  url_photo: MyString
+borneIllkirch2:
+  batiment: ru_illkirch
+  latitude: 48.528425
+  longitude: 7.737659
