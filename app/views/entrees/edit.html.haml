@@ -1,0 +1,10 @@
+%div(data-role="page")
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+  %h1 Edition d'une entrée
+  = render :partial => "form", :locals => { :entree => [@entree.batiment.campus, @entree.batiment, @entree] }
+
+  = link_to 'Show', [@entree.batiment.campus, @entree.batiment, @entree] |
+  = link_to 'Back', edit_campus_batiment_entrees_path(@entree.batiment.campus, @entree.batiment)

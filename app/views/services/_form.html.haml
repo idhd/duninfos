@@ -1,0 +1,23 @@
+= form_for service do |f|
+  
+  %div(data-role="fieldcontain")
+    = f.label :Batiment_du_service
+    = collection_select(:service, :batiment_id, @batiments, :id, :nom)
+  %div(data-role="fieldcontain")
+    = f.label :Categorie_du_service
+    = collection_select(:service, :categorie_id, @categories, :id, :nom)
+  %div(data-role="fieldcontain")
+    = f.label :nom
+    = f.text_field :nom
+  %div(data-role="fieldcontain")
+    = f.label :tel
+    = f.text_field :tel
+  %div(data-role="fieldcontain")
+    = f.label :email
+    = f.text_field :email
+  %div(data-role="fieldcontain")
+    = f.label :url_site_web
+    = f.text_field :url_site_web
+
+  = f.submit
+

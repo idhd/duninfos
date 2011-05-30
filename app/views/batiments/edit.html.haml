@@ -3,9 +3,8 @@
     %h1 Interface d'administration
     %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
   / /header
-  %h1 Edition d'un campus
-  = render :partial => "form", :locals => { :campus => @campus }
+  %h1 Edition d'un batiment
+  = render :partial => "form", :locals => { :batiment => [@batiment.campus, @batiment] }
   
-  = link_to 'Show', campus_path(@campus) |
-  = link_to 'Back', '/admin/campus/edit'
-
+  = link_to 'Show', campus_batiment_path(@batiment.campus, @batiment) |
+  = link_to 'Back', '/admin/batiment/edit'
