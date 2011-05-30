@@ -1,0 +1,10 @@
+%div(data-role="page")
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+  %h1 Edition d'un service
+  = render :partial => "form", :locals => { :service => [@service.batiment.campus, @service.batiment, @service] }
+  
+  = link_to 'Show', campus_batiment_service_path(@service.batiment.campus, @service.batiment, @service) |
+  = link_to 'Back', '/admin/service/edit'

@@ -7,5 +7,4 @@
   = render :partial => "form", :locals => { :batiment => [@batiment.campus, @batiment] }
   
   = link_to 'Show', campus_batiment_path(@batiment.campus, @batiment) |
-  = link_to 'Back', campus_path(@batiment.campus)
-
+  = link_to 'Back', '/admin/batiment/edit'

@@ -1,0 +1,25 @@
+= form_for salle do |f|
+  
+  %div(data-role="fieldcontain")
+    = f.label :"Batiment"
+    = collection_select(:salle, :batiment_id, @batiments, :id, :nom)
+  %div(data-role="fieldcontain")
+    = f.label :nom
+    = f.text_field :nom
+  %div(data-role="fieldcontain")
+    = f.label :num_etage
+    = f.text_area :num_etage
+  %div(data-role="fieldcontain")
+    = f.label :nb_place
+    = f.text_field :nb_place
+  %div(data-role="fieldcontain")
+    = f.label :info
+    = f.text_area :info    
+  %div(data-role="fieldcontain")
+    = f.label :acces_libre
+    = f.select(:acces_libre, [['Oui', true], ['Non', false]])
+  %div(data-role="fieldcontain")
+    = f.label :imprimante
+    = f.select(:imprimante, [['Oui', true], ['Non', false]])
+
+  = f.submit
