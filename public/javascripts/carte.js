@@ -87,7 +87,7 @@ $(document).ready(function () {
 
 			          marker: {
 			            options: {
-				            icon: "/images/categories/"+val.batiment.categories[i].url
+				            icon: "/images/categories/"+val.batiment.categories[i].icon_file_name
 			            },
 			            data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
 						          '<div id="infoWindowContent">'+

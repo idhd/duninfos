@@ -1,5 +1,5 @@
 ru:
-  id: 1
+  # id: 1
   nom: Restaurant Universitaire
   icon_file_name: 1.png
   icon_content_type: image/png
@@ -7,7 +7,7 @@ ru:
   icon_updated_at: "2011-05-28 15:09:22"
 
 ecole:
-  id: 2
+  # id: 2
   nom: Ecole
   icon_file_name: 2.png
   icon_content_type: image/png
@@ -15,7 +15,7 @@ ecole:
   icon_updated_at: "2011-05-28 15:09:22"
 
 logement:
-  id: 3
+  # id: 3
   nom: Logement
   icon_file_name: 3.png
   icon_content_type: image/png
@@ -23,7 +23,7 @@ logement:
   icon_updated_at: "2011-05-28 15:09:22"
 
 cmp_sport:
-  id: 4
+  # id: 4
   nom: complexe sportif
   icon_file_name: 4.png
   icon_content_type: image/png
@@ -31,7 +31,7 @@ cmp_sport:
   icon_updated_at: "2011-05-28 15:09:22"
 
 bibliotheque:
-  id: 5
+  # id: 5
   nom: Bibliothèque
   icon_file_name: 5.png
   icon_content_type: image/png
