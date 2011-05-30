@@ -1,0 +1,9 @@
+= form_for categorie do |f|
+  %div(data-role="fieldcontain")
+    = f.label :nom
+    = f.text_field :nom
+  %div(data-role="fieldcontain")
+    = f.label :icon
+    = f.file_field :icon
+  
+  = f.submit

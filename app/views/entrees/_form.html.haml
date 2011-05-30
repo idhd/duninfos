@@ -1,0 +1,15 @@
+= form_for entree do |f|
+  = javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=false', 'gmap3-min'
+  
+  %div(data-role="fieldcontain")
+    = f.label :batiment
+    = collection_select(:entree, :batiment_id, @batiments, :id, :nom)
+  = form_geolocation_fields f
+  %div(data-role="fieldcontain")
+    = f.label :photo
+    = f.file_field :photo
+  %div(data-role="fieldcontain")
+    = f.label :acces_handicape
+    = f.select(:acces_handicape, [['Oui', true], ['Non', false]])
+
+  = f.submit

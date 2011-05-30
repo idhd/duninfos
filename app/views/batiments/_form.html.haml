@@ -1,0 +1,33 @@
+= form_for batiment do |f|
+  = javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=false', 'gmap3-min'
+  
+  %div(data-role="fieldcontain")
+    = f.label :"Campus du batiment"
+    = collection_select(:batiment, :campus_id, @campuses, :id, :nom)
+  = form_geolocation_fields f
+  %div(data-role="fieldcontain")
+    = f.label :nom
+    = f.text_field :nom
+  %div(data-role="fieldcontain")
+    = f.label :adresse
+    = f.text_area :adresse
+  %div(data-role="fieldcontain")
+    = f.label :code_postal
+    = f.text_field :code_postal
+  %div(data-role="fieldcontain")
+    = f.label :ville
+    = f.text_field :ville
+  %div(data-role="fieldcontain")
+    = f.label :horaires
+    = f.text_field :horaires
+  %div(data-role="fieldcontain")
+    = f.label :photo
+    = f.file_field :photo
+  %div(data-role="fieldcontain")
+    = f.label :info
+    = f.text_area :info    
+  %div(data-role="fieldcontain")
+    = f.label :acces_wifi
+    = f.select(:acces_wifi, [['Oui', true], ['Non', false]])
+
+  = f.submit

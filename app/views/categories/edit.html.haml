@@ -1,0 +1,10 @@
+%div(data-role="page")
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+  %h1 Edition d'une categorie
+  = render :partial => "form", :locals => { :categorie => @categorie }
+  
+  = link_to 'Show', @categorie |
+  = link_to 'Back', '/admin/categorie/edit'

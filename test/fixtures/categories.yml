@@ -1,19 +1,39 @@
 ru:
+  id: 1
   nom: Restaurant Universitaire
-  url: cat_ru.png
+  icon_file_name: 1.png
+  icon_content_type: image/png
+  icon_file_size: 0
+  icon_updated_at: "2011-05-28 15:09:22"
 
 ecole:
+  id: 2
   nom: Ecole
-  url: cat_ecole.png
+  icon_file_name: 2.png
+  icon_content_type: image/png
+  icon_file_size: 0
+  icon_updated_at: "2011-05-28 15:09:22"
 
 logement:
+  id: 3
   nom: Logement
-  url: cat_logement.png
+  icon_file_name: 3.png
+  icon_content_type: image/png
+  icon_file_size: 0
+  icon_updated_at: "2011-05-28 15:09:22"
 
 cmp_sport:
+  id: 4
   nom: complexe sportif
-  url: cat_cmp_sport.png
+  icon_file_name: 4.png
+  icon_content_type: image/png
+  icon_file_size: 0
+  icon_updated_at: "2011-05-28 15:09:22"
 
 bibliotheque:
+  id: 5
   nom: Bibliothèque
-  url: cat_biblio.png
+  icon_file_name: 5.png
+  icon_content_type: image/png
+  icon_file_size: 0
+  icon_updated_at: "2011-05-28 15:09:22"
