@@ -1,0 +1,20 @@
+
+%div(data-role="page" )
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+  %div{"data-role" => "content"}
+    %h1 Modification/Suppression de bornes
+    %div{"data-role" => "fieldcontain"}
+      %h2 Quelle borne voulez-vous modifier?      
+      - @bornes.each do |borne|
+        %div
+          %ul#test(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
+            %li{:style => "text-align:center;"}	
+              %img{:id => "imgHandy", :src => borne.photo.url}  
+            %li
+              %a.lol{:href => edit_campus_batiment_borne_path(borne.batiment.campus, borne.batiment, borne)} Editer
+            %li
+              %a.kikoo{:href => campus_batiment_borne_path(borne.batiment.campus, borne.batiment, borne), :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Supprimer
+

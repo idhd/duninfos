@@ -17,9 +17,20 @@ class BornesController < ApplicationController
     respond_with @borne
   end
   
+  def edit
+    @borne = Borne.find(params[:id])
+    @campuses = Campus.all
+    @batiments = Batiment.all
+  end
+  
+  def edit_all
+    @batiment = Batiment.find(params[:batiment_id])
+    @bornes = @batiment.bornes
+  end
+  
   def create
     @batiment = Batiment.find(params[:batiment_id])
-    respond_with(@batiment.campus, @batiment, @borne = @batiment.bornes.create(params[:borne]))
+    respond_with(@batiment.campus, @batiment, @borne = @batiment.bornes.create(params[:borne]), :location => carte_campus_batiment_path(@batiment.campus, @batiment))
   end
   
   def update
