@@ -2,7 +2,7 @@ class CarteController < ApplicationController
   respond_to :html
   
   def index
-    if session[:parametres] == nil
+    if session[:parametres]["submit"] == nil
       categories = Categorie.all
       session[:parametres] = {}
       categories.each do |categorie|
@@ -36,7 +36,7 @@ class CarteController < ApplicationController
 
     @categories = Categorie.all
    
-    if params[:submit_params]
+    if params[:parametres]
       session[:parametres] = params[:parametres]
             
       if params[:campus_id] && params[:batiment_id]

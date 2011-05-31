@@ -121,42 +121,46 @@ $(document).ready(function () {
 			            }
 			          }
 			        });
+		        }  
 		          
-		          if($.inArray("bornes", categories) != -1) {
+		        
 		          
-		            bornes = val.batiment.bornes;
-		            if (!$.isArray(bornes)) bornes = new Array(bornes);
-		            
-		            $.each(bornes, function(kb, vb) {
+	          if($.inArray("bornes", categories) != -1) {
+	            
+	            bornes = val.batiment.bornes;
+	            if (!$.isArray(bornes)) bornes = new Array(bornes);
+	            
+	            $.each(bornes, function(kb, vb) {
 
-		              // On positionne un marqueur pour cette borne
-		              $('#map').gmap3({
-			              action: 'addMarker',
-			              latLng: [vb.latitude, vb.longitude],
-
-			              marker: {
-			                options: {
-				                icon: "/images/categories/borne.png"
-			                },
-			                data:'<div id="infoWindowContent">'+
-			                      '<img src="' + vb.url_photo + '" class="borne_photo">' +
-						               '</div>',
-			                events: {
-				                click: function(marker, event, data) {
-				                  var infowindow = $(this).gmap3({action:'get', name:'infowindow'})
-				                  if(infowindow) {
-					                infowindow.setContent(data);
-					                infowindow.open(marker.map, marker);
-				                  } else {
-					                $(this).gmap3({action:'addinfowindow', anchor:marker, options:{content: data}});
-				                  }
-				                }
+	              // On positionne un marqueur pour cette borne
+	              $('#map').gmap3({
+		              action: 'addMarker',
+		              latLng: [vb.latitude, vb.longitude],
+			            map:{
+			              center: true,
+			            },
+		              marker: {
+		                options: {
+			                icon: "/images/categories/borne.png"
+		                },
+		                data:'<div id="infoWindowContent">'+
+		                      '<img src="' + vb.url_photo + '" class="borne_photo">' +
+					               '</div>',
+		                events: {
+			                click: function(marker, event, data) {
+			                  var infowindow = $(this).gmap3({action:'get', name:'infowindow'})
+			                  if(infowindow) {
+				                infowindow.setContent(data);
+				                infowindow.open(marker.map, marker);
+			                  } else {
+				                $(this).gmap3({action:'addinfowindow', anchor:marker, options:{content: data}});
+			                  }
 			                }
-			              }
-			            });
+		                }
+		              }
 		            });
-		          }
-		        }
+	            });
+	          }
 		        i++;
 		      });
 		    }
