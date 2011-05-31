@@ -22,6 +22,6 @@
           - else
             %input(name = "borne" type = "checkbox" data-theme = "c"){:id => "checkbox-#{i+1}", :name => "parametres[bornes]"}
           %label{:for => "checkbox-#{i+1}"} Borne de recharge monéo
-      %input#submit_params(type='hidden' name='submit_params' value='1')
+      %input#submit_params(type='hidden'){:name => "parametres[submit]"}
           
   = render :partial => "shared/navigation", :locals => { :complet => true }
