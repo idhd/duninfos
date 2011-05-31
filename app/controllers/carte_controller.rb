@@ -2,16 +2,6 @@ class CarteController < ApplicationController
   respond_to :html
   
   def index
-    if session[:parametres]["submit"] == nil
-      categories = Categorie.all
-      session[:parametres] = {}
-      categories.each do |categorie|
-        session[:parametres][categorie.id] = "on"
-      end
-      session[:parametres]["bornes"] = "on"
-    end
-    
-    
     if params[:campus_id] && params[:batiment_id]
       @batiment = Batiment.find(params[:batiment_id])
       @entrees = @batiment.entrees
@@ -35,7 +25,15 @@ class CarteController < ApplicationController
     end
 
     @categories = Categorie.all
-   
+    
+    if !session[:parametres]
+      session[:parametres] = {}
+      @categories.each do |categorie|
+        session[:parametres][categorie.id] = "on"
+      end
+      session[:parametres]["bornes"] = "on"
+    end
+    
     if params[:parametres]
       session[:parametres] = params[:parametres]
             
