@@ -9,7 +9,7 @@
           - i = i+1
           %li
             %img{:height => "80px", :src => "/images/categories/" + categorie.icon_file_name, :width => "80px"}
-            - if @parametres && @parametres.keys.include?(categorie.id)
+            - if @parametres && @parametres.keys.include?(categorie.id.to_s)
               %input(data-theme = "c" checked){:name => "parametres[#{categorie.id}]", :type => "checkbox", :id => "checkbox-#{i}"}
             - else
               %input(data-theme = "c"){:name => "parametres[#{categorie.id}]", :type => "checkbox", :id => "checkbox-#{i}"}
@@ -22,5 +22,6 @@
           - else
             %input(name = "borne" type = "checkbox" data-theme = "c"){:id => "checkbox-#{i+1}", :name => "parametres[bornes]"}
           %label{:for => "checkbox-#{i+1}"} Borne de recharge monéo
+      %input(type="hidden"){:name => "parametres[submit]"}
           
   = render :partial => "shared/navigation", :locals => { :complet => true }
