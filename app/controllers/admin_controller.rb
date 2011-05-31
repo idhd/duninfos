@@ -3,18 +3,9 @@ class AdminController < ApplicationController
   before_filter :auth
   
   def new
-    if params[:campus_id] && @campus = Campus.find(params[:campus_id])
-      if params[:categorie_id] && @categorie = Categorie.find(params[:categorie_id])
-        @batiments = Batiment.where(:campus_id => @campus, :categorie_id => @categorie)
-      end
-    else
-      @batiments = Batiment.all  
-    end
-    
-    @campuses = Campus.all
-    
+    @batiments = Batiment.all  
+    @campuses = Campus.all    
     @categories = Categorie.all
-
   end
   
   def edit_campuses
