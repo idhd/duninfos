@@ -19,7 +19,7 @@ class SallesController < ApplicationController
 
   def create
     @batiment = Batiment.find(params[:batiment_id])
-    respond_with(@batiment.campus, @batiment, @salle = @batiment.salles.create(params[:salle]), :location => campus_batiment_path(@batiment.campus, @batiment))
+    respond_with(@batiment.campus, @batiment, @salle = @batiment.salles.create(params[:salle]), :location => campus_batiment_salles_path(@batiment.campus, @batiment))
   end
   
   def edit
