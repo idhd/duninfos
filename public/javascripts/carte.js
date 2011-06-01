@@ -87,7 +87,7 @@ $(document).ready(function () {
 
 			          marker: {
 			            options: {
-				            icon: "/images/categories/"+val.batiment.categories[i].icon_file_name
+				            icon: "/images/categories/" + val.batiment.categories[i].id + '/small/' + val.batiment.categories[i].icon_file_name
 			            },
 			            data:'<div id="infoWindowHeader"><h3>'+val.batiment.nom+'</h3></div>'+
 						          '<div id="infoWindowContent">'+
@@ -101,7 +101,7 @@ $(document).ready(function () {
 						          '<div id="imgBatiment">'+
 						          '<a href="/campuses/'+val.batiment.campus_id+
 						          '/batiments/'+val.batiment.id+premiereEntree+
-						          '"><img alt="liste des entrées" src="/images/batiments/'+val.batiment.photo_file_name+'"></a>'+
+						          '"><img alt="liste des entrées" src="/images/batiments/' + val.batiment.id + '/small/' + val.batiment.photo_file_name + '"></a>'+
 						          '</div>'+
 						
 						          '</div>'+

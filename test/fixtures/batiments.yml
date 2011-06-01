@@ -32,7 +32,6 @@ isu:
             Lundi-Mercredi : 8h-12h | 14h-20h
             Jeudi-Vendredi : 8h30-12h | 13h30-19h30
   info: Bâtiment de l'International Space University
-  photo_file_name: 473597501.jpg
 
 ru_illkirch:
   campus: illkirch
@@ -55,8 +54,6 @@ bat_biblio_pharma:
   ville: Illkirch Graffenstaden
   longitude: 7.736388
   latitude: 48.52951
-  horaires: ''
-  info: ''
   
 residence_illkirch:
   campus: illkirch
@@ -67,7 +64,3 @@ residence_illkirch:
   ville: Illkirch Graffenstaden
   longitude: 7.733688
   latitude: 48.528944
-  horaires: ''
-  info: ''
-
-  

@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'haml'
 gem 'jquery-rails'
 gem 'paperclip'
+gem 'yaml_db'
 
 group :development, :test do
   gem 'cucumber-rails'

@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   def update
     @categorie = Categorie.find(params[:id])
     @categorie.update_attributes(params[:categorie])
-    respond_with @categorie
+    respond_with @categorie, :location => categories_path
   end
   
   def destroy

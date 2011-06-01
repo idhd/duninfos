@@ -1,0 +1,446 @@
+
+--- 
+campuses: 
+  columns: 
+  - id
+  - nom
+  - longitude
+  - latitude
+  - created_at
+  - updated_at
+  records: 
+  - - 193666451
+    - esplanade
+    - 7.76669
+    - 48.579021
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 211076332
+    - meinau
+    - 7.743194
+    - 48.560733
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 418776055
+    - robertsau
+    - 7.77545
+    - 48.602013
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 499566478
+    - medecine
+    - 7.745876
+    - 48.576167
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 569977537
+    - neudorf
+    - 7.777435
+    - 48.566597
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 654315783
+    - cronembourg
+    - 7.712166
+    - 48.606419
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 732307117
+    - illkirch
+    - 7.737063
+    - 48.522719
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 1073723655
+    - schiltigheim
+    - 7.746386
+    - 48.604691
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+
+--- 
+services: 
+  columns: 
+  - id
+  - batiment_id
+  - categorie_id
+  - nom
+  - tel
+  - email
+  - url_site_web
+  - created_at
+  - updated_at
+  records: 
+  - - 193898355
+    - 878147688
+    - 821904474
+    - "Les h\xC3\xA9liotropes"
+    - 
+    - 
+    - 
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 318759206
+    - 745037260
+    - 110154574
+    - "Biblioth\xC3\xA8que  de la facult\xC3\xA9 de pharmacie"
+    - 
+    - 
+    - 
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 473597501
+    - 473597501
+    - 158886572
+    - ISU
+    - 0388655430
+    - 
+    - www.isunet.edu/
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 904718522
+    - 1053186913
+    - 1019186233
+    - Restaurant universitaire
+    - 
+    - 
+    - 
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 949111939
+    - 473597501
+    - 158886572
+    - ENSIIE
+    - 0369200230
+    - christiane.muller@ensiie.fr
+    - www.ensiie.fr
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 1015873644
+    - 848652380
+    - 158886572
+    - ENSPS
+    - 0368854510
+    - contact@ensps.fr
+    - www.ensps.fr
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+
+--- 
+bornes: 
+  columns: 
+  - id
+  - batiment_id
+  - url_photo
+  - created_at
+  - updated_at
+  - latitude
+  - longitude
+  - photo_file_name
+  - photo_content_type
+  - photo_file_size
+  - photo_updated_at
+  records: 
+  - - 162541975
+    - 1053186913
+    - 
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 48.528425
+    - 7.737659
+    - 
+    - 
+    - 
+    - 
+  - - 280584239
+    - 1053186913
+    - 
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 48.528911
+    - 7.73759
+    - 
+    - 
+    - 
+    - 
+
+--- 
+users: 
+  columns: 
+  - id
+  - login
+  - password
+  - created_at
+  - updated_at
+  records: 
+  - - 980190962
+    - admin
+    - admin
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+
+--- 
+salles: 
+  columns: 
+  - id
+  - batiment_id
+  - nb_place
+  - num_etage
+  - nom
+  - imprimante
+  - acces_libre
+  - info
+  - created_at
+  - updated_at
+  records: 
+  - - 69811040
+    - 473597501
+    - 50
+    - 1
+    - Salle 1401
+    - true
+    - false
+    - "Wifi Vid\xC3\xA9oprojecteur"
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+  - - 128839478
+    - 473597501
+    - 40
+    - 1
+    - Salle 1601
+    - false
+    - false
+    - "Wifi Vid\xC3\xA9oprojecteur"
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+
+--- 
+entrees: 
+  columns: 
+  - id
+  - batiment_id
+  - acces_handicape
+  - longitude
+  - latitude
+  - created_at
+  - updated_at
+  - position
+  - photo_file_name
+  - photo_content_type
+  - photo_file_size
+  - photo_updated_at
+  records: 
+  - - 564820956
+    - 848652380
+    - true
+    - 7.737666
+    - 48.525507
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 1
+    - 
+    - 
+    - 
+    - 
+  - - 624655881
+    - 848652380
+    - true
+    - 7.738549
+    - 48.525691
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 2
+    - 
+    - 
+    - 
+    - 
+  - - 974741792
+    - 473597501
+    - true
+    - 7.736751
+    - 48.522953
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:24:51.419897
+    - 2
+    - 2.jpg
+    - image/jpeg
+    - 270876
+    - 2011-06-01 14:24:51.354098
+  - - 1011992480
+    - 473597501
+    - true
+    - 7.737107
+    - 48.522794
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:23:07.959705
+    - 1
+    - 1.jpg
+    - image/jpeg
+    - 237918
+    - 2011-06-01 14:23:07.896149
+
+--- 
+batiments: 
+  columns: 
+  - id
+  - campus_id
+  - acces_wifi
+  - nom
+  - adresse
+  - code_postal
+  - ville
+  - longitude
+  - latitude
+  - horaires
+  - info
+  - created_at
+  - updated_at
+  - photo_file_name
+  - photo_content_type
+  - photo_file_size
+  - photo_updated_at
+  records: 
+  - - 473597501
+    - 732307117
+    - false
+    - ISU
+    - "P\xC3\xB4le API - Parc d'Innovation\r\n\
+      1 rue Jean-Dominique Cassini\r\n"
+    - "67412"
+    - Illkirch Graffenstaden
+    - 7.73692
+    - 48.523139
+    - "Lundi-Mercredi : 8h-12h | 14h-20h           Jeudi-Vendredi : 8h30-12h | 13h30-19h30           "
+    - "B\xC3\xA2timent de l'International Space University"
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:30:29.383619
+    - 473597501.jpg
+    - image/jpeg
+    - 9938
+    - 2011-06-01 14:30:29.340885
+  - - 745037260
+    - 732307117
+    - true
+    - "Biblioth\xC3\xA8que de la facult\xC3\xA9 de pharmacie"
+    - 76 route du Rhin
+    - "67400"
+    - Illkirch Graffenstaden
+    - 7.736388
+    - 48.52951
+    - 
+    - 
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 
+    - 
+    - 
+    - 
+  - - 848652380
+    - 732307117
+    - true
+    - "P\xC3\xB4le Api"
+    - "P\xC3\xB4le API - Parc d'Innovation\n\
+      Bd S\xC3\xA9bastien Brant\n\
+      BP 10413\n"
+    - "67412"
+    - Illkirch Graffenstaden
+    - 7.737741
+    - 48.525745
+    - |
+      Lundi-Mercredi : 8h-12h | 14h-18h
+      Jeudi-Vendredi : 8h30-12h | 13h30-17h30
+
+    - "Le P\xC3\xB4le API"
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 
+    - 
+    - 
+    - 
+  - - 878147688
+    - 732307117
+    - true
+    - "R\xC3\xA9sidence \xC3\xA9tudiante d'Illkirch"
+    - 78 route du Rhin
+    - "67400"
+    - Illkirch Graffenstaden
+    - 7.733688
+    - 48.528944
+    - 
+    - 
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 
+    - 
+    - 
+    - 
+  - - 1053186913
+    - 732307117
+    - true
+    - Restaurant Universitaire d'Illkirch
+    - 76 route du Rhin
+    - "67400"
+    - Illkirch Graffenstaden
+    - 7.737685
+    - 48.528695
+    - "Lundi-Vendredi : 11h-15h"
+    - "B\xC3\xA2timent du Restaurant Universitaire d'Illkirch"
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:21:47
+    - 
+    - 
+    - 
+    - 
+
+--- 
+categories: 
+  columns: 
+  - id
+  - nom
+  - created_at
+  - updated_at
+  - icon_file_name
+  - icon_content_type
+  - icon_file_size
+  - icon_updated_at
+  records: 
+  - - 85880419
+    - complexe sportif
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:41:43.188969
+    - 4.png
+    - image/png
+    - 4771
+    - 2011-06-01 14:41:43.155731
+  - - 110154574
+    - "Biblioth\xC3\xA8que"
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:42:02.312081
+    - 5.png
+    - image/png
+    - 3836
+    - 2011-06-01 14:42:02.279334
+  - - 158886572
+    - Ecole
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:41:21.865207
+    - 2.png
+    - image/png
+    - 4699
+    - 2011-06-01 14:41:21.829635
+  - - 821904474
+    - Logement
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:42:18.866178
+    - 3.png
+    - image/png
+    - 774
+    - 2011-06-01 14:42:18.831970
+  - - 1019186233
+    - Restaurant Universitaire
+    - 2011-06-01 14:21:47
+    - 2011-06-01 14:45:07.760274
+    - 1.png
+    - image/png
+    - 1512
+    - 2011-06-01 14:45:07.722999

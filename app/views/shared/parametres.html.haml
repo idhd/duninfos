@@ -8,7 +8,7 @@
         - @categories.each do |categorie|
           - i = i+1
           %li
-            %img{:height => "80px", :src => "/images/categories/" + categorie.icon_file_name, :width => "80px"}
+            %img{:height => "80px", :src => categorie.icon.url(:small), :width => "80px"}
             - if @parametres && @parametres.keys.include?(categorie.id.to_s)
               %input(data-theme = "c" checked){:name => "parametres[#{categorie.id}]", :type => "checkbox", :id => "checkbox-#{i}"}
             - else
