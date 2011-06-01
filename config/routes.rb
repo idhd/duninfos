@@ -16,7 +16,11 @@ Duninfos::Application.routes.draw do
         get 'carte' => "carte#index", :as => :carte
         match 'carte/parametres' => "carte#parametres", :via => [:get, :post], :as => :parametres
       end
-      resources :bornes
+      resources :bornes do
+        collection do
+          get 'edit' => "bornes#edit_all", :as => :edit
+        end
+      end
       resources :services
       resources :entrees do
         collection do

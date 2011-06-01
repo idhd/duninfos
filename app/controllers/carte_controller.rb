@@ -29,7 +29,7 @@ class CarteController < ApplicationController
     if !session[:parametres]
       session[:parametres] = {}
       @categories.each do |categorie|
-        session[:parametres][categorie.id] = "on"
+        session[:parametres][categorie.id.to_s] = "on"
       end
       session[:parametres]["bornes"] = "on"
     end

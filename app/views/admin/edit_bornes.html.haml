@@ -1,0 +1,27 @@
+=javascript_include_tag "edit_borne"
+
+%div(data-role="page" )
+  %div{"data-role" => "header", "data-theme" => "b"}
+    %h1 Interface d'administration
+    %a.ui-btn-right.jqm-home{"data-direction" => "reverse", "data-icon" => "home", "data-iconpos" => "notext", :href => "../../"} Home
+  / /header
+  %div{"data-role" => "content"}
+    %h1 Modification de bornes
+    %form#form{:action => "", :method => "post", :name => "form"}
+
+      %div{"data-role" => "fieldcontain"}
+        %label.select{:for => "select-campus"} Dans quel Campus ?
+        %select#select-campus{:name => "campus_id"}
+          %option{:disabled => "disabled", :selected => "selected"} Choisissez le campus
+          - @campuses.each do |campus|
+            %option{:value => campus.id}= campus.nom.capitalize
+      
+      %div{"data-role" => "fieldcontain"}
+        %label.select{:for => "select-batiment"} Dans quel Batiment?
+        %select#select-batiment{:name => "batiment_id"}
+          - @batiments.each do |batiment|
+            %option{:value => batiment.id}= batiment.nom.capitalize
+
+      %ul#test(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
+        %li
+          %a.lol{:href => "#"} Aller à la page d'édition/suppression

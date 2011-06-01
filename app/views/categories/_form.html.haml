@@ -1,4 +1,4 @@
-= form_for categorie do |f|
+= form_for categorie , :html => {:multipart => true} do |f|
   %div(data-role="fieldcontain")
     = f.label :nom
     = f.text_field :nom
