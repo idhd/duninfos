@@ -27,7 +27,7 @@ $(document).ready(function(){
         $(".lol").attr('href','/campuses/'+campus_id+'/batiments/'+batiment_id+'/entrees/edit');
     });   
     
-    $("#test").bind('tap', function(e) {
+    $("#test").click(function(e) {
         e.preventDefault;
         var campus_id = $("#select-campus option:selected").val();
         var batiment_id = $("#select-batiment option:selected").val();
