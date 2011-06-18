@@ -15,5 +15,5 @@
   num_etage: 1
   info: Wifi Vidéoprojecteur
   nom: Salle 1401
-  imprimante: true
+  imprimante: false
   acces_libre: false
