@@ -16,10 +16,14 @@ $(document).ready(function(){
             batiments=eval(data);
             //console.log(batiments);
             batimentslist.options.length=0;
-             
-            for (i=0; i<batiments.length; i++)
-                batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);
-
+            if (batiments.length != 0) {  
+                for (i=0; i<batiments.length; i++)
+                    batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);
+            }
+            else
+            {
+                batimentslist.options[0]=new Option("Pas de batiments dans ce campus");
+            }
             myselect.selectmenu("refresh");
             update();
         });
@@ -45,10 +49,14 @@ $(document).ready(function(){
         salles=eval(data);
         //console.log(batiments);
         salleslist.options.length=0;
-         
-        for (i=0; i<salles.length; i++)
-                salleslist.options[salleslist.options.length]=new Option(salles[i].salle.nom, salles[i].salle.id);
-
+        if (salles.length != 0) {   
+            for (i=0; i<salles.length; i++)
+                    salleslist.options[salleslist.options.length]=new Option(salles[i].salle.nom, salles[i].salle.id);
+        }
+        else
+        {
+            salleslist.options[0]=new Option("Pas de salles dans ce batiment");
+        }
         myselect.selectmenu("refresh");
         });
 

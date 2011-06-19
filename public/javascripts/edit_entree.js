@@ -14,10 +14,14 @@ $(document).ready(function(){
         batiments=eval(data);
         //console.log(batiments);
         batimentslist.options.length=0;
-         
-        for (i=0; i<batiments.length; i++)
-            batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id, true);
-
+        if (batiments.length != 0) {      
+            for (i=0; i<batiments.length; i++)
+                batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id, true);
+        }
+        else
+        {
+            batimentslist.options[0]=new Option("Pas de batiments dans ce campus");
+        }
             myselect.selectmenu("refresh");
         });
         

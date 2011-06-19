@@ -16,10 +16,14 @@ $(document).ready(function(){
             batiments=eval(data);
             //console.log(batiments);
             batimentslist.options.length=0;
-             
-            for (i=0; i<batiments.length; i++)
-                batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);
-
+            if (batiments.length != 0) {  
+                for (i=0; i<batiments.length; i++)
+                    batimentslist.options[batimentslist.options.length]=new Option(batiments[i].batiment.nom, batiments[i].batiment.id);
+            }
+            else
+            {
+                batimentslist.options[0]=new Option("Pas de batiments dans ce campus");            
+            }
             myselect.selectmenu("refresh");
             update();
         });
@@ -42,14 +46,18 @@ $(document).ready(function(){
         var myselect = $("select#select-service");
               
         $.getJSON('/campuses/'+campus_id+'/batiments/'+batiment_id+'/services.json', function(data) {
-        services=eval(data);
-        //console.log(batiments);
-        serviceslist.options.length=0;
-         
-        for (i=0; i<services.length; i++)
-                serviceslist.options[serviceslist.options.length]=new Option(services[i].service.nom, services[i].service.id);
-
-        myselect.selectmenu("refresh");
+            services=eval(data);
+            //console.log(batiments);
+            serviceslist.options.length=0;
+            if (services.length != 0) {   
+                for (i=0; i<services.length; i++)
+                        serviceslist.options[serviceslist.options.length]=new Option(services[i].service.nom, services[i].service.id);
+            }
+            else
+            {
+                servicesslist.options[0]=new Option("Pas de services dans ce campus");            
+            }
+            myselect.selectmenu("refresh");
         });
 
         var campus_id = $("#select-campus option:selected").val();
