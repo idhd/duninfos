@@ -4,6 +4,9 @@ $(document).ready(function () {
   
   var categories = new Array();
   var categoriesTemp = new Array();
+
+  if (navigator.geolocation)
+    var watchId = navigator.geolocation.watchPosition(successCallback, null, {enableHighAccuracy:true});
   
   // On récupère les parametres
   $.getJSON( url_complete + "/parametres.json", function(data) {
@@ -12,10 +15,7 @@ $(document).ready(function () {
         categories.push(key);
       });
     }
-  });
-
-  if (navigator.geolocation)
-    var watchId = navigator.geolocation.watchPosition(successCallback, null, {enableHighAccuracy:true});
+  });  
   
   // On récupère l'adresse de la page (auquel on enlève le '/carte' de la fin)
   var url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
@@ -202,11 +202,6 @@ function successCallback(position)
                 {
                     icon: '/images/position.png'
                 }
-           },
-
-          data: "test",
-
-          
-          
+           }          
     });
 }
