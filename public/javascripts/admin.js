@@ -3,6 +3,9 @@ $(document).ready(function(){
     var myselect = $("select#select-batiment");
     myselect.selectmenu("refresh");
 
+  $("#btn_geloc").hide();
+  if(navigator.geolocation) {$("#btn_geloc").show();}
+
   $(".all").hide();
   var choix = "";
     $("label[for='choix-campus']").bind('tap', function() {
@@ -122,12 +125,7 @@ $(document).ready(function(){
 
     if(navigator.geolocation)
     {
-	navigator.geolocation.getCurrentPosition(function(position)
-	{
-	        latitude = position.coords.latitude;
-	        longitude = position.coords.longitude;
-	});
-	
+	navigator.geolocation.getCurrentPosition(successfunction, errorfunction, {maximumAge:5000, timeout:5000});
 
     	$("#btn_geloc").click(function()
 	{
@@ -138,7 +136,7 @@ $(document).ready(function(){
 		la = $('#longitude').val();
 		if(la == "") { $('#longitude').val(longitude); }
 		else { $('#longitude').val(""); }
-		
+
 		ad = $('#adresse').text();
 		if(ad == "")
 		{
@@ -149,7 +147,22 @@ $(document).ready(function(){
 		}
 		else { $('#adresse').text(""); }
 
+		navigator.geolocation.getCurrentPosition(successfunction, errorfunction, {maximumAge:100, timeout:5000});
 	});
     }
 });
 
+function errorfunction(error){
+    switch(error.code) {
+        case error.TIMEOUT:
+		latitude = 'Erreur : Timeout';
+		longitude = 'Erreur : Timeout';
+		adresse = '';
+        break;
+    }
+}
+
+function successfunction(position){
+	latitude = position.coords.latitude;
+	longitude = position.coords.longitude;
+}
