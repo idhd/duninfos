@@ -13,6 +13,9 @@ $(document).ready(function () {
       });
     }
   });
+
+  if (navigator.geolocation)
+    var watchId = navigator.geolocation.watchPosition(successCallback, null, {enableHighAccuracy:true});
   
   // On récupère l'adresse de la page (auquel on enlève le '/carte' de la fin)
   var url = window.location.pathname.substr( 0, window.location.pathname.length-6 );
@@ -185,3 +188,20 @@ $(document).ready(function () {
     });
   });
 });
+
+function successCallback(position)
+{    
+    $('#map').gmap3(
+    {
+          action: 'addMarker',
+          latLng: [position.coords.latitude, position.coords.longitude],
+          
+          marker: 
+          {
+                options: 
+                {
+                    icon: '/images/position.png'
+                }
+           }
+    });
+}
