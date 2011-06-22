@@ -1,14 +1,19 @@
 ru:
   nom: Restaurant Universitaire
+  icon_file_name: 1.png
 
 ecole:
   nom: Ecole
+  icon_file_name: 2.png
 
 logement:
   nom: Logement
+  icon_file_name: 3.png
 
 cmp_sport:
   nom: complexe sportif
+  icon_file_name: 4.png
 
 bibliotheque:
   nom: Bibliothèque
+  icon_file_name: 5.png
