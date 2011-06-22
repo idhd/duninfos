@@ -202,6 +202,11 @@ function successCallback(position)
                 {
                     icon: '/images/position.png'
                 }
-           }
+           },
+
+          data: "test",
+
+          
+          
     });
 }

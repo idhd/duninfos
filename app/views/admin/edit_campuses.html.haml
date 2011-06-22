@@ -14,7 +14,7 @@
           %h3=campus.nom.capitalize
           %ul(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
             %li
-              %a{:href => edit_campus_path(campus)} Edit
+              %a{:href => edit_campus_path(campus)} Modifier
             %li
-              %a{:href => campus_path(campus), :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Destroy
+              %a{:href => campus_path(campus), :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Supprimer
 

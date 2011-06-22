@@ -22,10 +22,10 @@
           - @batiments.each do |batiment|
             %option{:value => batiment.id}= batiment.nom.capitalize
 
-      %h2 Quelle salle voulez-vous modifier?
+      %h2 Quelle salle voulez-vous modifier ?
 
       %div{"data-role" => "fieldcontain"}
-        %label.select{:for => "select-salle"} Salle?
+        %label.select{:for => "select-salle"} Quelle salle ?
         %select#select-salle{:name => "salle_id"}
           - @salles.each do |salle|
             %option{:value => salle.id}= salle.nom.capitalize
@@ -33,7 +33,7 @@
       
       %ul#test(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
         %li
-          %a.lol{:href => "#"} Editer
+          %a.lol{:href => "#"} Modifier
         %li
           %a.kikoo{:href => "#", :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Supprimer
 

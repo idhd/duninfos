@@ -17,15 +17,15 @@
             %option{:value => campus.id}= campus.nom.capitalize
       
       %div{"data-role" => "fieldcontain"}
-        %label.select{:for => "select-batiment"} Dans quel Batiment?
+        %label.select{:for => "select-batiment"} Dans quel Batiment ?
         %select#select-batiment{:name => "batiment_id"}
           - @batiments.each do |batiment|
             %option{:value => batiment.id}= batiment.nom.capitalize
 
-      %h2 Quel service voulez-vous modifier?
+      %h2 Quel service voulez-vous modifier ?
 
       %div{"data-role" => "fieldcontain"}
-        %label.select{:for => "select-service"} Service?
+        %label.select{:for => "select-service"} Quelle service ?
         %select#select-service{:name => "service_id"}
           - @services.each do |service|
             %option{:value => service.id}= service.nom.capitalize
@@ -33,7 +33,7 @@
       
       %ul#test(data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b")
         %li
-          %a.lol{:href => "#"} Editer
+          %a.lol{:href => "#"} Modifier
         %li
           %a.kikoo{:href => "#", :"data-confirm" => 'Êtes-vous sûr(e)?', :"data-method" => :delete} Supprimer
 
