@@ -10,6 +10,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'paperclip'
 gem 'yaml_db'
+gem 'unicorn'
 
 group :development, :test do
   gem 'cucumber-rails'
